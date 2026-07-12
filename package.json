@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "lint": "eslint ."
+    "preview": "npm run build && wrangler dev",
+    "lint": "eslint .",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "framer-motion": "^11.5.4",
@@ -17,6 +18,7 @@
     "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.44.0",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^6.0.3",
@@ -25,6 +27,7 @@
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
     "vite": "^8.1.4",
-    "vite-plugin-sitemap": "^0.6.1"
+    "vite-plugin-sitemap": "^0.6.1",
+    "wrangler": "^4.110.0"
   }
 }
