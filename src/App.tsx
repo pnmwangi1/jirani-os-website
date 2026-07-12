@@ -16,6 +16,7 @@ const Pricing = lazy(() => import('./pages/Pricing'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Privacy = lazy(() => import('./pages/Privacy'));
+const DeleteAccount = lazy(() => import('./pages/DeleteAccount'));
 const Terms = lazy(() => import('./pages/Terms'));
 const Security = lazy(() => import('./pages/Security'));
 const Careers = lazy(() => import('./pages/Careers'));
@@ -47,6 +48,7 @@ export default function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
+              <Route path="/delete-account" element={<DeleteAccount />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/security" element={<Security />} />
               <Route path="/careers" element={<Careers />} />

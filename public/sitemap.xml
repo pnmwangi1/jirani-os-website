@@ -12,5 +12,6 @@
   <url><loc>https://jiranios.com/blog</loc><priority>0.5</priority></url>
   <url><loc>https://jiranios.com/faq</loc><priority>0.6</priority></url>
   <url><loc>https://jiranios.com/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://jiranios.com/delete-account</loc><priority>0.4</priority></url>
   <url><loc>https://jiranios.com/terms</loc><priority>0.3</priority></url>
 </urlset>

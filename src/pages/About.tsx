@@ -5,6 +5,7 @@ import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/marketing/Reveal';
 import { CTASection } from '../components/marketing/CTASection';
+import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
 
 const values = [
   { title: 'Built for the way businesses actually run', desc: 'Not the way software makes them run. Real workflows, real edge cases, real constraints.' },
@@ -22,7 +23,8 @@ export default function About() {
 
   return (
     <>
-      <Section className="pb-12">
+      <Section className="relative overflow-hidden pb-12">
+        <BackgroundGlow variant="hero" />
         <div className="container">
           <Reveal className="mx-auto max-w-2xl text-center">
             <Badge tone="primary">About Jirani OS</Badge>

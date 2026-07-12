@@ -78,7 +78,7 @@ export default function Privacy() {
       <ul>
         <li>You may access and update most of your account information directly within the app.</li>
         <li>You may request a copy of the personal data we hold about you.</li>
-        <li>You may request deletion of your account and associated data, subject to legal retention requirements.</li>
+        <li>You may request deletion of your account and associated data, subject to legal retention requirements. See our <a href="/delete-account">Delete Account</a> page for exactly how.</li>
         <li>You may opt out of non-essential communications at any time.</li>
       </ul>
       <p>To exercise any of these rights, contact us using the details on our Contact page.</p>

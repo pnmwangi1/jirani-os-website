@@ -4,7 +4,10 @@ import { Badge } from '../components/ui/Badge';
 import { Reveal } from '../components/marketing/Reveal';
 import { SolutionCard } from '../components/marketing/SolutionCard';
 import { CTASection } from '../components/marketing/CTASection';
+import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { solutions } from '../content/solutions';
+import { appScreenshots } from '../content/screenshots';
 
 export default function Solutions() {
   useSeo({
@@ -15,15 +18,20 @@ export default function Solutions() {
 
   return (
     <>
-      <Section className="pb-12">
-        <div className="container">
-          <Reveal className="mx-auto max-w-2xl text-center">
+      <Section className="relative overflow-hidden pb-12">
+        <BackgroundGlow variant="hero" />
+        <div className="container grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.3fr_1fr]">
+          <Reveal className="text-center lg:text-left">
             <Badge tone="primary">Solutions</Badge>
             <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">Built for your kind of business.</h1>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
               Jirani OS is one system underneath, but it is shaped by the real, specific needs of
               the businesses that use it. Here is what that looks like for yours.
             </p>
+          </Reveal>
+          <Reveal delay={0.1} className="hidden justify-center gap-4 lg:flex">
+            <PhoneFrame src={appScreenshots[2].src} alt={appScreenshots[2].alt} className="mt-8" />
+            <PhoneFrame src={appScreenshots[3].src} alt={appScreenshots[3].alt} />
           </Reveal>
         </div>
       </Section>

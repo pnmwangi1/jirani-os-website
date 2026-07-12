@@ -3,10 +3,12 @@ import { ArrowRight } from 'lucide-react';
 import { LinkButton } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { ConvergenceVisual } from './ConvergenceVisual';
+import { BackgroundGlow } from './BackgroundGlow';
 
 export function Hero() {
   return (
-    <div className="container pt-16 pb-8 md:pt-24 md:pb-12">
+    <div className="container relative pt-16 pb-8 md:pt-24 md:pb-12">
+      <BackgroundGlow variant="hero" />
       <div className="mx-auto max-w-3xl text-center">
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <Badge tone="primary">One system, every branch</Badge>

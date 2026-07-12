@@ -1,18 +1,20 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Layers, Building2, Store, Droplet, Wrench, Factory } from 'lucide-react';
+import { ArrowRight, Building2, Store, Droplet, Wrench, Factory } from 'lucide-react';
 import { useSeo } from '../lib/seo';
 import { Hero } from '../components/marketing/Hero';
 import { FeatureCard } from '../components/marketing/FeatureCard';
 import { TestimonialCard } from '../components/marketing/TestimonialCard';
 import { StatBlock } from '../components/marketing/StatBlock';
 import { CTASection } from '../components/marketing/CTASection';
-import { MockupFrame } from '../components/marketing/MockupFrame';
+import { ScreenshotShowcase } from '../components/marketing/ScreenshotShowcase';
+import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { Reveal } from '../components/marketing/Reveal';
+import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
 import { Section } from '../components/ui/Section';
-import { Card } from '../components/ui/Card';
 import { Badge } from '../components/ui/Badge';
 import { featureGroups } from '../content/features';
 import { testimonials } from '../content/testimonials';
+import { appScreenshots } from '../content/screenshots';
 
 const highlightFeatures = [
   featureGroups[0].features[1], // Rent management
@@ -50,7 +52,8 @@ export default function Home() {
       <Hero />
 
       {/* Why one system */}
-      <Section className="border-t border-border bg-surface">
+      <Section className="relative overflow-hidden border-t border-border bg-surface">
+        <BackgroundGlow variant="section" />
         <div className="container">
           <Reveal className="mx-auto max-w-2xl text-center">
             <Badge tone="primary">Why one system</Badge>
@@ -150,29 +153,25 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <Card padding="lg">
-              <div className="grid grid-cols-2 gap-3">
-                {['Billing Engine', 'Accounting Engine', 'Inventory Engine', 'CRM Engine', 'Notification Engine'].map((engine) => (
-                  <div key={engine} className="flex items-center gap-2 rounded-xl bg-primary-light/50 px-4 py-3">
-                    <Layers size={15} className="text-primary" />
-                    <span className="text-xs font-semibold text-ink">{engine}</span>
-                  </div>
-                ))}
-              </div>
-            </Card>
+            <div className="grid grid-cols-2 gap-4">
+              <PhoneFrame src={appScreenshots[8].src} alt={appScreenshots[8].alt} className="mt-6" />
+              <PhoneFrame src={appScreenshots[9].src} alt={appScreenshots[9].alt} />
+            </div>
           </Reveal>
         </div>
       </Section>
 
-      {/* Screenshot showcase */}
+      {/* Screenshot showcase — real product screenshots */}
       <Section>
         <div className="container">
-          <Reveal className="mb-10 text-center">
-            <h2 className="text-3xl font-extrabold text-ink md:text-4xl">See it in action.</h2>
+          <Reveal className="mb-12 text-center">
+            <Badge tone="primary">The real thing</Badge>
+            <h2 className="mt-4 text-3xl font-extrabold text-ink md:text-4xl">See it in action.</h2>
+            <p className="mx-auto mt-3 max-w-lg text-base text-ink-muted">
+              These are real screens from the Jirani OS app — not mockups.
+            </p>
           </Reveal>
-          <Reveal delay={0.1}>
-            <MockupFrame label="Dashboard overview" />
-          </Reveal>
+          <ScreenshotShowcase screenshots={appScreenshots.slice(0, 8)} />
         </div>
       </Section>
 
