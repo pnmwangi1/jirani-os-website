@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jirani OS</title>
+    <script>
+      // Item: GitHub Pages has no server-side rewrite support, so a
+      // direct visit or refresh on e.g. /features would normally 404.
+      // This is the standard workaround — encode the real path into a
+      // query string, redirect to index.html, and a matching script
+      // there restores it via history.replaceState before React Router
+      // ever sees the URL. Cloudflare Pages does NOT need this (see
+      // public/_redirects instead) — this file is specifically for the
+      // GitHub Pages deployment path.
+      var path = window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace('/?redirect=' + encodeURIComponent(path));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,108 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=general-sans@400,500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme — pulled directly from the Jirani OS app's real C_LIGHT
+     tokens, not invented for this site. RGB triplets (not hex) so
+     Tailwind's <alpha-value> opacity modifiers work. */
+  --color-bg: 250 247 240;              /* #FAF7F0 */
+  --color-surface: 255 255 255;         /* #FFFFFF */
+  --color-ink: 28 43 36;                /* #1C2B24 */
+  --color-ink-muted: 138 150 144;       /* #8A9690 */
+  --color-border: 233 226 211;          /* #E9E2D3 */
+  --color-primary: 31 77 61;            /* #1F4D3D */
+  --color-primary-light: 226 235 228;   /* #E2EBE4 */
+  --color-tenant: 224 146 47;           /* #E0922F */
+  --color-tenant-light: 251 240 220;    /* #FBF0DC */
+  --color-manager: 124 58 237;          /* #7C3AED */
+  --color-manager-light: 237 233 254;   /* #EDE9FE */
+  --color-accountant: 3 105 161;        /* #0369A1 */
+  --color-accountant-light: 224 242 254;/* #E0F2FE */
+  --color-caretaker: 6 95 70;           /* #065F46 */
+  --color-caretaker-light: 209 250 229; /* #D1FAE5 */
+  --color-contractor: 193 87 43;        /* #C1572B */
+  --color-contractor-light: 248 231 221;/* #F8E7DD */
+  --color-success: 58 140 94;           /* #3A8C5E */
+  --color-success-light: 227 241 232;   /* #E3F1E8 */
+  --color-warning: 217 119 6;           /* #D97706 */
+  --color-warning-light: 254 243 199;   /* #FEF3C7 */
+  --color-danger: 220 38 38;            /* #DC2626 */
+  --color-danger-light: 254 226 226;    /* #FEE2E2 */
+  --color-info: 37 99 235;              /* #2563EB */
+  --color-info-light: 239 246 255;      /* #EFF6FF */
+  --logo-shadow: drop-shadow(0 1px 2px rgba(28,43,36,0.28));
+}
+
+.dark {
+  /* Dark theme — pulled directly from the app's real C_DARK tokens. */
+  --color-bg: 26 24 21;                 /* #1A1815 */
+  --color-surface: 36 34 32;            /* #242220 */
+  --color-ink: 240 237 231;             /* #F0EDE7 */
+  --color-ink-muted: 155 150 140;       /* #9B968C */
+  --color-border: 56 53 47;             /* #38352F */
+  --color-primary: 74 155 127;          /* #4A9B7F */
+  --color-primary-light: 30 49 41;      /* #1E3129 */
+  --color-tenant: 240 169 74;           /* #F0A94A */
+  --color-tenant-light: 61 46 19;       /* #3D2E13 */
+  --color-manager: 167 139 250;         /* #A78BFA */
+  --color-manager-light: 44 35 64;      /* #2C2340 */
+  --color-accountant: 56 189 248;       /* #38BDF8 */
+  --color-accountant-light: 19 42 56;   /* #132A38 */
+  --color-caretaker: 52 211 153;        /* #34D399 */
+  --color-caretaker-light: 15 46 34;    /* #0F2E22 */
+  --color-contractor: 225 122 79;       /* #E17A4F */
+  --color-contractor-light: 58 32 22;   /* #3A2016 */
+  --color-success: 79 173 117;          /* #4FAD75 */
+  --color-success-light: 27 51 36;      /* #1B3324 */
+  --color-warning: 240 169 61;          /* #F0A93D */
+  --color-warning-light: 61 46 10;      /* #3D2E0A */
+  --color-danger: 240 99 90;            /* #F0635A */
+  --color-danger-light: 61 24 21;       /* #3D1815 */
+  --color-info: 96 165 250;             /* #60A5FA */
+  --color-info-light: 19 42 68;         /* #132A44 */
+  --logo-shadow: drop-shadow(0 1px 2px rgba(240,237,231,0.35));
+}
+
+* {
+  border-color: rgb(var(--color-border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-bg text-ink font-body antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+  letter-spacing: -0.02em;
+}
+
+/* Visible keyboard focus everywhere, in the brand color — never the
+   browser default blue outline, per the accessibility quality floor. */
+:focus-visible {
+  outline: 2px solid rgb(var(--color-primary));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.logo-shadow {
+  filter: var(--logo-shadow);
+}

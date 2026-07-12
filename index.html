@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1F4D3D" />
+
+    <title>Jirani OS — The operating system for your business</title>
+    <meta name="description" content="Jirani OS unifies property management, sales, billing, inventory and accounting into one system — built for businesses that outgrew spreadsheets and disconnected apps." />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jirani OS" />
+    <meta property="og:title" content="Jirani OS — The operating system for your business" />
+    <meta property="og:description" content="One system for property management, sales, billing, inventory and accounting — replacing the spreadsheets and disconnected apps most growing businesses juggle today." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://jiranios.com/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jirani OS — The operating system for your business" />
+    <meta name="twitter:description" content="One system for property management, sales, billing, inventory and accounting." />
+    <meta name="twitter:image" content="/og-image.png" />
+
+    <script>
+      // Item: matches the redirect from public/404.html for GitHub
+      // Pages deployments — restores the real path before React Router
+      // mounts. No-op on Cloudflare Pages, since _redirects means this
+      // query param is never present there.
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirect = params.get('redirect');
+        if (redirect) {
+          window.history.replaceState(null, '', redirect);
+        }
+      })();
+    </script>
+    <script>
+      // Item: applied before paint to avoid a flash of the wrong theme —
+      // reads the same localStorage key the in-app ThemeToggle will use,
+      // so this logic transfers directly when this becomes the real app shell.
+      (function () {
+        try {
+          var stored = localStorage.getItem('jirani-theme');
+          var mode = stored || 'system';
+          var isDark = mode === 'dark' || (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
