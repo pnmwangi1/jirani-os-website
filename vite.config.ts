@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/jirani-os-website/',
   plugins: [react()],
   build: {
     // Item: kept conservative — pages are already lazy-loaded via
