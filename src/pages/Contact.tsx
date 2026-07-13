@@ -7,6 +7,8 @@ import { Card } from '../components/ui/Card';
 import { Input, Textarea } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/marketing/Reveal';
+import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { CommunicationIllustration } from '../components/marketing/illustrations';
 
 export default function Contact() {
   useSeo({
@@ -27,9 +29,11 @@ export default function Contact() {
   }
 
   return (
-    <Section>
+    <Section className="relative overflow-hidden">
+      <BackgroundGlow variant="hero" />
       <div className="container">
         <Reveal className="mx-auto max-w-2xl text-center">
+          <CommunicationIllustration className="mx-auto mb-2 h-32 w-44" />
           <Badge tone="primary">Contact</Badge>
           <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">Let&rsquo;s talk about your business.</h1>
           <p className="mt-4 text-base leading-relaxed text-ink-muted">

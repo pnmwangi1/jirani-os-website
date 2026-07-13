@@ -4,6 +4,8 @@ import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
 import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/marketing/Reveal';
+import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { SecurityIllustration } from '../components/marketing/illustrations';
 
 const pillars = [
   {
@@ -57,9 +59,11 @@ export default function Security() {
 
   return (
     <>
-      <Section className="pb-12">
+      <Section className="relative overflow-hidden pb-12">
+        <BackgroundGlow variant="hero" />
         <div className="container">
           <Reveal className="mx-auto max-w-2xl text-center">
+            <SecurityIllustration className="mx-auto mb-2 h-32 w-40" />
             <Badge tone="primary">Security</Badge>
             <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">How we protect your data.</h1>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">

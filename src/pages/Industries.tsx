@@ -5,8 +5,11 @@ import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/marketing/Reveal';
 import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { PropertyIllustration, CommerceIllustration, DataIllustration, AutomationIllustration } from '../components/marketing/illustrations';
 import { industries } from '../content/industries';
 import { CheckCircle2 } from 'lucide-react';
+
+const industryIllustrations = [PropertyIllustration, CommerceIllustration, DataIllustration, AutomationIllustration];
 
 export default function Industries() {
   useSeo({
@@ -33,10 +36,15 @@ export default function Industries() {
 
       <Section className="pt-0">
         <div className="container space-y-6">
-          {industries.map((ind, i) => (
+          {industries.map((ind, i) => {
+            const Illustration = industryIllustrations[i % industryIllustrations.length];
+            return (
             <Reveal key={ind.id} delay={i * 0.05}>
               <Card padding="lg">
-                <h2 className="font-display text-2xl font-bold text-ink">{ind.title}</h2>
+                <div className="flex items-center gap-5">
+                  <Illustration className="hidden h-20 w-28 flex-shrink-0 sm:block" />
+                  <h2 className="font-display text-2xl font-bold text-ink">{ind.title}</h2>
+                </div>
                 <div className="mt-5 grid grid-cols-1 gap-8 lg:grid-cols-2">
                   <div>
                     <h3 className="mb-2 text-xs font-bold uppercase tracking-wide text-ink-muted">The challenge</h3>
@@ -58,7 +66,7 @@ export default function Industries() {
                 </div>
               </Card>
             </Reveal>
-          ))}
+          );})}
         </div>
       </Section>
 

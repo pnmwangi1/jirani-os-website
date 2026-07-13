@@ -10,6 +10,8 @@ import { ScreenshotShowcase } from '../components/marketing/ScreenshotShowcase';
 import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { AutomationIllustration } from '../components/marketing/illustrations';
+import { WaveDivider } from '../components/marketing/WaveDivider';
 import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
 import { featureGroups } from '../content/features';
@@ -50,6 +52,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <WaveDivider className="text-surface -mb-1" />
 
       {/* Why one system */}
       <Section className="relative overflow-hidden border-t border-border bg-surface">
@@ -68,6 +71,9 @@ export default function Home() {
               the other parts — so nothing ever quite adds up. Jirani OS replaces all of it with
               one system where every part already knows about every other part.
             </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <AutomationIllustration className="mx-auto mt-8 h-44 w-full max-w-md" />
           </Reveal>
         </div>
       </Section>
@@ -154,8 +160,8 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.15}>
             <div className="grid grid-cols-2 gap-4">
-              <PhoneFrame src={appScreenshots[8].src} alt={appScreenshots[8].alt} className="mt-6" />
-              <PhoneFrame src={appScreenshots[9].src} alt={appScreenshots[9].alt} />
+              <PhoneFrame src={appScreenshots[3].src} alt={appScreenshots[3].alt} caption={appScreenshots[3].caption} className="mt-6" />
+              <PhoneFrame src={appScreenshots[4].src} alt={appScreenshots[4].alt} caption={appScreenshots[4].caption} />
             </div>
           </Reveal>
         </div>
@@ -171,7 +177,7 @@ export default function Home() {
               These are real screens from the Jirani OS app — not mockups.
             </p>
           </Reveal>
-          <ScreenshotShowcase screenshots={appScreenshots.slice(0, 8)} />
+          <ScreenshotShowcase screenshots={appScreenshots} />
         </div>
       </Section>
 

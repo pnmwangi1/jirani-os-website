@@ -6,6 +6,7 @@ import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/marketing/Reveal';
 import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { AutomationIllustration } from '../components/marketing/illustrations';
 
 const values = [
   { title: 'Built for the way businesses actually run', desc: 'Not the way software makes them run. Real workflows, real edge cases, real constraints.' },
@@ -101,6 +102,7 @@ export default function About() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
+            <AutomationIllustration className="mb-6 h-40 w-full max-w-sm" />
             <p className="text-base leading-relaxed text-ink-muted">
               We also believe in getting the fundamentals right before the features: real
               double-entry accounting, not a spreadsheet pretending to be one. Role-based

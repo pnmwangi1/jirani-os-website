@@ -30,8 +30,8 @@ export default function Solutions() {
             </p>
           </Reveal>
           <Reveal delay={0.1} className="hidden justify-center gap-4 lg:flex">
-            <PhoneFrame src={appScreenshots[2].src} alt={appScreenshots[2].alt} className="mt-8" />
-            <PhoneFrame src={appScreenshots[3].src} alt={appScreenshots[3].alt} />
+            <PhoneFrame src={appScreenshots[2].src} alt={appScreenshots[2].alt} caption={appScreenshots[2].caption} className="mt-8" />
+            <PhoneFrame src={appScreenshots[1].src} alt={appScreenshots[1].alt} caption={appScreenshots[1].caption} />
           </Reveal>
         </div>
       </Section>

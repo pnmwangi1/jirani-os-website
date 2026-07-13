@@ -8,10 +8,10 @@ import type { AppScreenshot } from '../../content/screenshots';
  * by the hero's ConvergenceVisual. */
 export function ScreenshotShowcase({ screenshots }: { screenshots: AppScreenshot[] }) {
   return (
-    <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+    <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-5">
       {screenshots.map((shot, i) => (
         <Reveal key={shot.src} delay={i * 0.05} className={i % 2 === 1 ? 'sm:mt-8' : ''}>
-          <PhoneFrame src={shot.src} alt={shot.alt} />
+          <PhoneFrame src={shot.src} alt={shot.alt} caption={shot.caption} />
         </Reveal>
       ))}
     </div>
