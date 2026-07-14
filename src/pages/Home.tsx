@@ -74,6 +74,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.15}>
             <AutomationIllustration className="mx-auto mt-8 h-44 w-full max-w-md" />
+            <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wide text-ink-muted">Every part of the system, connected automatically</p>
           </Reveal>
         </div>
       </Section>

@@ -102,7 +102,8 @@ export default function About() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <AutomationIllustration className="mb-6 h-40 w-full max-w-sm" />
+            <AutomationIllustration className="mb-3 h-40 w-full max-w-sm" />
+            <p className="mb-6 text-center text-xs font-semibold uppercase tracking-wide text-ink-muted">Shared engines, not five separate systems</p>
             <p className="text-base leading-relaxed text-ink-muted">
               We also believe in getting the fundamentals right before the features: real
               double-entry accounting, not a spreadsheet pretending to be one. Role-based

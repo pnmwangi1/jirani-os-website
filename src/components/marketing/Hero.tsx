@@ -45,7 +45,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="mt-14 md:mt-20">
+      <div className="mt-8 md:mt-16">
         <ConvergenceVisual />
       </div>
     </div>

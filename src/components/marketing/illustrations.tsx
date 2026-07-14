@@ -174,6 +174,37 @@ export function InventoryIllustration({ className = '' }: IllustrationProps) {
   );
 }
 
+export function PricingIllustration({ className = '' }: IllustrationProps) {
+  return (
+    <svg viewBox="0 0 320 240" fill="none" className={className} role="img" aria-label="Pricing plans illustration">
+      {/* three plan cards, the middle one raised/highlighted - a direct, literal "choose your plan" visual, unlike a generic data chart */}
+      <rect x="30" y="90" width="80" height="120" rx="12" className="fill-surface stroke-border" strokeWidth="2" />
+      <rect x="120" y="60" width="80" height="150" rx="12" className="fill-primary" />
+      <rect x="210" y="90" width="80" height="120" rx="12" className="fill-surface stroke-border" strokeWidth="2" />
+      {/* left card contents */}
+      <rect x="44" y="106" width="40" height="8" rx="4" className="fill-border" />
+      <rect x="44" y="122" width="30" height="14" rx="4" className="fill-ink-muted/30" />
+      <rect x="44" y="150" width="52" height="6" rx="3" className="fill-border" />
+      <rect x="44" y="164" width="52" height="6" rx="3" className="fill-border" />
+      {/* middle (highlighted) card contents */}
+      <rect x="134" y="76" width="40" height="8" rx="4" fill="white" fillOpacity="0.85" />
+      <rect x="134" y="92" width="34" height="16" rx="4" fill="white" fillOpacity="0.95" />
+      <rect x="134" y="122" width="52" height="6" rx="3" fill="white" fillOpacity="0.6" />
+      <rect x="134" y="136" width="52" height="6" rx="3" fill="white" fillOpacity="0.6" />
+      <rect x="134" y="150" width="52" height="6" rx="3" fill="white" fillOpacity="0.6" />
+      <rect x="134" y="176" width="52" height="18" rx="9" fill="white" fillOpacity="0.2" />
+      {/* right card contents */}
+      <rect x="224" y="106" width="40" height="8" rx="4" className="fill-border" />
+      <rect x="224" y="122" width="30" height="14" rx="4" className="fill-ink-muted/30" />
+      <rect x="224" y="150" width="52" height="6" rx="3" className="fill-border" />
+      <rect x="224" y="164" width="52" height="6" rx="3" className="fill-border" />
+      {/* a small "star" badge over the highlighted plan */}
+      <circle cx="160" cy="50" r="16" className="fill-tenant" />
+      <path d="M160 42l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" fill="white" />
+    </svg>
+  );
+}
+
 export function MobileAppIllustration({ className = '' }: IllustrationProps) {
   return (
     <svg viewBox="0 0 320 240" fill="none" className={className} role="img" aria-label="Mobile app illustration">

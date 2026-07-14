@@ -7,7 +7,7 @@ import { Input } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { DataIllustration } from '../components/marketing/illustrations';
+import { PricingIllustration } from '../components/marketing/illustrations';
 import { Card } from '../components/ui/Card';
 
 export default function Pricing() {
@@ -33,7 +33,7 @@ export default function Pricing() {
       <BackgroundGlow variant="hero" />
       <div className="container">
         <Reveal className="mx-auto max-w-xl text-center">
-          <DataIllustration className="mx-auto mb-2 h-32 w-44" />
+          <PricingIllustration className="mx-auto mb-2 h-32 w-44" />
           <Badge tone="warning">
             <Clock size={12} /> Coming soon
           </Badge>

@@ -66,14 +66,15 @@ export const solutions: Solution[] = [
   {
     id: 'water-companies',
     icon: Droplet,
-    title: 'Water Companies',
+    title: 'Water Refill Shops',
     tone: 'info',
-    summary: 'Metered utility billing built specifically for water providers, designed to extend to other utilities as you grow.',
+    summary: 'Sell water by the litre from your tank, and let the system track what\u2019s left — automatically, every sale.',
     points: [
-      'Meter reading capture and consumption-based billing',
-      'Automatic invoice generation on your own billing cycle',
-      'Payment collection and arrears follow-up built in',
-      'The same engine is designed to extend to electricity and gas',
+      'Sell any size — 1 litre, 20 litres, whatever your customers bring',
+      'Your tank\u2019s stock updates itself every time someone buys, no manual counting',
+      'Know exactly how much water is left before you run dry',
+      'Set a reorder level, and if your supplier is also on Jirani OS, restocking happens automatically — no phone call needed',
+      'Handles cash and M-Pesa at the till, just like any other product',
     ],
   },
   {

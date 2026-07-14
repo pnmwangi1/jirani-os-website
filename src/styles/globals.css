@@ -42,7 +42,7 @@
   --color-surface: 36 34 32;            /* #242220 */
   --color-ink: 240 237 231;             /* #F0EDE7 */
   --color-ink-muted: 155 150 140;       /* #9B968C */
-  --color-border: 56 53 47;             /* #38352F */
+  --color-border: 74 69 60;              /* was #38352F - too close to both bg (#1A1815) and surface (#242220) to actually separate them; lightened so surface-on-background elements (cards, the hero's floating tool chips, dividers) read as distinct shapes rather than relying on near-invisible edges */
   --color-primary: 74 155 127;          /* #4A9B7F */
   --color-primary-light: 30 49 41;      /* #1E3129 */
   --color-tenant: 240 169 74;           /* #F0A94A */

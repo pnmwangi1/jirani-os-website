@@ -8,7 +8,7 @@ import { Input, Textarea } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { CommunicationIllustration } from '../components/marketing/illustrations';
+import { CommunicationIllustration, PropertyIllustration } from '../components/marketing/illustrations';
 
 export default function Contact() {
   useSeo({
@@ -92,7 +92,7 @@ export default function Contact() {
                 <Mail size={18} className="mt-0.5 text-primary" />
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-ink-muted">Email</p>
-                  <p className="mt-1 text-sm font-medium text-ink">hello@jiranios.com</p>
+                  <a href="mailto:support@jiranios.com" className="mt-1 block text-sm font-medium text-ink hover:text-primary hover:underline">support@jiranios.com</a>
                 </div>
               </div>
             </Card>
@@ -101,7 +101,7 @@ export default function Contact() {
                 <Phone size={18} className="mt-0.5 text-primary" />
                 <div>
                   <p className="text-xs font-bold uppercase tracking-wide text-ink-muted">Phone</p>
-                  <p className="mt-1 text-sm font-medium text-ink">+254 700 000 000</p>
+                  <a href="tel:+254753127090" className="mt-1 block text-sm font-medium text-ink hover:text-primary hover:underline">+254 753 127 090</a>
                 </div>
               </div>
             </Card>
@@ -114,10 +114,16 @@ export default function Contact() {
                 </div>
               </div>
             </Card>
-            {/* Item: Google Maps embed placeholder — replace the src with
-                a real embed URL for the office location when available. */}
-            <div className="flex aspect-video items-center justify-center rounded-2xl border border-dashed border-border bg-primary-light/30 text-xs font-medium text-primary/50">
-              Map placeholder
+            {/* Item (confirmed real gap, now fixed): this was a bare
+                dashed box with just the words "Map placeholder" -
+                looked exactly like an unfinished element rather than a
+                deliberate design choice. Once a real office address
+                exists, replace this whole block with a real Google
+                Maps iframe embed instead. */}
+            <div className="flex aspect-video flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-primary-light/40 p-6 text-center">
+              <PropertyIllustration className="h-20 w-28" />
+              <p className="text-sm font-semibold text-ink">Serving businesses across Kenya</p>
+              <p className="text-xs text-ink-muted">Reach us by email or phone above — we&rsquo;ll get back to you directly.</p>
             </div>
           </Reveal>
         </div>
