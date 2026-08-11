@@ -3,7 +3,8 @@ import { Link, NavLink as RouterNavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { primaryNav } from '../../content/nav';
 import { ThemeToggle } from './ThemeToggle';
-import { LinkButton } from '../ui/Button';
+import { LinkButton, AnchorButton } from '../ui/Button';
+import { APP_URL } from '../../lib/constants';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,9 +44,16 @@ export function Header() {
           <LinkButton to="/contact" variant="ghost" size="sm">
             Contact sales
           </LinkButton>
-          <LinkButton to="/contact" variant="primary" size="sm">
+          {/* Item (login/website integration, explicit request): links out
+              to the real product app rather than /contact — a visitor with
+              an existing account can actually sign in, not just leave a
+              message. Opens in a new tab since it's a different site. */}
+          <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="sm">
+            Log in
+          </AnchorButton>
+          <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="sm">
             Get started
-          </LinkButton>
+          </AnchorButton>
         </div>
 
         <button
@@ -73,11 +81,16 @@ export function Header() {
               </RouterNavLink>
             ))}
           </nav>
-          <div className="mt-6 flex items-center justify-between gap-3">
+          <div className="mt-4 flex items-center gap-3">
+            <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="md" className="flex-1 justify-center">
+              Log in
+            </AnchorButton>
+          </div>
+          <div className="mt-3 flex items-center justify-between gap-3">
             <ThemeToggle />
-            <LinkButton to="/contact" variant="primary" size="md" className="flex-1 justify-center">
+            <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="md" className="flex-1 justify-center">
               Get started
-            </LinkButton>
+            </AnchorButton>
           </div>
         </div>
       )}

@@ -7,6 +7,7 @@ import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
 import { PropertyIllustration, CommerceIllustration, DataIllustration, AutomationIllustration } from '../components/marketing/illustrations';
 import { industries } from '../content/industries';
+import { businessTemplates } from '../content/businessTemplates';
 import { CheckCircle2 } from 'lucide-react';
 
 const industryIllustrations = [PropertyIllustration, CommerceIllustration, DataIllustration, AutomationIllustration];
@@ -14,7 +15,7 @@ const industryIllustrations = [PropertyIllustration, CommerceIllustration, DataI
 export default function Industries() {
   useSeo({
     title: 'Industries',
-    description: 'How Jirani OS solves specific, real problems in real estate, retail and wholesale, utilities, and service & manufacturing businesses.',
+    description: 'How Jirani OS helps mini marts, water refill businesses, salons, bars & restaurants, pharmacies, property managers and more — built for how each business actually runs.',
     path: '/industries',
   });
 
@@ -31,6 +32,30 @@ export default function Industries() {
               businesses grow past ad-hoc tools. Here is what that looks like, and what changes.
             </p>
           </Reveal>
+        </div>
+      </Section>
+
+      {/* Business templates — concise, specific "how this helps MY
+          business" grid (Phase 5, explicit request), matching Jirani
+          OS's actual setup-engine templates. */}
+      <Section className="pt-0 pb-12">
+        <div className="container">
+          <Reveal className="mb-8 text-center">
+            <Badge tone="primary">Built for your specific business</Badge>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {businessTemplates.map((t, i) => (
+              <Reveal key={t.id} delay={i * 0.04}>
+                <div className="h-full rounded-2xl border border-border bg-surface p-5 transition-all duration-300 hover:border-primary/25 hover:shadow-soft-lg hover:-translate-y-1">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary-light">
+                    <t.icon size={16} className="text-primary" />
+                  </div>
+                  <h3 className="mt-3 text-sm font-bold text-ink">{t.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-ink-muted">{t.description}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </Section>
 

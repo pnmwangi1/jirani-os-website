@@ -7,7 +7,13 @@ interface SeoProps {
 }
 
 const SITE_NAME = 'Jirani OS';
-const BASE_URL = 'https://jiranios.com';
+// Item (Phase 9, explicit request — real domain confirmed: the site is
+// live on Cloudflare at www.jiranios.com): was hardcoded to the
+// no-www placeholder used throughout early development. Reads
+// VITE_SITE_URL first (declared in .env.example already) so this
+// doesn't need another code change if the canonical www/non-www
+// choice ever changes at the DNS level.
+const BASE_URL = import.meta.env.VITE_SITE_URL || 'https://www.jiranios.com';
 
 function setMeta(name: string, content: string, attr: 'name' | 'property' = 'name') {
   let el = document.querySelector(`meta[${attr}="${name}"]`);

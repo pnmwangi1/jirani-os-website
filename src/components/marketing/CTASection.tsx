@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
-import { LinkButton } from '../ui/Button';
+import { LinkButton, AnchorButton } from '../ui/Button';
 import { Reveal } from './Reveal';
+import { APP_URL } from '../../lib/constants';
 
 interface CTASectionProps {
   title?: string;
@@ -17,9 +18,9 @@ export function CTASection({
         <h2 className="mx-auto max-w-xl text-3xl font-extrabold text-white md:text-4xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/75">{subtitle}</p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <LinkButton to="/contact" size="lg" className="bg-white text-primary hover:bg-white/90">
-            Get started <ArrowRight size={16} />
-          </LinkButton>
+          <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" size="lg" className="bg-white text-primary hover:bg-white/90">
+            Start your 7-day free trial <ArrowRight size={16} />
+          </AnchorButton>
           <LinkButton to="/contact" size="lg" variant="ghost" className="text-white hover:bg-white/10">
             Talk to sales
           </LinkButton>
