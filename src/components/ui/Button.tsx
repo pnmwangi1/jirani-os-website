@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'outline';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'invert';
 type Size = 'sm' | 'md' | 'lg';
 
 interface BaseProps {
@@ -30,11 +30,23 @@ interface AnchorButtonProps extends BaseProps {
   rel?: string;
 }
 
+// Item FIX (root cause of the reported "blank buttons"): 'invert' is a
+// real variant now, not a 'primary' button with a className override
+// bolted on. The old pattern — variant="primary" (bg-primary
+// text-white) plus className="bg-white text-primary" appended after —
+// relied on the two conflicting `text-*`/`bg-*` utilities losing to
+// each other in a specific order. Tailwind's generated stylesheet
+// order (not the order classes appear in the JSX string) decides which
+// utility wins when two target the same CSS property, so that ordering
+// was never guaranteed — and evidently resolved to white-text-on-white
+// in practice, making the button's label invisible. A dedicated
+// variant has no competing classes to lose to.
 const variantClasses: Record<Variant, string> = {
   primary: 'bg-primary text-white hover:bg-primary/90 shadow-soft',
   secondary: 'bg-primary-light text-primary hover:bg-primary-light/70',
   outline: 'border border-border text-ink hover:bg-surface',
   ghost: 'text-ink hover:bg-primary-light/50',
+  invert: 'bg-white text-primary hover:bg-white/90 shadow-soft',
 };
 
 const sizeClasses: Record<Size, string> = {

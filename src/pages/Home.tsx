@@ -10,8 +10,10 @@ import { ScreenshotShowcase } from '../components/marketing/ScreenshotShowcase';
 import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { AutomationIllustration } from '../components/marketing/illustrations';
 import { WaveDivider } from '../components/marketing/WaveDivider';
+import { WhyJiraniStory } from '../components/marketing/WhyJiraniStory';
+import { ServiceProviderSection } from '../components/marketing/ServiceProviderSection';
+import { CustomerAccountsSection } from '../components/marketing/CustomerAccountsSection';
 import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
 import { featureGroups } from '../content/features';
@@ -45,7 +47,7 @@ export default function Home() {
   useSeo({
     title: 'Jirani OS',
     description:
-      'Jirani OS unifies property management, sales, billing, inventory and accounting into one system — built for businesses that outgrew spreadsheets and disconnected apps.',
+      'Jirani OS is business management software for Kenya — POS, barcode scanning, inventory, customer accounts, billing and property management in one system. Start your 7-day free trial.',
     path: '/',
   });
 
@@ -54,9 +56,18 @@ export default function Home() {
       <Hero />
       <WaveDivider className="text-surface -mb-1" />
 
-      {/* Why one system */}
-      <Section className="relative overflow-hidden border-t border-border bg-surface">
+      {/* Service Provider hero section (Phase 2, explicit request):
+          made a major, prominent moment on the homepage rather than a
+          buried feature. */}
+      <Section className="relative overflow-hidden bg-surface">
         <BackgroundGlow variant="section" />
+        <div className="container">
+          <ServiceProviderSection posShot={appScreenshots[3]} />
+        </div>
+      </Section>
+
+      {/* Why one system */}
+      <Section className="relative overflow-hidden border-t border-border">
         <div className="container">
           <Reveal className="mx-auto max-w-2xl text-center">
             <Badge tone="primary">Why one system</Badge>
@@ -68,14 +79,19 @@ export default function Home() {
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
               A spreadsheet for rent, a separate till for sales, WhatsApp for orders, a notebook
               for stock and an accountant reconstructing it all at month-end. None of it talks to
-              the other parts — so nothing ever quite adds up. Jirani OS replaces all of it with
-              one system where every part already knows about every other part.
+              the other parts — so nothing ever quite adds up.
             </p>
           </Reveal>
-          <Reveal delay={0.15}>
-            <AutomationIllustration className="mx-auto mt-8 h-44 w-full max-w-md" />
-            <p className="mt-3 text-center text-xs font-semibold uppercase tracking-wide text-ink-muted">Every part of the system, connected automatically</p>
-          </Reveal>
+          <div className="mt-12">
+            <WhyJiraniStory />
+          </div>
+        </div>
+      </Section>
+
+      {/* Customer accounts (Phase 3, explicit request) */}
+      <Section className="border-t border-border bg-surface">
+        <div className="container">
+          <CustomerAccountsSection customersShot={appScreenshots[6]} />
         </div>
       </Section>
 
@@ -213,7 +229,10 @@ export default function Home() {
 
       <Section className="pt-0">
         <div className="container">
-          <CTASection />
+          <CTASection
+            title="Your business has outgrown notebooks, spreadsheets and disconnected systems."
+            subtitle="Give it one place to run. Start your 7-day free trial — no card required."
+          />
         </div>
       </Section>
     </>
