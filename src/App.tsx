@@ -22,6 +22,7 @@ const Security = lazy(() => import('./pages/Security'));
 const Careers = lazy(() => import('./pages/Careers'));
 const Blog = lazy(() => import('./pages/Blog'));
 const FAQ = lazy(() => import('./pages/FAQ'));
+const Refer = lazy(() => import('./pages/Refer'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function ScrollToTop() {
@@ -54,6 +55,11 @@ export default function App() {
               <Route path="/careers" element={<Careers />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/faq" element={<FAQ />} />
+              {/* Item (Customer Referral & Community Growth Engine,
+                  spec §11): the referral landing page. Placed as its
+                  own top-level route, not nested under any existing
+                  page, matching how every other route here works. */}
+              <Route path="/r/:code" element={<Refer />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
