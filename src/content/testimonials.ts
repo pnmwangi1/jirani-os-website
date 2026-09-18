@@ -1,28 +1,29 @@
 export interface Testimonial {
+  scenario: string; // a short, generic label for the kind of business - not a name or "role at X"
   quote: string;
-  role: string; // deliberately a role/business type, not a fabricated named person or company
 }
 
-// Item: Jirani OS does not yet have published customer testimonials to
-// draw from. Per the brief's own instruction, these are clearly marked
-// as illustrative examples of the kind of outcome the product is
-// designed to deliver — not attributed to real people or companies.
-// Replace with real testimonials once available, and remove the
-// disclaimer alongside them.
+// Item: Jirani OS does not yet have published customer testimonials.
+// These are written as short scenario narratives describing outcomes
+// the product is designed to deliver - deliberately not phrased as a
+// quote attributed to a named person or a specific business, since
+// that would misrepresent them as real customer feedback. The section
+// they render in carries its own explicit disclaimer as well. Replace
+// with real testimonials, properly attributed, once available.
 export const testimonials: Testimonial[] = [
   {
+    scenario: 'Retail shop running delivery through Jirani OS',
     quote:
-      'Before, orders came in over WhatsApp and a rider was arranged by phone call every single time. Now a customer orders from our shop, and delivery is dispatched before I even see the message.',
-    role: 'Illustrative example — Owner, retail shop running delivery through Jirani OS',
+      'Orders used to come in over WhatsApp, with a rider arranged by phone call every single time. Now an order placed through the shop gets priced and dispatched before anyone has to pick up a phone.',
   },
   {
+    scenario: 'Wholesale retail shop',
     quote:
-      'Our till, our stock count and our books used to disagree with each other constantly. They do not anymore, because they are the same system.',
-    role: 'Illustrative example — Owner, wholesale retail shop',
+      'The till, the stock count and the books used to disagree with each other constantly. They stop disagreeing once they are the same system.',
   },
   {
+    scenario: 'Water refill business',
     quote:
-      'Meter readings used to mean a week of manual invoicing. Now it happens the same day the readings are captured.',
-    role: 'Illustrative example — Operations Lead, water utility provider',
+      'Manual invoicing from meter or tank readings used to take a week to catch up on. With one connected system, it happens the same day the readings are captured.',
   },
 ];

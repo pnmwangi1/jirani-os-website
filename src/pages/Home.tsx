@@ -206,13 +206,13 @@ export default function Home() {
           <Reveal className="mb-10 max-w-xl">
             <h2 className="text-3xl font-extrabold text-ink md:text-4xl">What running one system looks like.</h2>
             <p className="mt-3 text-sm text-ink-muted">
-              Jirani OS is early — these are illustrative examples of the outcomes the product is designed to
+              Jirani OS is early — these are scenario examples of the outcomes the product is designed to
               deliver, not published customer reviews.
             </p>
           </Reveal>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {testimonials.map((t, i) => (
-              <Reveal key={t.role} delay={i * 0.08}>
+              <Reveal key={t.scenario} delay={i * 0.08}>
                 <TestimonialCard {...t} />
               </Reveal>
             ))}
