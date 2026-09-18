@@ -22,7 +22,7 @@ export default function Privacy() {
       <h3>1.1 Information you provide directly</h3>
       <ul>
         <li>Account information: name, phone number, email address, and password (stored as a secure hash, never in plain text).</li>
-        <li>Business and property information you enter, such as property details, unit information, tenant records, product listings, and pricing.</li>
+        <li>Business information you enter, such as branch details, product and service listings, pricing, and customer records.</li>
         <li>Payment-related information necessary to process transactions, such as M-Pesa transaction references. We do not store your M-Pesa PIN or full payment credentials.</li>
         <li>Communications you send us, such as support requests or contact form submissions.</li>
       </ul>

@@ -8,7 +8,7 @@ import { Input, Textarea } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { CommunicationIllustration, PropertyIllustration } from '../components/marketing/illustrations';
+import { CommunicationIllustration, MobileAppIllustration } from '../components/marketing/illustrations';
 
 export default function Contact() {
   useSeo({
@@ -121,7 +121,7 @@ export default function Contact() {
                 exists, replace this whole block with a real Google
                 Maps iframe embed instead. */}
             <div className="flex aspect-video flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-primary-light/40 p-6 text-center">
-              <PropertyIllustration className="h-20 w-28" />
+              <MobileAppIllustration className="h-20 w-28" />
               <p className="text-sm font-semibold text-ink">Serving businesses across Kenya</p>
               <p className="text-xs text-ink-muted">Reach us by email or phone above — we&rsquo;ll get back to you directly.</p>
             </div>

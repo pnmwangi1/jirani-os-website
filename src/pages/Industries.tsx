@@ -5,17 +5,17 @@ import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/marketing/Reveal';
 import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { PropertyIllustration, CommerceIllustration, DataIllustration, AutomationIllustration } from '../components/marketing/illustrations';
+import { MobileAppIllustration, CommerceIllustration, DataIllustration, AutomationIllustration } from '../components/marketing/illustrations';
 import { industries } from '../content/industries';
 import { businessTemplates } from '../content/businessTemplates';
 import { CheckCircle2 } from 'lucide-react';
 
-const industryIllustrations = [PropertyIllustration, CommerceIllustration, DataIllustration, AutomationIllustration];
+const industryIllustrations = [MobileAppIllustration, CommerceIllustration, DataIllustration, AutomationIllustration];
 
 export default function Industries() {
   useSeo({
     title: 'Industries',
-    description: 'How Jirani OS helps mini marts, water refill businesses, salons, bars & restaurants, pharmacies, property managers and more — built for how each business actually runs.',
+    description: 'How Jirani OS helps mini marts, water refill businesses, salons, bars & restaurants, pharmacies and more sell online and get orders delivered — built for how each business actually runs.',
     path: '/industries',
   });
 

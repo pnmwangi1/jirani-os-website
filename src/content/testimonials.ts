@@ -12,8 +12,8 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Before, rent tracking lived in a notebook and a phone full of M-Pesa messages. Now every unit, every invoice and every payment is in one place.',
-    role: 'Illustrative example — Property Manager, 40-unit residential estate',
+      'Before, orders came in over WhatsApp and a rider was arranged by phone call every single time. Now a customer orders from our shop, and delivery is dispatched before I even see the message.',
+    role: 'Illustrative example — Owner, retail shop running delivery through Jirani OS',
   },
   {
     quote:

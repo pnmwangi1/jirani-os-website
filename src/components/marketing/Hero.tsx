@@ -39,7 +39,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink-muted lg:mx-0"
           >
-            Run sales, customers, stock, services, billing and property operations from one
+            Run your shop, customer orders, deliveries, stock, services and billing from one
             connected system — right from your phone.
           </motion.p>
           <motion.div

@@ -8,16 +8,16 @@ export interface IndustryDetail {
 
 export const industries: IndustryDetail[] = [
   {
-    id: 'real-estate',
-    title: 'Real Estate & Property Management',
+    id: 'ecommerce-delivery',
+    title: 'Online Shop & Delivery',
     challenge:
-      'Rent collection, maintenance requests and tenant communication often live in separate spreadsheets, WhatsApp threads and paper files — making it hard to know, at any given moment, what is actually owed.',
+      'Customers want to order without walking in or calling — but a separate website, a separate delivery app and a rider on standby usually means three more bills and three systems that do not talk to each other.',
     approach:
-      'Jirani OS keeps every tenancy, invoice, payment and maintenance ticket in one system, tied to the specific unit and tenant it belongs to. Rent invoicing, arrears tracking and deposit handling happen automatically, on a schedule you set.',
+      'Every business on Jirani OS gets a shop customers can browse and order from through the Jirani OS customer app. An order placed there is priced, routed and dispatched to a rider automatically — no phone call, no separate system.',
     outcomes: [
-      'Know exactly what is owed across every property, in real time',
-      'Tenants pay and raise issues without a phone call',
-      'Owner reports generated automatically, not reconstructed at month-end',
+      'A real online shop, live from day one, no separate website needed',
+      'Customers order and reorder at their own convenience through the customer app',
+      'Delivery priced, routed and dispatched automatically, every time',
     ],
   },
   {
@@ -35,14 +35,14 @@ export const industries: IndustryDetail[] = [
   },
   {
     id: 'utilities',
-    title: 'Utility Providers',
+    title: 'Water Refill & Metered Businesses',
     challenge:
-      'Metered billing — water especially — is often run on a separate, disconnected system from everything else, making consumption tracking and collections harder than they need to be.',
+      'Metered, by-the-litre selling is often run on a separate, disconnected system from everything else, making consumption tracking and stock reconciliation harder than they need to be.',
     approach:
-      'Meter readings feed directly into consumption-based invoicing, using the same billing engine as every other charge in the system. Arrears follow-up and payment collection happen through the same tenant-facing tools.',
+      'Every litre sold updates your tank\u2019s stock automatically, using the same billing engine as every other product in the system. Set a reorder level, and if your supplier is also on Jirani OS, restocking happens on its own — no phone call needed.',
     outcomes: [
-      'Consumption-based billing without a separate system to maintain',
-      'One place for tenants to see and pay both rent and utility charges',
+      'By-the-litre billing without a separate system to maintain',
+      'Tank stock that updates itself on every sale, no manual counting',
       'Built to extend beyond water as your utility offering grows',
     ],
   },

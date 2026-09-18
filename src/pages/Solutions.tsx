@@ -12,7 +12,7 @@ import { appScreenshots } from '../content/screenshots';
 export default function Solutions() {
   useSeo({
     title: 'Solutions',
-    description: 'How Jirani OS serves property managers, landlords, retail and wholesale businesses, water companies, service businesses, manufacturers and growing enterprises.',
+    description: 'How Jirani OS serves delivery & logistics, device repair, retail and wholesale businesses, water refill shops, service businesses, manufacturers and growing enterprises.',
     path: '/solutions',
   });
 
@@ -30,8 +30,8 @@ export default function Solutions() {
             </p>
           </Reveal>
           <Reveal delay={0.1} className="hidden justify-center gap-4 lg:flex">
-            <PhoneFrame src={appScreenshots[2].src} alt={appScreenshots[2].alt} caption={appScreenshots[2].caption} className="mt-8" />
-            <PhoneFrame src={appScreenshots[1].src} alt={appScreenshots[1].alt} caption={appScreenshots[1].caption} />
+            <PhoneFrame src={appScreenshots[3].src} alt={appScreenshots[3].alt} caption={appScreenshots[3].caption} className="mt-8" />
+            <PhoneFrame src={appScreenshots[4].src} alt={appScreenshots[4].alt} caption={appScreenshots[4].caption} />
           </Reveal>
         </div>
       </Section>

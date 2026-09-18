@@ -32,10 +32,11 @@ export default function About() {
             <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">Why we built this.</h1>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
               Jirani is the Swahili word for neighbor. We built Jirani OS on a simple observation:
-              the businesses closest to us — the property manager down the road, the shop on the
-              corner, the water provider serving a whole estate — were all running on the same
-              patchwork of spreadsheets, WhatsApp threads and disconnected apps. Not because they
-              wanted to, but because nothing built for their scale had brought it all together.
+              the businesses closest to us — the shop on the corner, the water refill business
+              down the road, the salon serving a whole estate — were all running on the same
+              patchwork of spreadsheets, WhatsApp threads and disconnected apps, arranging every
+              delivery over a phone call. Not because they wanted to, but because nothing built
+              for their scale had brought it all together.
             </p>
           </Reveal>
         </div>

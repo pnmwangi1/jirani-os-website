@@ -34,34 +34,34 @@ interface Plan {
 // sees after paying. 'scale' kept as the internal id (unchanged in the
 // backend since migration 149) — only the displayed name changed to
 // Jirani Plus.
-const sharedFoundation = ['Sales, stock and customer accounts', 'M-Pesa payment collection', 'Role-based staff access', 'Real-time reporting'];
+const sharedFoundation = ['Your own online shop', 'Sales, stock and customer accounts', 'M-Pesa payment collection', 'Automatic delivery dispatch', 'Role-based staff access', 'Real-time reporting'];
 
 const plans: Plan[] = [
   {
     id: 'start',
     name: 'Jirani Start',
     price: 'KES 1,000',
-    tagline: 'Everything you need to successfully run one business location.',
+    tagline: 'Everything you need to successfully run one business location — including a shop your customers can order from.',
     perfectFor: 'Single shops, mini marts, pharmacies, salons, hardware stores, restaurants, water refill businesses and growing SMEs.',
-    included: '1 branch included',
+    included: '1 branch included · your shop is live from day one',
     groups: [
-      { icon: ShoppingCart, label: 'POS', items: ['Goods & services in one till', 'Cash and M-Pesa payments'] },
-      { icon: Users, label: 'Customers', items: ['Customer accounts', 'Credit sales tracking'] },
+      { icon: ShoppingCart, label: 'Shop & POS', items: ['Your own customer-facing shop, live immediately', 'Goods & services in one till', 'Cash and M-Pesa payments'] },
+      { icon: Users, label: 'Customers', items: ['Customer accounts', 'Credit sales tracking', 'Orders placed from your shop, delivered automatically'] },
     ],
   },
   {
     id: 'scale',
     name: 'Jirani Plus',
     price: 'KES 2,500',
-    tagline: 'Built for businesses ready to expand.',
+    tagline: 'Built for businesses ready to expand — more branches, deeper numbers, smarter delivery.',
     perfectFor: 'Businesses running multiple branches, or ready to add advanced accounting, customer credit, and executive reporting.',
     included: '3 branches · 3 staff seats per branch included',
     featured: true,
     groups: [
-      { icon: Barcode, label: 'POS', items: ['Smart barcode scanning', 'Goods & services in one till'] },
-      { icon: Building2, label: 'Branches', items: ['Multi-branch operations', 'Branch comparison reporting'] },
+      { icon: Barcode, label: 'Shop & POS', items: ['Smart barcode scanning', 'Goods & services in one till'] },
+      { icon: Building2, label: 'Branches', items: ['Multi-branch operations — add more as you grow, on either plan', 'Branch comparison reporting'] },
       { icon: Calculator, label: 'Accounting', items: ['Advanced accounting engine', 'Customer credit limit control'] },
-      { icon: TrendingUp, label: 'Business Intelligence', items: ['Executive-level reporting', 'Cross-branch insights'] },
+      { icon: TrendingUp, label: 'Business Intelligence', items: ['Executive-level reporting', 'Cross-branch insights', 'Delivery cost & performance analytics'] },
     ],
   },
 ];
@@ -75,7 +75,7 @@ export default function Pricing() {
   useSeo({
     title: 'Pricing',
     description:
-      'Jirani OS pricing: Jirani Start at KES 1,000/month and Jirani Plus at KES 2,500/month. Start your 7-Day Jirani Plus Experience free trial today, paid via M-Pesa.',
+      'Jirani OS pricing: Jirani Start at KES 1,000/month and Jirani Plus at KES 2,500/month — every plan includes your own online shop, customer app listing, and automatic delivery dispatch. Start your 7-Day Jirani Plus Experience free trial today, paid via M-Pesa.',
     path: '/pricing',
   });
 
@@ -193,9 +193,11 @@ export default function Pricing() {
         <Reveal delay={0.35} className="mx-auto mt-14 max-w-2xl text-center">
           <h3 className="text-xl font-bold text-ink">One system, instead of paying for several disconnected tools.</h3>
           <p className="mt-3 text-sm leading-relaxed text-ink-muted">
-            Start on Jirani Start, move to Jirani Plus the moment you need it — same account, same
-            data, same team, no migration. Businesses can grow from one branch to multiple
-            branches without ever changing platforms.
+            No plan or website builder to pay for separately, no delivery app to bolt on — the
+            price above already includes your shop, your customer app listing, and the delivery
+            that connects the two. Start on Jirani Start, move to Jirani Plus the moment you need
+            it — same account, same data, same team, no migration. Businesses can grow from one
+            branch to multiple branches without ever changing platforms.
           </p>
           <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-xs font-semibold text-ink-muted">
             <Smartphone size={14} className="text-primary" /> Subscriptions are paid via M-Pesa

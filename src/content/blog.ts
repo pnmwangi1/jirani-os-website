@@ -25,10 +25,10 @@ export const blogPosts: BlogPost[] = [
     readTime: '—',
   },
   {
-    slug: 'rent-collection-without-spreadsheets',
-    title: 'Rent collection without a spreadsheet',
+    slug: 'delivery-without-phone-calls',
+    title: 'Delivery without a single phone call',
     excerpt:
-      'A look at what actually breaks down when a property portfolio grows past a handful of units, and what changes when billing, payments and reporting share one system.',
+      'A look at what actually breaks down when order volume grows past what one phone and one rider can coordinate — and what changes when your shop, your customer app and your delivery dispatch share one system.',
     category: 'Operations',
     date: 'Coming soon',
     readTime: '—',

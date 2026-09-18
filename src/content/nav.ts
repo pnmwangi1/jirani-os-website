@@ -6,6 +6,7 @@ export interface NavLink {
 export const primaryNav: NavLink[] = [
   { label: 'Solutions', to: '/solutions' },
   { label: 'Features', to: '/features' },
+  { label: 'Delivery', to: '/delivery' },
   { label: 'Industries', to: '/industries' },
   { label: 'Pricing', to: '/pricing' },
   { label: 'About', to: '/about' },
@@ -15,6 +16,7 @@ export const footerNav = {
   product: [
     { label: 'Solutions', to: '/solutions' },
     { label: 'Features', to: '/features' },
+    { label: 'Delivery & Logistics', to: '/delivery' },
     { label: 'Industries', to: '/industries' },
     { label: 'Pricing', to: '/pricing' },
     { label: 'Security', to: '/security' },

@@ -19,8 +19,8 @@ export function Footer() {
               <img src="/jirani-logo.png" alt="Jirani OS" className="logo-shadow h-8 w-auto" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-ink-muted">
-              One operating system for property management, commerce and accounting — built for
-              businesses that outgrew spreadsheets and disconnected apps.
+              One operating system for your shop, customer orders, delivery and accounting — built
+              for businesses that outgrew spreadsheets and disconnected apps.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {[

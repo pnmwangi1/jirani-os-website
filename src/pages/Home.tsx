@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Building2, Store, Droplet, Wrench, Factory } from 'lucide-react';
+import { ArrowRight, Truck, Store, Droplet, Wrench, Factory } from 'lucide-react';
 import { useSeo } from '../lib/seo';
 import { Hero } from '../components/marketing/Hero';
 import { FeatureCard } from '../components/marketing/FeatureCard';
@@ -21,16 +21,16 @@ import { testimonials } from '../content/testimonials';
 import { appScreenshots } from '../content/screenshots';
 
 const highlightFeatures = [
-  featureGroups[0].features[1], // Rent management
-  featureGroups[1].features[0], // POS
+  featureGroups[0].features[0], // Your own online shop
+  featureGroups[0].features[2], // Delivery, automatically dispatched
   featureGroups[3].features[0], // Accounting engine
   featureGroups[2].features[0], // Inventory
   featureGroups[4].features[2], // Audit trails
-  featureGroups[0].features[4], // Utilities
+  featureGroups[0].features[1], // Customer app
 ];
 
 const categories = [
-  { icon: Building2, label: 'Property Managers' },
+  { icon: Truck, label: 'Delivery & Logistics' },
   { icon: Store, label: 'Retail & Wholesale' },
   { icon: Droplet, label: 'Water Companies' },
   { icon: Wrench, label: 'Service Businesses' },
@@ -38,16 +38,16 @@ const categories = [
 ];
 
 const steps = [
-  { n: '01', title: 'Set up your business', desc: 'Add your properties, branches, products or services — whatever your business runs on.' },
+  { n: '01', title: 'Set up your business', desc: 'Add your branches, products or services — and your online shop is live from day one.' },
   { n: '02', title: 'Your team gets to work', desc: 'Everyone logs in with role-based access — they see exactly what their job needs, nothing more.' },
-  { n: '03', title: 'Everything reconciles itself', desc: 'Sales, rent, payments and stock movements flow into accounting automatically, in real time.' },
+  { n: '03', title: 'Everything reconciles itself', desc: 'Sales, orders from your shop, deliveries and stock movements flow into accounting automatically, in real time.' },
 ];
 
 export default function Home() {
   useSeo({
     title: 'Jirani OS',
     description:
-      'Jirani OS is business management software for Kenya — POS, barcode scanning, inventory, customer accounts, billing and property management in one system. Start your 7-day free trial.',
+      'Jirani OS is business management software for Kenya — an online shop and customer app for every business, POS, barcode scanning, inventory, automatic delivery dispatch, and billing in one system. Start your 7-day free trial.',
     path: '/',
   });
 
@@ -77,7 +77,7 @@ export default function Home() {
               They have five software problems.
             </h2>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              A spreadsheet for rent, a separate till for sales, WhatsApp for orders, a notebook
+              A separate till for sales, WhatsApp for orders, a boda rider on standby, a notebook
               for stock and an accountant reconstructing it all at month-end. None of it talks to
               the other parts — so nothing ever quite adds up.
             </p>
@@ -166,12 +166,14 @@ export default function Home() {
             <h2 className="mt-4 text-3xl font-extrabold text-ink md:text-4xl">Built on reusable engines, not bolted-on features.</h2>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
               Jirani OS is architected around a small set of core engines — Billing, Accounting,
-              Inventory, CRM and Notifications — that every part of the product shares. A rent
-              invoice and a retail sale use the same billing engine underneath. A stock movement
-              from a sale and one from a production run use the same inventory engine.
+              Inventory, CRM and Notifications — that every part of the product shares. An order
+              placed through your online shop and a counter sale use the same billing engine
+              underneath. A stock movement from a sale and one from a production run use the same
+              inventory engine — and the same delivery engine prices and dispatches every order,
+              whichever branch it came from.
             </p>
             <p className="mt-3 text-base leading-relaxed text-ink-muted">
-              That is what makes it possible to add a new capability — say, a new utility type, or
+              That is what makes it possible to add a new capability — say, a new delivery rule, or
               a new industry workflow — without rebuilding what already works.
             </p>
           </Reveal>

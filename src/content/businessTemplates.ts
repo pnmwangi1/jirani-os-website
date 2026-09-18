@@ -1,4 +1,4 @@
-import { Droplet, ShoppingBasket, Shirt, Hammer, Flame, Scissors, Printer, Pill, UtensilsCrossed } from 'lucide-react';
+import { Droplet, ShoppingBasket, Shirt, Hammer, Flame, Scissors, Printer, Pill, UtensilsCrossed, Smartphone, WashingMachine } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface BusinessTemplate {
@@ -42,8 +42,20 @@ export const businessTemplates: BusinessTemplate[] = [
   {
     id: 'gas-refill',
     icon: Flame,
-    title: 'Gas Refill',
-    description: 'Track cylinder stock and exchanges, and keep customer accounts and credit organised.',
+    title: 'LPG & Gas',
+    description: 'Track cylinder stock and exchanges, sell by size, and get orders delivered — customer credit and accounts stay organised throughout.',
+  },
+  {
+    id: 'device-repair',
+    icon: Smartphone,
+    title: 'Device & Phone Repair',
+    description: 'Log every device by model and IMEI, track the job from drop-off to collection, and bill parts and labour together automatically.',
+  },
+  {
+    id: 'laundry',
+    icon: WashingMachine,
+    title: 'Laundry Pickup & Delivery',
+    description: 'Schedule collection and return, track every order in between, and bill the moment it is done.',
   },
   {
     id: 'salon-barbershop',

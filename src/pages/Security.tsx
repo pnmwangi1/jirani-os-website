@@ -1,4 +1,4 @@
-import { KeyRound, ShieldCheck, History, Lock, DatabaseBackup, Eye, Fingerprint, Map } from 'lucide-react';
+import { KeyRound, ShieldCheck, History, Lock, DatabaseBackup, Eye, Fingerprint, Map, LogIn } from 'lucide-react';
 import { useSeo } from '../lib/seo';
 import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
@@ -14,6 +14,11 @@ const pillars = [
     body: 'Accounts are protected by passwords stored as secure, salted hashes — never in plain text. Sensitive actions, such as changing a phone number or email address, or resetting a password, require a one-time verification code sent to the contact method being confirmed, so a change can only be made by someone who genuinely controls it.',
   },
   {
+    icon: LogIn,
+    title: 'Sign in the way you already trust',
+    body: 'Alongside phone-based login, Jirani OS supports signing in with Google — so getting into your account doesn\u2019t depend on remembering one more password, and your identity is verified by an account you already secure carefully.',
+  },
+  {
     icon: Fingerprint,
     title: 'Biometric app unlock',
     body: 'On supported devices, you can require your fingerprint or face to unlock the app after your first sign-in — a convenience layer on top of your real session, not a replacement for it. Your biometric data never leaves your device; Jirani OS only receives a yes/no confirmation from your device\u2019s own secure hardware.',
@@ -21,12 +26,12 @@ const pillars = [
   {
     icon: Lock,
     title: 'Role-based permissions',
-    body: 'Every person in your organization is assigned a role — landlord, manager, accountant, cashier, and more — that determines exactly what they can see and do. A cashier cannot view payroll; a security guard cannot edit accounting entries. Permissions are enforced on every request, not just hidden in the interface.',
+    body: 'Every person in your organization is assigned a role — owner, manager, accountant, cashier, rider, and more — that determines exactly what they can see and do. A cashier cannot view payroll; a rider cannot edit accounting entries. Permissions are enforced on every request, not just hidden in the interface.',
   },
   {
     icon: History,
-    title: 'Audit trails',
-    body: 'Sensitive actions — financial adjustments, permission changes, and record deletions among them — are recorded with who performed them and when. This creates accountability and makes it possible to reconstruct exactly what happened if a question ever arises.',
+    title: 'Audit trails, from the shop to the doorstep',
+    body: 'Sensitive actions — financial adjustments, permission changes, and record deletions among them — are recorded with who performed them and when. The same discipline covers commerce: every order placed through your shop and every delivery dispatched from it is tied to your account and your branch, so you can reconstruct exactly what happened, end to end, if a question ever arises.',
   },
   {
     icon: ShieldCheck,
@@ -41,7 +46,7 @@ const pillars = [
   {
     icon: Map,
     title: 'Location data, used narrowly',
-    body: 'Location is only requested for features that genuinely need it — such as confirming a parking or delivery location — and only while that specific feature is in use. It is never collected continuously in the background.',
+    body: 'Location is only requested for features that genuinely need it — such as pricing and routing a delivery from your shop to a customer — and only while that specific feature is in use. It is never collected continuously in the background.',
   },
   {
     icon: Eye,
@@ -53,7 +58,7 @@ const pillars = [
 export default function Security() {
   useSeo({
     title: 'Security',
-    description: 'How Jirani OS protects your data — authentication, role-based permissions, audit trails, encryption, backups, and our security roadmap.',
+    description: 'How Jirani OS protects your data and your customers\u2019 orders — authentication, Google Sign-In, role-based permissions, audit trails from shop to delivery, encryption, backups, and our security roadmap.',
     path: '/security',
   });
 

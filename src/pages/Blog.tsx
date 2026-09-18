@@ -10,7 +10,7 @@ import { blogPosts, blogCategories } from '../content/blog';
 export default function Blog() {
   useSeo({
     title: 'Blog',
-    description: 'Notes on building Jirani OS, running property and commerce operations, and what we are learning along the way.',
+    description: 'Notes on building Jirani OS, running shop, delivery and commerce operations, and what we are learning along the way.',
     path: '/blog',
   });
 

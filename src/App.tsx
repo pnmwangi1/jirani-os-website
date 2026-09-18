@@ -11,6 +11,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 const Home = lazy(() => import('./pages/Home'));
 const Solutions = lazy(() => import('./pages/Solutions'));
 const Features = lazy(() => import('./pages/Features'));
+const Delivery = lazy(() => import('./pages/Delivery'));
 const Industries = lazy(() => import('./pages/Industries'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const About = lazy(() => import('./pages/About'));
@@ -44,6 +45,7 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/solutions" element={<Solutions />} />
               <Route path="/features" element={<Features />} />
+              <Route path="/delivery" element={<Delivery />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />

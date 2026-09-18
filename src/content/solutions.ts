@@ -1,4 +1,4 @@
-import { Building2, Home, Store, Warehouse, Droplet, Wrench, Factory, UtensilsCrossed, TrendingUp } from 'lucide-react';
+import { Truck, Smartphone, Store, Warehouse, Droplet, Wrench, Factory, UtensilsCrossed, TrendingUp } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export interface Solution {
@@ -12,29 +12,29 @@ export interface Solution {
 
 export const solutions: Solution[] = [
   {
-    id: 'property-managers',
-    icon: Building2,
-    title: 'Property Managers',
+    id: 'delivery-logistics',
+    icon: Truck,
+    title: 'Delivery & Logistics',
     tone: 'manager',
-    summary: 'Run every building in your portfolio from one dashboard, with real-time visibility into occupancy, arrears and maintenance.',
+    summary: 'Every order placed through your online shop gets priced, routed and dispatched to a rider — automatically, without a single phone call.',
     points: [
-      'Multi-property, multi-branch view for your whole portfolio',
-      'Automated rent invoicing and arrears tracking',
-      'Maintenance requests routed straight to the right contractor',
-      'Owner-ready financial reports, generated automatically',
+      'Your own delivery fleet, or riders on the Jirani OS network',
+      'Free delivery above an order value, within a distance, or always — your rule',
+      'Route and fuel cost calculated automatically before a rider leaves',
+      'Live delivery tracking, from dispatch to doorstep',
     ],
   },
   {
-    id: 'landlords',
-    icon: Home,
-    title: 'Landlords',
+    id: 'repair-services',
+    icon: Smartphone,
+    title: 'Device & Phone Repair',
     tone: 'tenant',
-    summary: 'Whether you own one building or ten, know exactly what is owed, what is paid, and what needs your attention.',
+    summary: 'Track every device from drop-off to collection — model, fault, part cost and status — so nothing gets lost and nothing gets forgotten.',
     points: [
-      'A tenant portal that cuts down phone calls and follow-ups',
-      'Rent collected via M-Pesa, reconciled automatically',
-      'Deposit tracking and move-out settlement handled correctly',
-      'One place to see income and expenses across every unit',
+      'Every device logged with model, IMEI and reported fault',
+      'Job status visible from intake to collection',
+      'Parts and labour costed and billed together',
+      'Customers notified the moment their device is ready',
     ],
   },
   {
@@ -74,6 +74,7 @@ export const solutions: Solution[] = [
       'Your tank\u2019s stock updates itself every time someone buys, no manual counting',
       'Know exactly how much water is left before you run dry',
       'Set a reorder level, and if your supplier is also on Jirani OS, restocking happens automatically — no phone call needed',
+      'Customers order from your shop and get it delivered — no phone call needed on their end either',
       'Handles cash and M-Pesa at the till, just like any other product',
     ],
   },

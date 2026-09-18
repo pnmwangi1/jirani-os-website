@@ -7,7 +7,7 @@ import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
 import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import {
-  PropertyIllustration,
+  MobileAppIllustration,
   CommerceIllustration,
   InventoryIllustration,
   AccountingIllustration,
@@ -19,12 +19,12 @@ import { appScreenshots } from '../content/screenshots';
 // Item: one illustration per engine group, matched to what that group
 // actually covers - a direct, visual anchor for each section rather
 // than five identical-feeling text blocks in a row.
-const groupIllustrations = [PropertyIllustration, CommerceIllustration, InventoryIllustration, AccountingIllustration, AutomationIllustration];
+const groupIllustrations = [MobileAppIllustration, CommerceIllustration, InventoryIllustration, AccountingIllustration, AutomationIllustration];
 
 export default function Features() {
   useSeo({
     title: 'Features',
-    description: 'Every major capability in Jirani OS, organized by the engine that powers it — property management, commerce, inventory, accounting, and staff & access.',
+    description: 'Every major capability in Jirani OS, organized by the engine that powers it — your shop, customer app & delivery, commerce, inventory, accounting, and staff & access.',
     path: '/features',
   });
 
@@ -35,10 +35,11 @@ export default function Features() {
         <div className="container grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.3fr_1fr]">
           <Reveal className="text-center lg:text-left">
             <Badge tone="primary">Features</Badge>
-            <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">Everything the system does.</h1>
+            <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">From your shop to their doorstep.</h1>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              Organized by the engine underneath, not as one long list — because that is how the
-              product is actually built, and it is the easiest way to see what is relevant to you.
+              Every business gets an online shop, a customer app to order from, and delivery that
+              dispatches itself. Everything below is organized by the engine underneath, not as
+              one long list — because that is how the product is actually built.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="hidden justify-center gap-4 lg:flex">
