@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { footerNav } from '../../content/nav';
+import { PlayStoreBadge } from '../marketing/PlayStoreBadge';
 
 const columns: { title: string; key: keyof typeof footerNav }[] = [
   { title: 'Product', key: 'product' },
@@ -22,6 +23,7 @@ export function Footer() {
               One operating system for your shop, customer orders, delivery and accounting — built
               for businesses that outgrew spreadsheets and disconnected apps.
             </p>
+            <PlayStoreBadge className="mt-5" />
             <div className="mt-6 flex items-center gap-3">
               {[
                 { Icon: Twitter, label: 'X (Twitter)' },

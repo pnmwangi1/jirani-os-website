@@ -13,14 +13,11 @@
 export const APP_URL = import.meta.env.VITE_APP_URL || 'https://jirani-frontend.vercel.app';
 
 // Item (Customer Referral & Community Growth Engine, spec §10/11 —
-// "app not installed → referral web page → Google Play"): a genuinely
-// new constant, since no Play Store link existed anywhere in this
-// site before now (confirmed — every existing "Get started" CTA links
-// to APP_URL, the web app itself, not a Play listing). Left as an
-// explicit placeholder rather than a guessed URL, since a wrong Play
-// Store link is worse than an honestly-empty one — set
-// VITE_PLAY_STORE_URL once the app is actually published and its real
-// listing URL is known.
+// "app not installed → referral web page → Google Play"): confirmed
+// live on Google Play under this package id (matches the app's own
+// Capacitor appId in frontend/capacitor.config.json) — set
+// VITE_PLAY_STORE_URL instead if the listing ever moves to a
+// different id or track.
 export const PLAY_STORE_URL = import.meta.env.VITE_PLAY_STORE_URL || 'https://play.google.com/store/apps/details?id=com.jiranios.app';
 
 // Item (Customer Referral & Community Growth Engine): the Jirani OS

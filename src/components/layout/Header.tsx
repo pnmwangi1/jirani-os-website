@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink as RouterNavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Smartphone } from 'lucide-react';
 import { primaryNav } from '../../content/nav';
 import { ThemeToggle } from './ThemeToggle';
 import { LinkButton, AnchorButton } from '../ui/Button';
-import { APP_URL } from '../../lib/constants';
+import { APP_URL, PLAY_STORE_URL } from '../../lib/constants';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -41,6 +41,20 @@ export function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
+          {/* Item (explicit request — download the app / Play Store link):
+              a compact icon-link rather than the full Play badge image,
+              since the header is space-constrained; the full badge lives
+              in the Footer and Home hero instead. */}
+          <a
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get Jirani OS on Google Play"
+            title="Get it on Google Play"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-ink-muted transition-colors hover:border-primary hover:text-primary"
+          >
+            <Smartphone size={16} />
+          </a>
           <LinkButton to="/contact" variant="ghost" size="sm">
             Contact sales
           </LinkButton>
@@ -82,6 +96,17 @@ export function Header() {
             ))}
           </nav>
           <div className="mt-4 flex items-center gap-3">
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Get Jirani OS on Google Play"
+              className="flex h-11 flex-1 items-center justify-center gap-2 rounded-xl border border-border text-sm font-medium text-ink-muted transition-colors hover:border-primary hover:text-primary"
+            >
+              <Smartphone size={16} /> Get it on Google Play
+            </a>
+          </div>
+          <div className="mt-3 flex items-center gap-3">
             <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="md" className="flex-1 justify-center">
               Log in
             </AnchorButton>

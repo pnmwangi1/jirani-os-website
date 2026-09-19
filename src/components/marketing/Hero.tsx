@@ -4,6 +4,7 @@ import { LinkButton, AnchorButton } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { PhoneFrame } from './PhoneFrame';
 import { BackgroundGlow } from './BackgroundGlow';
+import { PlayStoreBadge } from './PlayStoreBadge';
 import { APP_URL } from '../../lib/constants';
 import { appScreenshots } from '../../content/screenshots';
 
@@ -54,6 +55,14 @@ export function Hero() {
             <LinkButton to="/features" variant="outline" size="lg">
               Explore Jirani OS
             </LinkButton>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-5 flex justify-center lg:justify-start"
+          >
+            <PlayStoreBadge />
           </motion.div>
         </div>
 
