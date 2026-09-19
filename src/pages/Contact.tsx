@@ -18,14 +18,52 @@ export default function Contact() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
-  function handleSubmit(e: FormEvent) {
+  // Item FIX (contact form previously delivered nothing — `handleSubmit`
+  // only flipped local state and never sent the data anywhere): submits
+  // directly to Web3Forms from the browser, no backend needed. The
+  // access key ties the submission to a real inbox on Web3Forms' end;
+  // without VITE_WEB3FORMS_ACCESS_KEY set, we fail fast with a clear
+  // error rather than silently pretending success.
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    // Item: no real backend wired yet, per the brief — client-side
-    // validation (via `required`) is real; the actual submission target
-    // is a placeholder to be swapped for a real endpoint later.
-    setSubmitted(true);
+    setError(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setError('Contact form is not configured yet. Please email us directly at support@jiranios.com.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New contact form message from ${form.name}`,
+          from_name: form.name,
+          name: form.name,
+          email: form.email,
+          reply_to: form.email,
+          message: form.message,
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setError(result.message || 'Something went wrong sending your message. Please try again.');
+      }
+    } catch {
+      setError('Something went wrong sending your message. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -78,8 +116,11 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                   />
-                  <Button type="submit" size="lg" className="self-start">
-                    Send message
+                  {error && (
+                    <p className="text-sm font-medium text-danger" role="alert">{error}</p>
+                  )}
+                  <Button type="submit" size="lg" className="self-start" disabled={submitting}>
+                    {submitting ? 'Sending…' : 'Send message'}
                   </Button>
                 </form>
               )}
