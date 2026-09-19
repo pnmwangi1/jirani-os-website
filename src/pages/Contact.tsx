@@ -25,26 +25,22 @@ export default function Contact() {
   // Item FIX (contact form previously delivered nothing — `handleSubmit`
   // only flipped local state and never sent the data anywhere): submits
   // directly to Web3Forms from the browser, no backend needed. The
-  // access key ties the submission to a real inbox on Web3Forms' end;
-  // without VITE_WEB3FORMS_ACCESS_KEY set, we fail fast with a clear
-  // error rather than silently pretending success.
+  // access key is not a secret — Web3Forms' own integration pattern is
+  // to embed it directly in client-side code (the browser has to send
+  // it regardless), so it's hardcoded here rather than routed through
+  // an env var and a deploy pipeline that has to inject it correctly.
+  const WEB3FORMS_ACCESS_KEY = 'c726fe2a-fb32-4083-8fa0-828b77d4f2c9';
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
-
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-    if (!accessKey) {
-      setError('Contact form is not configured yet. Please email us directly at support@jiranios.com.');
-      return;
-    }
-
     setSubmitting(true);
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: accessKey,
+          access_key: WEB3FORMS_ACCESS_KEY,
           subject: `New contact form message from ${form.name}`,
           from_name: form.name,
           name: form.name,
