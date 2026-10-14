@@ -34,3 +34,4 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localho
 
 // Public shop pages (shop.jiranios.com/<slug>) and the "Shops near you" directory, served by the main app deployment.
 export const SHOP_URL = import.meta.env.VITE_SHOP_URL || 'https://shop.jiranios.com';
+

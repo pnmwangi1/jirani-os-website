@@ -7,6 +7,7 @@ import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
 import { CTASection } from '../components/marketing/CTASection';
 import { APP_URL, PLAY_STORE_URL, SHOP_URL } from '../lib/constants';
+import { useSession } from '../lib/useSession';
 
 const shopperSteps = [
   { icon: MapPin, title: 'Tell us where you are', body: 'Share your location or type your area first, so you only see shops that can actually reach you. No wasted carts.' },
@@ -26,6 +27,7 @@ export default function Shops() {
     description: 'Find local shops on Jirani that deliver to you or are ready for collection. Shop owners get a shareable shop link and QR poster.',
     path: '/shops',
   });
+  const session = useSession();
 
   return (
     <>
@@ -34,6 +36,11 @@ export default function Shops() {
         <div className="container text-center">
           <Reveal>
             <Badge tone="primary">Shops near you</Badge>
+            {session.signedIn && (
+              <p className="mx-auto mt-4 max-w-md rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-ink">
+                You are signed in{session.firstName ? ` as ${session.firstName}` : ''}. Your orders and saved area are ready.
+              </p>
+            )}
             <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-extrabold text-ink md:text-5xl">Order from the shops around you.</h1>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-ink-muted">
               Local shops on Jirani deliver to your door or have your order ready to collect. Tell us where you are and we will show the ones that can reach you.

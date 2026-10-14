@@ -5,10 +5,13 @@ import { primaryNav } from '../../content/nav';
 import { ThemeToggle } from './ThemeToggle';
 import { LinkButton, AnchorButton } from '../ui/Button';
 import { APP_URL, PLAY_STORE_URL } from '../../lib/constants';
+import { useSession } from '../../lib/useSession';
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const session = useSession();
+  const accountUrl = `${APP_URL.replace(/\/$/, '')}/desktop`;
 
   // Item: close the mobile menu on route change, otherwise navigating
   // via a link leaves the overlay open behind the new page.
@@ -62,12 +65,23 @@ export function Header() {
               to the real product app rather than /contact — a visitor with
               an existing account can actually sign in, not just leave a
               message. Opens in a new tab since it's a different site. */}
-          <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="sm">
-            Log in
-          </AnchorButton>
-          <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="sm">
-            Get started
-          </AnchorButton>
+          {session.signedIn ? (
+            <>
+              <span className="text-sm font-medium text-ink-muted">Hi, {session.firstName || 'there'}</span>
+              <AnchorButton href={accountUrl} variant="primary" size="sm">
+                Open my account
+              </AnchorButton>
+            </>
+          ) : (
+            <>
+              <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="sm">
+                Log in
+              </AnchorButton>
+              <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="sm">
+                Get started
+              </AnchorButton>
+            </>
+          )}
         </div>
 
         <button
@@ -106,17 +120,28 @@ export function Header() {
               <Smartphone size={16} /> Get it on Google Play
             </a>
           </div>
-          <div className="mt-3 flex items-center gap-3">
-            <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="md" className="flex-1 justify-center">
-              Log in
-            </AnchorButton>
-          </div>
-          <div className="mt-3 flex items-center justify-between gap-3">
-            <ThemeToggle />
-            <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="md" className="flex-1 justify-center">
-              Get started
-            </AnchorButton>
-          </div>
+          {session.signedIn ? (
+            <div className="mt-3 flex items-center justify-between gap-3">
+              <ThemeToggle />
+              <AnchorButton href={accountUrl} variant="primary" size="md" className="flex-1 justify-center">
+                Hi, {session.firstName || 'there'} · Open my account
+              </AnchorButton>
+            </div>
+          ) : (
+            <>
+              <div className="mt-3 flex items-center gap-3">
+                <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="md" className="flex-1 justify-center">
+                  Log in
+                </AnchorButton>
+              </div>
+              <div className="mt-3 flex items-center justify-between gap-3">
+                <ThemeToggle />
+                <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="md" className="flex-1 justify-center">
+                  Get started
+                </AnchorButton>
+              </div>
+            </>
+          )}
         </div>
       )}
     </header>
