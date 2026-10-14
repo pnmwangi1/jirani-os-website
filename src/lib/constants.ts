@@ -31,3 +31,6 @@ export const PLAY_STORE_URL = import.meta.env.VITE_PLAY_STORE_URL || 'https://pl
 // production with no obvious error; VITE_API_BASE_URL must be set for
 // this site's actual deployment.
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/v1';
+
+// Public shop pages (shop.jiranios.com/<slug>) and the "Shops near you" directory, served by the main app deployment.
+export const SHOP_URL = import.meta.env.VITE_SHOP_URL || 'https://shop.jiranios.com';
