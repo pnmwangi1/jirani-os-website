@@ -20,8 +20,8 @@ export function Footer() {
               <img src="/jirani-logo.png" alt="Jirani OS" className="logo-shadow h-8 w-auto" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-ink-muted">
-              One operating system for your shop, customer orders, delivery and accounting — built
-              for businesses that outgrew spreadsheets and disconnected apps.
+              One app to run a business, shop from local businesses, or look after a property.
+              Made in Kenya, paid with M-Pesa.
             </p>
             <PlayStoreBadge className="mt-5" />
             <div className="mt-6 flex items-center gap-3">

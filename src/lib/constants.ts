@@ -35,3 +35,7 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localho
 // Public shop pages (shop.jiranios.com/<slug>) and the "Shops near you" directory, served by the main app deployment.
 export const SHOP_URL = import.meta.env.VITE_SHOP_URL || 'https://shop.jiranios.com';
 
+
+// Virtual properties are billed per property per month. The in-app price is set by an admin (default 250), and the
+// pricing endpoint needs a sign-in, so the website keeps its own copy here. Change it in this one place if the price changes.
+export const VIRTUAL_PRICE_KES = 250;

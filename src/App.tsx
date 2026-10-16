@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { PageLayout } from './components/layout/PageLayout';
 import { PageLoader } from './components/layout/PageLoader';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { installCtaTracking } from './lib/track';
 
 // Item: every page is route-level code-split via React.lazy — the
 // meaningful "code splitting" boundary for a 13-page marketing site,
@@ -13,6 +14,7 @@ const Solutions = lazy(() => import('./pages/Solutions'));
 const Features = lazy(() => import('./pages/Features'));
 const Delivery = lazy(() => import('./pages/Delivery'));
 const Shops = lazy(() => import('./pages/Shops'));
+const Properties = lazy(() => import('./pages/Properties'));
 const Industries = lazy(() => import('./pages/Industries'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const About = lazy(() => import('./pages/About'));
@@ -28,10 +30,20 @@ const Refer = lazy(() => import('./pages/Refer'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    // A link like /#properties scrolls to that section; any other navigation starts at the top.
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) { el.scrollIntoView(); return; }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
+  return null;
+}
+
+function CtaTracking() {
+  useEffect(() => installCtaTracking(), []);
   return null;
 }
 
@@ -40,6 +52,7 @@ export default function App() {
     <BrowserRouter>
       <ErrorBoundary>
         <ScrollToTop />
+        <CtaTracking />
         <PageLayout>
           <Suspense fallback={<PageLoader />}>
             <Routes>
@@ -48,6 +61,7 @@ export default function App() {
               <Route path="/features" element={<Features />} />
               <Route path="/delivery" element={<Delivery />} />
               <Route path="/shops" element={<Shops />} />
+              <Route path="/properties" element={<Properties />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />

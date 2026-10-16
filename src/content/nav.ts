@@ -4,13 +4,12 @@ export interface NavLink {
 }
 
 export const primaryNav: NavLink[] = [
-  { label: 'Solutions', to: '/solutions' },
   { label: 'Features', to: '/features' },
-  { label: 'Delivery', to: '/delivery' },
   { label: 'Shops', to: '/shops' },
+  { label: 'Properties', to: '/properties' },
+  { label: 'Delivery', to: '/delivery' },
   { label: 'Industries', to: '/industries' },
   { label: 'Pricing', to: '/pricing' },
-  { label: 'About', to: '/about' },
 ];
 
 export const footerNav = {
@@ -19,6 +18,7 @@ export const footerNav = {
     { label: 'Features', to: '/features' },
     { label: 'Delivery & Logistics', to: '/delivery' },
     { label: 'Shops near you', to: '/shops' },
+    { label: 'Virtual properties', to: '/properties' },
     { label: 'Industries', to: '/industries' },
     { label: 'Pricing', to: '/pricing' },
     { label: 'Security', to: '/security' },

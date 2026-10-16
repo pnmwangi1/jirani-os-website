@@ -24,7 +24,7 @@ const groupIllustrations = [MobileAppIllustration, CommerceIllustration, Invento
 export default function Features() {
   useSeo({
     title: 'Features',
-    description: 'Every major capability in Jirani OS, organized by the engine that powers it — your shop, customer app & delivery, commerce, inventory, accounting, and staff & access.',
+    description: 'Every major capability in Jirani OS, grouped by job: your shop and delivery, sharing your shop link, selling, inventory, accounting, staff and virtual properties.',
     path: '/features',
   });
 
@@ -37,9 +37,8 @@ export default function Features() {
             <Badge tone="primary">Features</Badge>
             <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">From your shop to their doorstep.</h1>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              Every business gets an online shop, a customer app to order from, and delivery that
-              dispatches itself. Everything below is organized by the engine underneath, not as
-              one long list — because that is how the product is actually built.
+              Every business gets an online shop and delivery that dispatches itself. Below is
+              everything Jirani OS does, grouped by what you are trying to get done.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="hidden justify-center gap-4 lg:flex">

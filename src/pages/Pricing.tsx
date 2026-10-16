@@ -5,7 +5,8 @@ import { Badge } from '../components/ui/Badge';
 import { AnchorButton } from '../components/ui/Button';
 import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { APP_URL } from '../lib/constants';
+import { APP_URL, VIRTUAL_PRICE_KES } from '../lib/constants';
+import { Link } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';
 
 interface FeatureGroup {
@@ -185,6 +186,20 @@ export default function Pricing() {
                   <p className="text-sm font-bold text-primary">{a.price}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Virtual properties: priced separately from the business plans */}
+        <Reveal delay={0.32} className="mx-auto mt-6 max-w-4xl">
+          <div className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-border bg-surface p-6 sm:flex-row sm:items-center">
+            <div>
+              <p className="text-sm font-bold text-ink">Looking after a property instead?</p>
+              <p className="mt-1 text-sm text-ink-muted">Virtual properties are separate from the business plans. Residents and staff join free.</p>
+            </div>
+            <div className="flex flex-shrink-0 items-center gap-4">
+              <p className="text-sm font-bold text-primary">KES {VIRTUAL_PRICE_KES} per property per month</p>
+              <Link to="/properties" className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-ink hover:bg-bg">See properties</Link>
             </div>
           </div>
         </Reveal>
