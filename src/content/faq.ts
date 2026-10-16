@@ -25,7 +25,7 @@ export const faqs: FaqItem[] = [
     category: 'Running your business',
     question: 'Do I need Jirani Plus?',
     answer:
-      'Jirani Start covers one branch and 3 staff with the full set of everyday tools. Plus adds barcode scanning, full accounting (ledger, trial balance, cash flow), credit limits, moving stock between branches and comparing branches, with 3 branches and 9 staff.',
+      'Jirani Start covers one branch and 3 staff with the everyday tools, including barcode scanning and customer credit limits. Plus adds full accounting (ledger, trial balance, cash flow), moving stock between branches, comparing branches, advanced business insights and branch dashboards, with 3 branches and 9 staff.',
   },
   {
     id: 'what-is-jirani',

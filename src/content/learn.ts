@@ -28,7 +28,7 @@ export const guides: Guide[] = [
     summary: 'Open the till, build the cart, take payment and close the shift.',
     steps: [
       { title: 'Open the till and shift', body: 'Enter the cash float in the drawer. Every sale needs an open till, and a branch can have only one open till at a time.' },
-      { title: 'Build the cart', body: 'Search for a product by name or scan its barcode (barcode scanning is on Jirani Plus), then adjust quantities in the cart.' },
+      { title: 'Build the cart', body: 'Search for a product by name or scan its barcode with your phone camera (or a scanner on a computer), then adjust quantities in the cart.' },
       { title: 'Discount and customer', body: 'Add a discount if you are giving one. Pick a customer if you are selling on credit.' },
       { title: 'Charge', body: 'Choose Cash, M-Pesa (with the transaction code), Split between cash and M-Pesa, or Credit to a customer account.' },
       { title: 'Close the till', body: 'At the end of the shift, count what is in the drawer and compare it with what Jirani recorded for cash, M-Pesa and card.' },
@@ -47,7 +47,7 @@ export const guides: Guide[] = [
   { slug: 'sell-on-credit', title: 'Sell on credit and collect it', minutes: 4, kind: 'credit',
     summary: 'Know who owes you, how much and for how long, and record each payment.',
     steps: [
-      { title: 'Charge a sale to credit', body: 'Pick an existing customer and choose Credit. The sale becomes an invoice and their balance goes up. A credit limit, if you set one (Jirani Plus), stops them going past it.' },
+      { title: 'Charge a sale to credit', body: 'Pick an existing customer and choose Credit. The sale becomes an invoice and their balance goes up. A credit limit, if you set one, stops them going past it.' },
       { title: 'Record a payment', body: 'Open the customer, tap Record payment, and enter the amount and method: cash, bank or M-Pesa.' },
       { title: 'Allocate it', body: 'Use Auto-fill (oldest first) or choose the invoices yourself. Their balance and aging update straight away.' },
       { title: 'Watch the aging', body: 'Balances are grouped as 0-30, 31-60, 61-90 and 90+ days so you know who to call first.' },

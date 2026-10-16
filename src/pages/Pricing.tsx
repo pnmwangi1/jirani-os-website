@@ -46,8 +46,8 @@ const plans: Plan[] = [
     perfectFor: 'Single shops, mini marts, pharmacies, salons, hardware stores, restaurants, water refill businesses and growing SMEs.',
     included: '1 branch included · your shop is live from day one',
     groups: [
-      { icon: ShoppingCart, label: 'Shop & POS', items: ['Your own customer-facing shop, live immediately', 'Goods & services in one till', 'Cash and M-Pesa payments'] },
-      { icon: Users, label: 'Customers', items: ['Customer accounts', 'Credit sales tracking', 'Orders placed from your shop, delivered automatically'] },
+      { icon: ShoppingCart, label: 'Shop & POS', items: ['Your own customer-facing shop, live immediately', 'Goods & services in one till', 'Cash and M-Pesa payments', 'Barcode scanning with your phone camera'] },
+      { icon: Users, label: 'Customers', items: ['Customer accounts', 'Credit sales and customer credit limits', 'Orders placed from your shop, delivered automatically'] },
     ],
   },
   {
@@ -55,13 +55,13 @@ const plans: Plan[] = [
     name: 'Jirani Plus',
     price: 'KES 2,500',
     tagline: 'Built for businesses ready to expand — more branches, deeper numbers, smarter delivery.',
-    perfectFor: 'Businesses running multiple branches, or ready to add advanced accounting, customer credit, and executive reporting.',
+    perfectFor: 'Businesses running multiple branches, or ready to add advanced accounting, branch dashboards and advanced business insights.',
     included: '3 branches · 3 staff seats per branch included',
     featured: true,
     groups: [
-      { icon: Barcode, label: 'Shop & POS', items: ['Smart barcode scanning', 'Goods & services in one till'] },
+      { icon: Barcode, label: 'Shop & POS', items: ['Everything in Jirani Start', 'Goods & services in one till'] },
       { icon: Building2, label: 'Branches', items: ['Multi-branch operations — add more as you grow, on either plan', 'Branch comparison reporting'] },
-      { icon: Calculator, label: 'Accounting', items: ['Advanced accounting engine', 'Customer credit limit control'] },
+      { icon: Calculator, label: 'Accounting', items: ['Advanced accounting engine'] },
       { icon: TrendingUp, label: 'Business Intelligence', items: ['Executive-level reporting', 'Cross-branch insights', 'Delivery cost & performance analytics'] },
     ],
   },
@@ -222,11 +222,11 @@ export default function Pricing() {
                     ['Profit and Loss, Balance Sheet', true, true],
                     ['Restaurant, bookings, jobs, laundry, production', true, true],
                     ['Branches and staff included', '1 branch, 3 staff', '3 branches, 9 staff'],
-                    ['Barcode scanning', false, true],
+                    ['Barcode scanning with your phone camera', true, true],
                     ['Full accounting: ledger, trial balance, cash flow', false, true],
-                    ['Credit limits for customers', false, true],
+                    ['Credit limits and terms for customers', true, true],
                     ['Move stock between branches', false, true],
-                    ['Compare branches, advanced reports', false, true],
+                    ['Compare branches, branch dashboards, advanced insights', false, true],
                   ].map(([label, a, b]) => (
                     <tr key={label as string} className="border-t border-border">
                       <td className="py-2.5 pr-3">{label as string}</td>

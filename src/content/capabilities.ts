@@ -19,13 +19,13 @@ export const capabilities: Capability[] = [
     withJirani: 'Every sale is rung up, paid for and recorded, and each shift ends with a count.',
     bullets: [
       'Open the till with a cash float and close it with a count',
+      'Scan barcodes with your phone camera, or a scanner on a computer, for quick checkouts',
       'Retail and wholesale prices from the same checkout',
       'Pay with cash, M-Pesa, bank or a customer account',
       'Returns and voids put stock and money back correctly',
       'Restaurants: tables, kitchen tickets and reservations',
       'Services: bookings, jobs, quotes, laundry and production',
     ],
-    plus: ['Scan barcodes at the till'],
   },
   {
     id: 'stock', kind: 'stock', title: 'Stock',
@@ -47,12 +47,12 @@ export const capabilities: Capability[] = [
     withJirani: 'Every customer has an account, a statement and an age on what they owe.',
     bullets: [
       'Sell on credit and record payments as they arrive',
+      'Set a credit limit for each customer, with credit terms',
       'See balances by age: 0-30, 31-60, 61-90 and 90+ days',
       'Wholesale pricing for the customers who get it',
       'Follow up leads, and see which sources turn into sales',
       'Message customers from inside the app',
     ],
-    plus: ['Set a credit limit for each customer'],
   },
   {
     id: 'suppliers', kind: 'suppliers', title: 'Suppliers and buying',

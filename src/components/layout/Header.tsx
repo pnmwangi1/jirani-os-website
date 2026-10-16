@@ -23,17 +23,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="container flex h-18 items-center justify-between py-3">
-        <Link to="/" className="flex items-center gap-2" aria-label="Jirani OS home">
+        <Link to="/" className="flex flex-shrink-0 items-center gap-2" aria-label="Jirani OS home">
           <Logo className="h-9" />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0 lg:flex xl:gap-1" aria-label="Primary">
           {primaryNav.map((item) => (
             <RouterNavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                `whitespace-nowrap rounded-full px-2 py-2 text-[13px] font-medium transition-colors xl:px-3 xl:text-sm 2xl:px-4 ${
                   isActive ? 'text-primary' : 'text-ink-muted hover:text-ink'
                 }`
               }
@@ -43,7 +43,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden flex-shrink-0 items-center gap-2 lg:flex xl:gap-3">
           <ThemeToggle />
           {/* Item (explicit request — download the app / Play Store link):
               a compact icon-link rather than the full Play badge image,
@@ -55,11 +55,11 @@ export function Header() {
             rel="noopener noreferrer"
             aria-label="Get Jirani OS on Google Play"
             title="Get it on Google Play"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-ink-muted transition-colors hover:border-primary hover:text-primary"
+            className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border border-border text-ink-muted transition-colors hover:border-primary hover:text-primary max-[1799px]:hidden"
           >
             <Smartphone size={16} />
           </a>
-          <LinkButton to="/contact" variant="ghost" size="sm">
+          <LinkButton to="/contact" variant="ghost" size="sm" className="whitespace-nowrap max-[1799px]:hidden">
             Contact sales
           </LinkButton>
           {/* Item (login/website integration, explicit request): links out
@@ -68,17 +68,17 @@ export function Header() {
               message. Opens in a new tab since it's a different site. */}
           {session.signedIn ? (
             <>
-              <span className="text-sm font-medium text-ink-muted">Hi, {session.firstName || 'there'}</span>
-              <AnchorButton href={accountUrl} variant="primary" size="sm">
+              <span className="hidden whitespace-nowrap text-sm font-medium text-ink-muted min-[1800px]:inline">Hi, {session.firstName || 'there'}</span>
+              <AnchorButton href={accountUrl} variant="primary" size="sm" className="whitespace-nowrap">
                 Open my account
               </AnchorButton>
             </>
           ) : (
             <>
-              <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="sm">
+              <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="sm" className="whitespace-nowrap">
                 Log in
               </AnchorButton>
-              <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="sm">
+              <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="primary" size="sm" className="whitespace-nowrap">
                 Get started
               </AnchorButton>
             </>

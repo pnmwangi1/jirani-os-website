@@ -3,8 +3,8 @@ import { ArrowRight, Check } from 'lucide-react';
 import { Reveal } from '../marketing/Reveal';
 import { APP_URL } from '../../lib/constants';
 
-const start = ['Everything above: sales, stock, customers, suppliers, people and reports', 'Your own online shop', 'Profit and Loss and a Balance Sheet', '1 branch and 3 staff seats'];
-const plus = ['Everything in Jirani Start', 'Barcode scanning at the till', 'Full accounting: ledger, trial balance and cash flow', 'Credit limits for customers', 'Move stock between branches, and compare them', '3 branches and 9 staff seats'];
+const start = ['Everything above: sales, barcode scanning, stock, customers with credit limits, suppliers, people and reports', 'Your own online shop', 'Profit and Loss and a Balance Sheet', '1 branch and 3 staff seats'];
+const plus = ['Everything in Jirani Start', 'Full accounting: ledger, trial balance and cash flow', 'Move stock between branches, and compare them', 'Advanced business insights and branch dashboards', '3 branches and 9 staff seats'];
 
 export function PlansSnapshot() {
   return (

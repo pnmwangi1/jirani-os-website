@@ -11,7 +11,7 @@ const tiles = [
   { icon: UserCog, title: 'Staff and pay records', line: 'Roles, pay sheets, advances and commissions.' },
   { icon: LayoutDashboard, title: 'Owner dashboard', line: 'Today at a glance, across every branch.' },
   { icon: FileBarChart, title: 'Reports', line: 'Sales by shift, profit and loss, downloadable.' },
-  { icon: ArrowLeftRight, title: 'Shop-to-shop loans', line: 'Borrow or lend stock with another shop.' },
+  { icon: ArrowLeftRight, title: 'Shop-to-shop loans', line: 'Borrow or lend any item with another shop.' },
   { icon: Target, title: 'Leads and follow-ups', line: 'Track enquiries and follow up on time.' },
   { icon: FileSpreadsheet, title: 'Import from Excel', line: 'Bring your products, customers and suppliers across.' },
 ];

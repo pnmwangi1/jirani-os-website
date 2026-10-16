@@ -107,7 +107,7 @@ export const featureGroups: FeatureGroup[] = [
     features: [
       { icon: LayoutDashboard, title: 'Owner dashboard', description: 'Today at a glance across every branch: sales, cash, orders and what needs your attention.' },
       { icon: FileBarChart, title: 'Sales reports by shift', description: 'See sales per shift and per day, and download them as a report.' },
-      { icon: ArrowLeftRight, title: 'Shop-to-shop stock loans', description: 'Borrow stock from another shop or lend yours, with a due date and a record of what came back.' },
+      { icon: ArrowLeftRight, title: 'Shop-to-shop stock loans', description: 'Borrow any item from another shop when you are out, or lend yours. Loans are tracked in units, with a due date and a record of what came back.' },
       { icon: Target, title: 'Leads and follow-ups', description: 'Keep track of enquiries and get reminded to follow up.' },
       { icon: FileSpreadsheet, title: 'Import from Excel', description: 'Bring your products, customers and suppliers across from a spreadsheet, with a check before anything is saved.' },
       { icon: UserCog, title: 'People and pay records', description: 'Roles, pay terms, pay sheets, salary advances and commissions in one place.' },
