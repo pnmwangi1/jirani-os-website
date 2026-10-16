@@ -4,7 +4,7 @@ import { Reveal } from './Reveal';
 
 const steps = [
   { icon: Tag, title: 'Priced', line: 'The delivery fee is worked out from distance and your rules.' },
-  { icon: Bike, title: 'Dispatched', line: 'A rider is assigned without a phone call.' },
+  { icon: Bike, title: 'Offered to riders', line: 'Your riders are offered the job in order, with no phone calls.' },
   { icon: MapPinned, title: 'Tracked', line: 'You and your customer can follow the order.' },
 ];
 

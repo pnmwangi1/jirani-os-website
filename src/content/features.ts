@@ -2,7 +2,7 @@ import {
   Share2, QrCode, Tag, FileSpreadsheet, ArrowLeftRight, Target, FileBarChart,
   Users, ShoppingCart, Receipt, Store, Smartphone, Truck as DeliveryTruck, MapPin,
   Package, Truck, Wallet, PieChart, Wrench, Boxes, UserCog, Bell,
-  BarChart3, LayoutDashboard, Lock, History, ClipboardList,
+  BarChart3, LayoutDashboard, Lock, History, ClipboardList, Bike, Route,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { virtualFeatures } from './virtualFeatures';
@@ -29,7 +29,7 @@ export const featureGroups: FeatureGroup[] = [
     features: [
       { icon: Store, title: 'Your own online shop', description: 'The moment you set up, your business gets a real shop customers can browse and order from — not just a counter they have to walk up to.' },
       { icon: Smartphone, title: 'Customer app', description: 'Customers get their own app to discover your shop, browse what you sell, place orders and reorder favourites — whenever suits them, not just when they can visit in person.' },
-      { icon: DeliveryTruck, title: 'Delivery, automatically dispatched', description: 'An order placed through your shop does not need a phone call to reach the customer. Jirani OS prices the delivery, assigns a rider, and tracks it — automatically, the moment the order is placed.' },
+      { icon: DeliveryTruck, title: 'Delivery, automatically dispatched', description: 'An order placed through your shop does not need a phone call to reach the customer. Jirani OS prices the delivery and offers it to your riders in order, then tracks it — automatically, the moment the order is placed.' },
       { icon: Wallet, title: 'Delivery rules, your call', description: 'Free delivery above an order value, within a distance, or always — set the rule once and Jirani OS applies it to every order, every time.' },
       { icon: MapPin, title: 'Route & fuel costing', description: 'Every delivery is routed and costed automatically, so you know exactly what a delivery costs before the rider even leaves.' },
     ],
@@ -87,6 +87,17 @@ export const featureGroups: FeatureGroup[] = [
       { icon: History, title: 'Audit trails', description: 'A complete, tamper-evident record of who did what, and when — for every sensitive action, from a stock adjustment to a dispatched delivery.' },
       { icon: Bell, title: 'Notifications', description: 'The right person is notified the moment something needs their attention, on the channel they use.' },
       { icon: ClipboardList, title: 'Multi-branch operations', description: 'Built from day one to scale from a single shop to a multi-branch enterprise.' },
+    ],
+  },
+  {
+    id: 'riders',
+    title: 'Riders and Delivery',
+    intro: 'Riders set their own rate. Businesses and customers choose the riders they trust.',
+    features: [
+      { icon: Bike, title: 'Your own riders', description: 'Add free-delivery riders and trusted paid riders to your shop. Orders are offered to them in order.' },
+      { icon: Wallet, title: 'A fixed price up front', description: 'Base fee plus per-km rate times distance. The customer sees it before ordering and it does not change.' },
+      { icon: Route, title: 'Customers bring their own rider', description: 'A customer can keep a personal list of riders and combine orders into one trip.' },
+      { icon: DeliveryTruck, title: 'Next rider, automatically', description: 'If a rider declines or does not answer in time, the order moves to the next rider on the list.' },
     ],
   },
   {

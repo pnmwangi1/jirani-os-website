@@ -11,6 +11,8 @@ import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { AutomationIllustration } from '../components/marketing/illustrations';
 import { appScreenshots } from '../content/screenshots';
 import { APP_URL } from '../lib/constants';
+import { RiderLinks } from '../components/story/RiderLinks';
+import { RateCalculator } from '../components/story/RateCalculator';
 
 const flow = [
   {
@@ -25,8 +27,8 @@ const flow = [
   },
   {
     n: '03',
-    title: 'A rider is dispatched',
-    desc: 'Your own rider, or one on the Jirani OS network — assigned and routed without a single phone call.',
+    title: 'A rider is offered the job',
+    desc: 'Offered to your riders first, one at a time, each at their own rate. Nobody has to call anyone.',
   },
   {
     n: '04',
@@ -38,13 +40,13 @@ const flow = [
 const pillars = [
   {
     icon: Truck,
-    title: 'Your fleet, or ours',
-    body: 'Run your own riders and vehicles, tap into the wider Jirani OS delivery network, or use both — whichever gets an order to a customer fastest.',
+    title: 'Your riders, your list',
+    body: 'Add your own free-delivery riders and trusted paid riders who set their own rate. Customers can also bring a rider they trust. Orders are offered to riders on those lists, in order.',
   },
   {
     icon: Users2,
-    title: 'Cascade dispatch',
-    body: 'If your first choice of rider cannot take an order, Jirani OS automatically offers it to the next available one — an order is never left waiting on a single person\u2019s phone.',
+    title: 'Next rider, automatically',
+    body: 'If your first choice of rider cannot take an order, Jirani OS offers it to the next rider on the list, after a short time limit, so an order is never left waiting on one phone.',
   },
   {
     icon: Radar,
@@ -119,6 +121,18 @@ export default function Delivery() {
             <PhoneFrame src={appScreenshots[3].src} alt={appScreenshots[3].alt} caption={appScreenshots[3].caption} className="mt-8" />
             <PhoneFrame src={appScreenshots[4].src} alt={appScreenshots[4].alt} caption={appScreenshots[4].caption} />
           </Reveal>
+        </div>
+      </Section>
+
+      <Section className="border-t border-border">
+        <div className="container">
+          <Reveal className="mx-auto mb-10 max-w-2xl text-center">
+            <h2 className="text-3xl font-extrabold text-ink md:text-4xl">Who the riders are, and who pays.</h2>
+            <p className="mt-3 text-base text-ink-muted">Riders are people you or your customers already trust, and each one sets their own rate.</p>
+          </Reveal>
+          <RiderLinks />
+          <div className="mt-10"><RateCalculator /></div>
+          <Reveal delay={0.1} className="mt-6 text-center"><LinkButton to="/riders" variant="outline">See the rider page</LinkButton></Reveal>
         </div>
       </Section>
 

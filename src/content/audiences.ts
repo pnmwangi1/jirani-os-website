@@ -1,7 +1,7 @@
-import { Store, ShoppingBag, Building2 } from 'lucide-react';
+import { Store, ShoppingBag, Building2, Bike } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
-export type AudienceKey = 'business' | 'shop' | 'property';
+export type AudienceKey = 'business' | 'shop' | 'rider' | 'property';
 
 export interface Audience {
   key: AudienceKey;
@@ -10,7 +10,7 @@ export interface Audience {
   title: string; // card title
   line: string; // one short line
   cta: string; // button label
-  ctaKind: 'app' | 'shops' | 'app-property';
+  ctaKind: 'app' | 'shops' | 'app-rider' | 'app-property';
   anchor: string; // homepage section id
   to: string; // inner page
   toLabel: string;
@@ -41,6 +41,18 @@ export const audiences: Audience[] = [
     anchor: 'shops',
     to: '/shops',
     toLabel: 'How shopping works',
+  },
+  {
+    key: 'rider',
+    icon: Bike,
+    chip: 'I ride',
+    title: 'Deliver and earn',
+    line: 'Set your own rate. Get delivery requests from businesses and customers who trust you.',
+    cta: 'Become a rider',
+    ctaKind: 'app-rider',
+    anchor: 'riders',
+    to: '/riders',
+    toLabel: 'How riders earn',
   },
   {
     key: 'property',

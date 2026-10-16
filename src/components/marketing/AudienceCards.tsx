@@ -4,10 +4,10 @@ import { audiences } from '../../content/audiences';
 import { Reveal } from './Reveal';
 import { audienceCta } from '../../lib/audienceCta';
 
-// "Pick your start": the same three doors as the hero, always equal weight.
+// "Pick your start": the same four doors as the hero, always equal weight.
 export function AudienceCards() {
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
       {audiences.map((a, i) => {
         const c = audienceCta(a);
         return (

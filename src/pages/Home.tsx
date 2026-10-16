@@ -2,15 +2,14 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useSeo } from '../lib/seo';
 import { Hero } from '../components/marketing/Hero';
-import { WaveDivider } from '../components/marketing/WaveDivider';
 import { Section } from '../components/ui/Section';
 import { Reveal } from '../components/marketing/Reveal';
-import { AudienceCards } from '../components/marketing/AudienceCards';
-import { ShopSection } from '../components/marketing/ShopSection';
-import { BusinessSection } from '../components/marketing/BusinessSection';
-import { PropertySection } from '../components/marketing/PropertySection';
-import { DeliveryStrip } from '../components/marketing/DeliveryStrip';
 import { TrustStrip } from '../components/marketing/TrustStrip';
+import { FollowOrder } from '../components/story/FollowOrder';
+import { CharacterDays } from '../components/story/CharacterDays';
+import { RidersHome } from '../components/story/RidersHome';
+import { PropertyHome } from '../components/story/PropertyHome';
+import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { FinalCTA } from '../components/marketing/FinalCTA';
 import { Accordion } from '../components/ui/Accordion';
 import { faqs } from '../content/faq';
@@ -29,31 +28,34 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <WaveDivider className="text-surface -mb-1" />
 
-      <Section className="bg-surface pt-12 md:pt-16">
-        <div className="container">
-          <Reveal className="mb-10 text-center">
-            <h2 className="text-3xl font-extrabold text-ink md:text-4xl">Pick your start.</h2>
-          </Reveal>
-          <AudienceCards />
-        </div>
+      <Section id="follow" className="scroll-mt-16 border-t border-border bg-surface">
+        <div className="container"><FollowOrder /></div>
       </Section>
 
-      <Section id="shops" className="border-t border-border">
-        <div className="container"><ShopSection /></div>
-      </Section>
-
-      <Section id="business" className="border-t border-border bg-surface">
-        <div className="container"><BusinessSection /></div>
-      </Section>
-
-      <Section id="properties" className="border-t border-border">
-        <div className="container"><PropertySection /></div>
+      <Section className="border-t border-border">
+        <div className="container"><CharacterDays /></div>
       </Section>
 
       <Section className="border-t border-border bg-surface">
-        <div className="container"><DeliveryStrip /></div>
+        <div className="container"><RidersHome /></div>
+      </Section>
+
+      <Section className="border-t border-border">
+        <div className="container"><PropertyHome /></div>
+      </Section>
+
+      <Section className="border-t border-border bg-surface">
+        <div className="container">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-extrabold text-ink md:text-4xl">This is the real app.</h2>
+            <p className="mt-3 text-base text-ink-muted">The shop Wanjiru orders from, and the till Baraka sells on.</p>
+          </Reveal>
+          <Reveal delay={0.1} className="mt-10 flex justify-center gap-4">
+            <PhoneFrame src="/screenshots/shop-storefront.jpg" alt="A Jirani shop with deals and add to cart" caption="The shop" className="max-w-[200px]" />
+            <PhoneFrame src="/screenshots/pos.jpg" alt="The Jirani point of sale" caption="The till" className="mt-8 max-w-[200px]" />
+          </Reveal>
+        </div>
       </Section>
 
       <Section className="border-t border-border">

@@ -11,7 +11,7 @@ export const faqs: FaqItem[] = [
     category: 'Getting Started',
     question: 'What exactly is Jirani OS?',
     answer:
-      'Jirani OS is one app with three uses. Businesses run sales, stock, staff, delivery and accounts, and every business gets its own online shop. Shoppers order from shops near them. Property managers run a property with parking prompts, gate passes, notices and repairs. It is built for small and medium businesses, and scales from a single shop to many branches.',
+      'Jirani OS is one app that connects the people in a local order. Businesses run sales, stock, staff and accounts, and every business gets its own online shop. Shoppers order from shops near them. Riders set their own rate and deliver for the businesses and customers who trust them. Property owners run a property with parking prompts, gate passes, notices and repairs. It is built for small and medium businesses, and scales from a single shop to many branches.',
   },
   {
     id: 'who-is-it-for',
@@ -42,11 +42,25 @@ export const faqs: FaqItem[] = [
       'Every business on Jirani OS gets one. Switch on Online shop visible in the app and you get your own address, such as shop.jiranios.com/your-shop, plus a QR poster to print. Add product photos in the first 7 days, because after that the public link shows only products that have photos.',
   },
   {
+    id: 'rider-how',
+    category: 'Riders',
+    question: 'How do riders work on Jirani OS?',
+    answer:
+      'A rider creates a rider account and sets a base fee and a per-km rate. Businesses add riders to their free-delivery or trusted paid lists, and customers can add riders to their own list. When an order needs delivery it is offered to the riders on the list, in order, and each rider sees their pay before accepting.',
+  },
+  {
+    id: 'rider-pays',
+    category: 'Riders',
+    question: 'Who pays the rider?',
+    answer:
+      'The customer pays the rider\u2019s rate for delivery: the base fee plus the per-km rate times the distance, shown before they order. A business\u2019s free-delivery riders cost the customer nothing.',
+  },
+  {
     id: 'property-what',
     category: 'Properties',
     question: 'What is a virtual property?',
     answer:
-      'A way to run a building from your phone: parking prompts, gate passes and expected guests, notices, lost and found, property chat, repairs with photos and quotes, and your own team of manager, caretaker and security. You create the property, pin its location and invite people by phone number.',
+      'A way to run a building from your phone: parking prompts, gate passes and expected guests, notices, lost and found, property chat, repairs with photos and quotes, and your own team of manager, caretaker and security. You create the property from a Jirani customer account, pin its location and invite people by phone number. Residents and staff can join from any account.',
   },
   {
     id: 'property-price',

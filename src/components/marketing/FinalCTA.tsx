@@ -9,7 +9,7 @@ export function FinalCTA({ title = 'Where would you like to start?' }: { title?:
     <Reveal>
       <div className="rounded-3xl bg-primary px-6 py-14 text-center md:px-16 md:py-20">
         <h2 className="mx-auto max-w-xl text-3xl font-extrabold text-white md:text-4xl">{title}</h2>
-        <div className="mx-auto mt-8 grid max-w-3xl grid-cols-1 gap-3 md:grid-cols-3">
+        <div className="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-3 md:grid-cols-4">
           {audiences.map((a) => {
             const c = audienceCta(a);
             return (

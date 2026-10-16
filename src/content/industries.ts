@@ -13,7 +13,7 @@ export const industries: IndustryDetail[] = [
     challenge:
       'Customers want to order without walking in or calling — but a separate website, a separate delivery app and a rider on standby usually means three more bills and three systems that do not talk to each other.',
     approach:
-      'Every business on Jirani OS gets a shop customers can browse and order from through the Jirani OS customer app. An order placed there is priced, routed and dispatched to a rider automatically — no phone call, no separate system.',
+      'Every business on Jirani OS gets a shop customers can browse and order from through the Jirani OS customer app. An order placed there is priced, routed and offered to a rider automatically — no phone call, no separate system.',
     outcomes: [
       'A real online shop, live from day one, no separate website needed',
       'Customers order and reorder at their own convenience through the customer app',

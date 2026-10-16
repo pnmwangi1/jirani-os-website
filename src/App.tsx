@@ -15,6 +15,7 @@ const Features = lazy(() => import('./pages/Features'));
 const Delivery = lazy(() => import('./pages/Delivery'));
 const Shops = lazy(() => import('./pages/Shops'));
 const Properties = lazy(() => import('./pages/Properties'));
+const Riders = lazy(() => import('./pages/Riders'));
 const Industries = lazy(() => import('./pages/Industries'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const About = lazy(() => import('./pages/About'));
@@ -62,6 +63,7 @@ export default function App() {
               <Route path="/delivery" element={<Delivery />} />
               <Route path="/shops" element={<Shops />} />
               <Route path="/properties" element={<Properties />} />
+              <Route path="/riders" element={<Riders />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about" element={<About />} />

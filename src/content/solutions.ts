@@ -16,9 +16,9 @@ export const solutions: Solution[] = [
     icon: Truck,
     title: 'Delivery & Logistics',
     tone: 'manager',
-    summary: 'Every order placed through your online shop gets priced, routed and dispatched to a rider — automatically, without a single phone call.',
+    summary: 'Every order placed through your online shop gets priced, routed and offered to a rider — automatically, without a single phone call.',
     points: [
-      'Your own delivery fleet, or riders on the Jirani OS network',
+      'Your own riders, trusted paid riders, or the customer\u2019s own rider',
       'Free delivery above an order value, within a distance, or always — your rule',
       'Route and fuel cost calculated automatically before a rider leaves',
       'Live delivery tracking, from dispatch to doorstep',
