@@ -35,7 +35,6 @@ export const footerNav = {
   resources: [
     { label: 'Learn', to: '/learn' },
     { label: 'FAQ', to: '/faq' },
-    { label: 'Blog', to: '/blog' },
     { label: 'Contact', to: '/contact' },
   ],
   legal: [

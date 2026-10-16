@@ -81,7 +81,7 @@ export default function Security() {
 
       <Section className="pt-0">
         <div className="container">
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={(i % 4) * 0.06}>
                 <Card padding="lg" className="h-full">

@@ -1,3 +1,4 @@
+import { NeighboursScene } from '../components/story/NeighboursScene';
 import { Clock } from 'lucide-react';
 import { useSeo } from '../lib/seo';
 import { Section } from '../components/ui/Section';
@@ -29,6 +30,7 @@ export default function Careers() {
             Get in touch
           </LinkButton>
         </Reveal>
+        <Reveal delay={0.1} className="mx-auto mt-10 max-w-xl"><div className="rounded-2xl border border-border bg-surface p-3"><NeighboursScene /></div></Reveal>
       </div>
     </Section>
   );

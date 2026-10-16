@@ -105,7 +105,7 @@ export default function Properties() {
       <Section className="border-t border-border bg-surface">
         <div className="container">
           <Reveal>
-            <div className="mx-auto max-w-2xl rounded-3xl border border-border bg-bg p-8 text-center shadow-soft">
+            <div className="mx-auto max-w-3xl rounded-3xl border border-border bg-bg p-8 text-center shadow-soft">
               <p className="text-xs font-bold uppercase tracking-wider text-primary">Simple pricing</p>
               <p className="mt-2 font-display text-4xl font-extrabold text-ink">KES {VIRTUAL_PRICE_KES}<span className="text-base font-semibold text-ink-muted"> per property, per month</span></p>
               <p className="mt-3 text-sm text-ink-muted">Pay with M-Pesa. The owner pays; residents, caretakers and security join free. Create it from a Jirani customer account, from the virtual property tile on your dashboard.</p>

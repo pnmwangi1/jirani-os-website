@@ -18,7 +18,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-6">
           <div className="col-span-2">
             <Link to="/" className="mb-4 inline-flex" aria-label="Jirani OS home">
-              <Logo className="h-9" />
+              <Logo className="h-7" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-ink-muted">
               One app to run a business, shop from local businesses, or look after a property.

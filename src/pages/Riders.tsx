@@ -98,7 +98,7 @@ export default function Riders() {
       <Section className="border-t border-border">
         <div className="container">
           <Reveal className="mx-auto mb-8 max-w-2xl text-center"><h2 className="text-3xl font-extrabold text-ink md:text-4xl">Rider questions.</h2></Reveal>
-          <div className="mx-auto max-w-2xl"><Accordion items={faqs} /></div>
+          <div className="mx-auto max-w-3xl"><Accordion items={faqs} /></div>
           <Reveal delay={0.1} className="mt-6 text-center"><Link to="/delivery" className="text-sm font-semibold text-primary hover:underline">How delivery works for businesses</Link></Reveal>
         </div>
       </Section>

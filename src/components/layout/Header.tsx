@@ -24,7 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="container flex h-18 items-center justify-between py-3">
         <Link to="/" className="flex flex-shrink-0 items-center gap-2" aria-label="Jirani OS home">
-          <Logo className="h-9" />
+          <Logo className="h-6 sm:h-7" />
         </Link>
 
         <nav className="hidden items-center gap-0 lg:flex xl:gap-1" aria-label="Primary">

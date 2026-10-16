@@ -36,3 +36,7 @@
 - People/HR is described as records (pay sheets, advances, leave), never "payroll".
 - Home shows four hand-built sample screens (components/story/SampleScreens.tsx), labelled "Sample data". Not done yet: real screenshots of more app screens; Shops/Riders/Delivery/Properties/Blog/Careers still use the earlier layout.
 - Run `npm install`, `npm run build`, then `npx wrangler deploy`. `tsc` could not run in the build sandbox.
+
+## Layout and logo pass (October 2026)
+- Barcode scanning and credit limits are on Jirani Start (migration 163). Plus-only: advanced accounting, stock transfers, branch comparison and dashboards, advanced BI.
+- Header logo reduced; header buttons no longer wrap when signed in. Shops page rebuilt on a two-column grid. Footer lists Blog once. Play badge falls back to a text button. og-image.png rebuilt with an absolute URL.

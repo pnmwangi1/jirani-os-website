@@ -148,7 +148,7 @@ export default function Delivery() {
               Nobody has to coordinate this by hand — it happens the same way, every time.
             </p>
           </Reveal>
-          <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+          <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {flow.map((s, i) => (
               <Reveal key={s.n} delay={i * 0.08}>
                 <div className="rounded-2xl border border-border bg-bg p-6">

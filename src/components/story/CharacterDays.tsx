@@ -76,7 +76,7 @@ export function CharacterDays({ only, heading = true }: { only?: Who[]; heading?
         <h2 className="text-3xl font-extrabold text-ink md:text-4xl">Meet the three people it works for.</h2>
         <p className="mt-3 text-base text-ink-muted">Each one gets what they need, and each one makes the others&apos; day easier.</p>
       </Reveal>)}
-      <div className={`${heading ? 'mt-12' : ''} grid grid-cols-1 gap-6 ${list.length === 3 ? 'lg:grid-cols-3' : 'md:grid-cols-2'}`}>
+      <div className={`${heading ? 'mt-12' : ''} grid grid-cols-1 gap-6 ${list.length === 3 ? 'lg:grid-cols-3' : list.length === 1 ? '' : 'md:grid-cols-2'}`}>
         {list.map((p, i) => (
           <Reveal key={p.who} delay={i * 0.08}>
             <div id={p.id} className="flex h-full scroll-mt-24 flex-col rounded-3xl border border-border bg-surface p-6 shadow-soft">

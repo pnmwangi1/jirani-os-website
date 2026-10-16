@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { NeighboursScene } from '../components/story/NeighboursScene';
 import { useSeo } from '../lib/seo';
 import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
@@ -27,6 +28,8 @@ export default function Blog() {
             We are just getting started publishing here. In the meantime, here is what is on deck.
           </p>
         </Reveal>
+
+        <Reveal delay={0.05} className="mx-auto mt-8 max-w-md"><NeighboursScene /></Reveal>
 
         <Reveal delay={0.1} className="mt-10 flex flex-wrap justify-center gap-2">
           <button
