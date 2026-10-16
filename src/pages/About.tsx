@@ -6,6 +6,7 @@ import { Card } from '../components/ui/Card';
 import { Reveal } from '../components/marketing/Reveal';
 import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { NeighboursScene } from '../components/story/NeighboursScene';
 import { AutomationIllustration } from '../components/marketing/illustrations';
 
 const values = [
@@ -38,6 +39,9 @@ export default function About() {
               delivery over a phone call. Not because they wanted to, but because nothing built
               for their scale had brought it all together.
             </p>
+          </Reveal>
+          <Reveal delay={0.1} className="mx-auto mt-8 max-w-xl">
+            <div className="rounded-2xl border border-border bg-surface p-3"><NeighboursScene /></div>
           </Reveal>
         </div>
       </Section>

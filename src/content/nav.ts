@@ -10,6 +10,7 @@ export const primaryNav: NavLink[] = [
   { label: 'Properties', to: '/properties' },
   { label: 'Delivery', to: '/delivery' },
   { label: 'Industries', to: '/industries' },
+  { label: 'Learn', to: '/learn' },
   { label: 'Pricing', to: '/pricing' },
 ];
 
@@ -32,6 +33,7 @@ export const footerNav = {
     { label: 'Contact', to: '/contact' },
   ],
   resources: [
+    { label: 'Learn', to: '/learn' },
     { label: 'FAQ', to: '/faq' },
     { label: 'Blog', to: '/blog' },
     { label: 'Contact', to: '/contact' },

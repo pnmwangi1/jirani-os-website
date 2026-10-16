@@ -69,7 +69,7 @@ const plans: Plan[] = [
 
 const addons = [
   { label: 'Additional branch', price: 'KES 1,000/month', note: 'Includes up to 3 staff' },
-  { label: 'Additional staff', price: 'KES 250/month', note: 'Per staff member, per branch' },
+  { label: 'Additional staff', price: 'KES 250/month', note: 'Per staff member, for the branch you choose' },
 ];
 
 export default function Pricing() {
@@ -186,6 +186,59 @@ export default function Pricing() {
                   <p className="text-sm font-bold text-primary">{a.price}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Pay for longer and save: 10% off 6 months, 20% off 12 months (enforced by the billing code) */}
+        <Reveal delay={0.31} className="mx-auto mt-6 max-w-4xl">
+          <div className="rounded-2xl border border-border bg-surface p-6">
+            <p className="text-sm font-bold text-ink">Pay for longer, pay less</p>
+            <p className="mt-1 text-xs text-ink-muted">Jirani Start works out to about KES 33 a day.</p>
+            <div className="mt-4 overflow-x-auto">
+              <table className="w-full min-w-[420px] text-left text-sm">
+                <thead><tr className="text-xs uppercase tracking-wide text-ink-muted"><th className="py-2 pr-3">Pay for</th><th className="py-2 pr-3">Discount</th><th className="py-2 pr-3">Jirani Start</th><th className="py-2">Jirani Plus</th></tr></thead>
+                <tbody className="text-ink">
+                  <tr className="border-t border-border"><td className="py-2.5 pr-3">1 month</td><td className="pr-3 text-ink-muted">None</td><td className="pr-3 font-semibold">KES 1,000</td><td className="font-semibold">KES 2,500</td></tr>
+                  <tr className="border-t border-border"><td className="py-2.5 pr-3">6 months</td><td className="pr-3 font-semibold text-primary">10% off</td><td className="pr-3 font-semibold">KES 5,400</td><td className="font-semibold">KES 13,500</td></tr>
+                  <tr className="border-t border-border"><td className="py-2.5 pr-3">12 months</td><td className="pr-3 font-semibold text-primary">20% off</td><td className="pr-3 font-semibold">KES 9,600</td><td className="font-semibold">KES 24,000</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Start vs Plus, row by row */}
+        <Reveal delay={0.32} className="mx-auto mt-6 max-w-4xl">
+          <div className="rounded-2xl border border-border bg-surface p-6">
+            <p className="mb-4 text-sm font-bold text-ink">Start and Plus, side by side</p>
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[420px] text-left text-sm">
+                <thead><tr className="text-xs uppercase tracking-wide text-ink-muted"><th className="py-2 pr-3">What you get</th><th className="py-2 pr-3 text-center">Start</th><th className="py-2 text-center">Plus</th></tr></thead>
+                <tbody className="text-ink">
+                  {[
+                    ['Till, stock, customers, suppliers, reports', true, true],
+                    ['Your own online shop and delivery', true, true],
+                    ['Profit and Loss, Balance Sheet', true, true],
+                    ['Restaurant, bookings, jobs, laundry, production', true, true],
+                    ['Branches and staff included', '1 branch, 3 staff', '3 branches, 9 staff'],
+                    ['Barcode scanning', false, true],
+                    ['Full accounting: ledger, trial balance, cash flow', false, true],
+                    ['Credit limits for customers', false, true],
+                    ['Move stock between branches', false, true],
+                    ['Compare branches, advanced reports', false, true],
+                  ].map(([label, a, b]) => (
+                    <tr key={label as string} className="border-t border-border">
+                      <td className="py-2.5 pr-3">{label as string}</td>
+                      {[a, b].map((v, i) => (
+                        <td key={i} className="py-2.5 text-center">
+                          {typeof v === 'string' ? <span className="text-xs font-semibold">{v}</span> : v ? <Check size={16} className="mx-auto text-primary" aria-label="Included" /> : <span className="text-ink-muted" aria-label="Not included">&ndash;</span>}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </Reveal>

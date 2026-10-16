@@ -17,4 +17,14 @@
   <url><loc>https://www.jiranios.com/privacy</loc><priority>0.3</priority></url>
   <url><loc>https://www.jiranios.com/delete-account</loc><priority>0.4</priority></url>
   <url><loc>https://www.jiranios.com/terms</loc><priority>0.3</priority></url>
+  <url><loc>https://www.jiranios.com/learn</loc><priority>0.7</priority></url>
+  <url><loc>https://www.jiranios.com/learn/first-day</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/make-a-sale</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/stock-and-counts</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/sell-on-credit</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/suppliers</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/staff-and-roles</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/online-shop</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/delivery-riders</loc><priority>0.5</priority></url>
+  <url><loc>https://www.jiranios.com/learn/daily-routine</loc><priority>0.5</priority></url>
 </urlset>

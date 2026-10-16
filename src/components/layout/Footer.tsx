@@ -1,3 +1,4 @@
+import { Logo } from './Logo';
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Facebook, Instagram } from 'lucide-react';
 import { footerNav } from '../../content/nav';
@@ -17,7 +18,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-6">
           <div className="col-span-2">
             <Link to="/" className="mb-4 inline-flex" aria-label="Jirani OS home">
-              <img src="/jirani-logo.png" alt="Jirani OS" className="logo-shadow h-8 w-auto" />
+              <Logo className="h-9" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-ink-muted">
               One app to run a business, shop from local businesses, or look after a property.

@@ -1,11 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-import { cloudflare } from "@cloudflare/vite-plugin";
-
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), cloudflare()],
+  plugins: [react()],
   build: {
     // Item: kept conservative — pages are already lazy-loaded via
     // React.lazy in App.tsx, which is the split that actually matters

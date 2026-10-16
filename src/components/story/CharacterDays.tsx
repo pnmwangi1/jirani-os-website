@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Figure, Motorbike, Bubble, Ground, whoColor, type Who } from './Stick';
+import { Figure, Motorbike, Bubble, Ground, Shop, whoColor, type Who } from './Stick';
 import { Reveal } from '../marketing/Reveal';
 import { SHOP_URL, APP_URL } from '../../lib/constants';
 
@@ -8,8 +8,9 @@ function WanjiruScene() {
   return (
     <svg viewBox="0 0 260 130" className="w-full" role="img" aria-label="Wanjiru browses shops near her on her phone">
       <Ground w={260} y={118} />
-      <Figure who="wanjiru" x={80} y={118} pose="phone" />
-      <Bubble k={0.6} x={165} y={84} text="3 shops reach me" />
+      <Figure who="wanjiru" x={60} y={118} pose="phone" />
+      {[140, 180, 220].map((x) => (<g key={x} transform={`translate(${x} 118) scale(0.3)`}><Shop x={0} y={0} /></g>))}
+      <Bubble k={0.6} x={170} y={70} text="3 shops reach me" />
     </svg>
   );
 }
@@ -67,15 +68,16 @@ const panels: Panel[] = [
   },
 ];
 
-export function CharacterDays() {
+export function CharacterDays({ only, heading = true }: { only?: Who[]; heading?: boolean }) {
+  const list = only ? panels.filter((p) => only.includes(p.who)) : panels;
   return (
     <div>
-      <Reveal className="mx-auto max-w-2xl text-center">
+      {heading && (<Reveal className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-extrabold text-ink md:text-4xl">Meet the three people it works for.</h2>
         <p className="mt-3 text-base text-ink-muted">Each one gets what they need, and each one makes the others&apos; day easier.</p>
-      </Reveal>
-      <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
-        {panels.map((p, i) => (
+      </Reveal>)}
+      <div className={`${heading ? 'mt-12' : ''} grid grid-cols-1 gap-6 ${list.length === 3 ? 'lg:grid-cols-3' : 'md:grid-cols-2'}`}>
+        {list.map((p, i) => (
           <Reveal key={p.who} delay={i * 0.08}>
             <div id={p.id} className="flex h-full scroll-mt-24 flex-col rounded-3xl border border-border bg-surface p-6 shadow-soft">
               {p.scene}

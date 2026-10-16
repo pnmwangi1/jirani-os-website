@@ -7,6 +7,27 @@ export interface FaqItem {
 
 export const faqs: FaqItem[] = [
   {
+    id: 'run-business',
+    category: 'Running your business',
+    question: 'What can I run on Jirani OS?',
+    answer:
+      'The till with shift sessions, stock with reorder alerts and stock counts, customer accounts with credit and aging, suppliers and purchases, staff roles, pay records and commissions, and Profit and Loss and Balance Sheet reports. Restaurants also get tables, kitchen tickets and reservations, and service businesses get bookings, jobs, quotes, laundry orders and production.',
+  },
+  {
+    id: 'payroll',
+    category: 'Running your business',
+    question: 'Does Jirani OS run payroll?',
+    answer:
+      'No. People keeps your records: pay terms, pay sheets, salary advances with instalments, leave, shifts and commissions. It does not move money or pay your staff.',
+  },
+  {
+    id: 'plus-needed',
+    category: 'Running your business',
+    question: 'Do I need Jirani Plus?',
+    answer:
+      'Jirani Start covers one branch and 3 staff with the full set of everyday tools. Plus adds barcode scanning, full accounting (ledger, trial balance, cash flow), credit limits, moving stock between branches and comparing branches, with 3 branches and 9 staff.',
+  },
+  {
     id: 'what-is-jirani',
     category: 'Getting Started',
     question: 'What exactly is Jirani OS?',

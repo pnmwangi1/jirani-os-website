@@ -27,3 +27,12 @@
 - Real shop names/images: src/content/shopShowcase.ts (images in public/shops/<slug>.jpg).
 - Re-capture app screenshots (business section uses older ones).
 - Meta tags are client-side only (SPA); pre-rendering/schema not done.
+
+## Overhaul (October 2026)
+- Home: business-led hero, "A day with Baraka" scroll story, Before/With capability grid, six guided industries, beyond-the-till (shopper, rider), property strip, plans snapshot.
+- Features: eight capability sections with a jump menu (content/capabilities.ts). Industries: all 15 illustrated (content/industryProfiles.ts); six are "Guided setup", the rest "Runs on Goods & Services".
+- Solutions: by job, Before/With. Pricing: term discounts (10% for 6 months, 20% for 12, from the billing code) and Start vs Plus table.
+- Learn hub: /learn and /learn/:slug from content/learn.ts (written from be/content/training-manual.md).
+- People/HR is described as records (pay sheets, advances, leave), never "payroll".
+- Home shows four hand-built sample screens (components/story/SampleScreens.tsx), labelled "Sample data". Not done yet: real screenshots of more app screens; Shops/Riders/Delivery/Properties/Blog/Careers still use the earlier layout.
+- Run `npm install`, `npm run build`, then `npx wrangler deploy`. `tsc` could not run in the build sandbox.

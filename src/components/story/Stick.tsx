@@ -3,16 +3,19 @@ import type { ReactNode } from 'react';
 // A tiny stick-figure kit. Everything is inline SVG, themed with the site's colour tokens, no images.
 // Angles are in degrees from straight down, clockwise: 0 = hanging, 90 = pointing right, 180 = straight up.
 
-export type Who = 'wanjiru' | 'baraka' | 'otieno' | 'njeri';
-export type Pose = 'stand' | 'phone' | 'wave' | 'cheer' | 'carry' | 'ride' | 'think';
+export type Who = 'wanjiru' | 'baraka' | 'otieno' | 'njeri' | 'staff' | 'supplier';
+export type Pose = 'stand' | 'phone' | 'wave' | 'cheer' | 'carry' | 'ride' | 'think' | 'count' | 'tablet' | 'serve' | 'point' | 'stress';
+export type Mood = 'happy' | 'flat' | 'sad' | 'wow';
 
 export const whoColor: Record<Who, string> = {
   wanjiru: 'rgb(var(--color-info))',
   baraka: 'rgb(var(--color-tenant))',
   otieno: 'rgb(var(--color-primary))',
   njeri: 'rgb(var(--color-manager))',
+  staff: 'rgb(var(--color-accountant))',
+  supplier: 'rgb(var(--color-contractor))',
 };
-export const whoName: Record<Who, string> = { wanjiru: 'Wanjiru', baraka: 'Baraka', otieno: 'Otieno', njeri: 'Mama Njeri' };
+export const whoName: Record<Who, string> = { wanjiru: 'Wanjiru', baraka: 'Baraka', otieno: 'Otieno', njeri: 'Mama Njeri', staff: 'Staff', supplier: 'Supplier' };
 
 const poses: Record<Pose, [number, number, number, number]> = {
   stand: [-14, 14, -8, 8],
@@ -22,6 +25,11 @@ const poses: Record<Pose, [number, number, number, number]> = {
   carry: [80, 70, -8, 8],
   ride: [78, 78, 62, 28],
   think: [-14, 135, -8, 8],
+  count: [62, 74, -8, 8],
+  tablet: [52, 64, -8, 8],
+  serve: [-14, 86, -8, 8],
+  point: [-14, 118, -8, 8],
+  stress: [-150, 150, -12, 12],
 };
 
 const pt = (x: number, y: number, len: number, deg: number) => {
@@ -36,10 +44,11 @@ interface FigureProps {
   pose?: Pose;
   flip?: boolean;
   scale?: number;
+  mood?: Mood;
   children?: ReactNode; // props drawn in figure space (0,0 = feet), e.g. a parcel
 }
 
-export function Figure({ who, x, y, pose = 'stand', flip = false, scale = 1, children }: FigureProps) {
+export function Figure({ who, x, y, pose = 'stand', flip = false, scale = 1, mood = 'happy', children }: FigureProps) {
   const c = whoColor[who];
   const [aL, aR, lL, lR] = poses[pose];
   const sh: [number, number] = [0, -52];
@@ -57,6 +66,14 @@ export function Figure({ who, x, y, pose = 'stand', flip = false, scale = 1, chi
       <line x1={hip[0]} y1={hip[1]} x2={fL[0]} y2={fL[1]} {...sw} />
       <line x1={hip[0]} y1={hip[1]} x2={fR[0]} y2={fR[1]} {...sw} />
       <circle cx={0} cy={-67} r={9} fill="rgb(var(--color-bg))" stroke={c} strokeWidth={3.5} />
+      <g fill="rgb(var(--color-ink))" stroke="none">
+        <circle cx={-3.2} cy={-69} r={1.5} /><circle cx={3.2} cy={-69} r={1.5} />
+      </g>
+      {mood === 'happy' && <path d="M-3.6 -63.6 q3.6 3.6 7.2 0" fill="none" stroke="rgb(var(--color-ink))" strokeWidth={1.4} strokeLinecap="round" />}
+      {mood === 'flat' && <line x1={-3} y1={-63} x2={3} y2={-63} stroke="rgb(var(--color-ink))" strokeWidth={1.4} strokeLinecap="round" />}
+      {mood === 'sad' && <path d="M-3.6 -61.8 q3.6 -3.6 7.2 0" fill="none" stroke="rgb(var(--color-ink))" strokeWidth={1.4} strokeLinecap="round" />}
+      {mood === 'wow' && <circle cx={0} cy={-62.8} r={2} fill="none" stroke="rgb(var(--color-ink))" strokeWidth={1.3} />}
+      {pose === 'stress' && <g fill="rgb(var(--color-info))" opacity={0.85}><path d="M12 -78 q3 5 0 7 q-3 -2 0 -7z" /><path d="M-13 -74 q3 5 0 7 q-3 -2 0 -7z" /></g>}
       {who === 'wanjiru' && <circle cx={-2} cy={-79} r={4.5} fill={c} />}
       {who === 'baraka' && <rect x={-6} y={-49} width={12} height={15} rx={2} fill={c} opacity={0.85} />}
       {who === 'otieno' && <path d="M-10 -69 a10 10 0 0 1 20 0 z" fill={c} />}

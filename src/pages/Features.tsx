@@ -5,80 +5,81 @@ import { Reveal } from '../components/marketing/Reveal';
 import { FeatureCard } from '../components/marketing/FeatureCard';
 import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { PhoneFrame } from '../components/marketing/PhoneFrame';
-import {
-  MobileAppIllustration,
-  CommerceIllustration,
-  InventoryIllustration,
-  AccountingIllustration,
-  AutomationIllustration,
-} from '../components/marketing/illustrations';
+import { GroupScene } from '../components/story/GroupScene';
+import { capabilities } from '../content/capabilities';
 import { featureGroups } from '../content/features';
-import { appScreenshots } from '../content/screenshots';
+import { CheckCircle2 } from 'lucide-react';
 
-// Item: one illustration per engine group, matched to what that group
-// actually covers - a direct, visual anchor for each section rather
-// than five identical-feeling text blocks in a row.
-const groupIllustrations = [MobileAppIllustration, CommerceIllustration, InventoryIllustration, AccountingIllustration, AutomationIllustration];
+const moreIds = ['shop-delivery', 'riders', 'virtual-properties'];
 
 export default function Features() {
   useSeo({
     title: 'Features',
-    description: 'Every major capability in Jirani OS, grouped by job: your shop and delivery, sharing your shop link, selling, inventory, accounting, staff and virtual properties.',
+    description: 'Everything Jirani OS does for your business: selling, stock, customers and credit, suppliers, people, money and reports, growth and branches, plus your online shop, delivery and virtual properties.',
     path: '/features',
   });
+  const more = featureGroups.filter((g) => moreIds.includes(g.id));
 
   return (
     <>
-      <Section className="relative overflow-hidden pb-12">
+      <Section className="relative overflow-hidden pb-8">
         <BackgroundGlow variant="hero" />
-        <div className="container grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.3fr_1fr]">
-          <Reveal className="text-center lg:text-left">
+        <div className="container">
+          <Reveal className="mx-auto max-w-2xl text-center">
             <Badge tone="primary">Features</Badge>
-            <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">From your shop to their doorstep.</h1>
+            <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">Everything it takes to run the business.</h1>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">
-              Every business gets an online shop and delivery that dispatches itself. Below is
-              everything Jirani OS does, grouped by what you are trying to get done.
+              From the first sale of the morning to the profit figure at night. Jump to what you need.
             </p>
           </Reveal>
-          <Reveal delay={0.1} className="hidden justify-center gap-4 lg:flex">
-            <PhoneFrame src={appScreenshots[0].src} alt={appScreenshots[0].alt} caption={appScreenshots[0].caption} className="mt-8" />
-            <PhoneFrame src={appScreenshots[3].src} alt={appScreenshots[3].alt} caption={appScreenshots[3].caption} />
-          </Reveal>
+          <nav aria-label="Feature groups" className="mx-auto mt-8 flex max-w-3xl flex-wrap justify-center gap-2">
+            {capabilities.map((c) => (
+              <a key={c.id} href={`#${c.id}`} className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary">{c.title}</a>
+            ))}
+            <a href="#more" className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary">Shop, delivery and properties</a>
+          </nav>
         </div>
       </Section>
 
-      {featureGroups.map((group, gi) => {
-        const Illustration = groupIllustrations[gi % groupIllustrations.length];
-        return (
-          <Section key={group.id} className={`relative overflow-hidden pt-0 pb-16 ${gi % 2 === 1 ? 'border-t border-border bg-surface' : ''}`}>
-            {gi % 2 === 1 && <BackgroundGlow variant="section" />}
-            <div className="container">
-              <div className="mb-8 grid grid-cols-1 items-center gap-6 sm:grid-cols-[1fr_auto]">
-                <Reveal className="max-w-2xl">
-                  <h2 className="text-2xl font-extrabold text-ink md:text-3xl">{group.title}</h2>
-                  <p className="mt-2 text-sm text-ink-muted">{group.intro}</p>
-                </Reveal>
-                <Reveal delay={0.08} className="hidden sm:block">
-                  <Illustration className="h-28 w-40" />
-                </Reveal>
-              </div>
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {group.features.map((f, i) => (
-                  <Reveal key={f.title} delay={i * 0.05}>
-                    <FeatureCard {...f} />
-                  </Reveal>
+      {capabilities.map((c, i) => (
+        <Section key={c.id} className={`scroll-mt-20 py-12 ${i % 2 === 0 ? 'border-t border-border bg-surface' : ''}`}>
+          <div id={c.id} className="container grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+            <Reveal className={i % 2 === 1 ? 'lg:order-2' : ''}>
+              <div className="overflow-hidden rounded-2xl border border-border bg-primary-light/30 p-3"><GroupScene kind={c.kind} after /></div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <h2 className="text-2xl font-extrabold text-ink md:text-3xl">{c.title}</h2>
+              <p className="mt-2 text-base text-ink-muted">{c.withJirani}</p>
+              <ul className="mt-5 space-y-2.5">
+                {c.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-ink"><CheckCircle2 size={16} className="mt-0.5 flex-shrink-0 text-primary" /><span>{b}</span></li>
                 ))}
-              </div>
+                {c.plus?.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-sm text-ink"><CheckCircle2 size={16} className="mt-0.5 flex-shrink-0 text-primary" /><span>{b} <Badge tone="info">Plus</Badge></span></li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </Section>
+      ))}
+
+      <div id="more" />
+      {more.map((group) => (
+        <Section key={group.id} className="border-t border-border py-12">
+          <div className="container">
+            <Reveal className="mb-8 max-w-2xl">
+              <h2 className="text-2xl font-extrabold text-ink md:text-3xl">{group.title}</h2>
+              <p className="mt-2 text-sm text-ink-muted">{group.intro}</p>
+            </Reveal>
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {group.features.map((f, i) => (<Reveal key={f.title} delay={i * 0.05}><FeatureCard {...f} /></Reveal>))}
             </div>
-          </Section>
-        );
-      })}
+          </div>
+        </Section>
+      ))}
 
       <Section className="border-t border-border bg-surface">
-        <div className="container">
-          <CTASection />
-        </div>
+        <div className="container"><CTASection /></div>
       </Section>
     </>
   );

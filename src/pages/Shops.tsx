@@ -8,6 +8,8 @@ import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
 import { CTASection } from '../components/marketing/CTASection';
 import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { FeaturedShops } from '../components/marketing/FeaturedShops';
+import { CharacterDays } from '../components/story/CharacterDays';
+import { GroupScene } from '../components/story/GroupScene';
 import QRCode from 'react-qr-code';
 import { APP_URL, PLAY_STORE_URL, SHOP_URL } from '../lib/constants';
 import { useSession } from '../lib/useSession';
@@ -81,6 +83,7 @@ export default function Shops() {
               </Reveal>
             ))}
           </div>
+          <div className="mx-auto mt-10 max-w-2xl"><CharacterDays only={['wanjiru']} heading={false} /></div>
         </div>
       </Section>
 
@@ -107,6 +110,7 @@ export default function Shops() {
             <h2 className="mt-4 text-3xl font-extrabold text-ink md:text-4xl">Get your shop link</h2>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">Your Jirani shop is also a web page you can share anywhere. No app download needed to browse.</p>
           </Reveal>
+          <Reveal className="mx-auto mt-8 max-w-xl"><div className="rounded-2xl border border-border bg-primary-light/30 p-3"><GroupScene kind="grow" after /></div></Reveal>
           <div className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
             {ownerPoints.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.08}>

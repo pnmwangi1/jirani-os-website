@@ -1,3 +1,4 @@
+import { Logo } from './Logo';
 import { useState, useEffect } from 'react';
 import { Link, NavLink as RouterNavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Smartphone } from 'lucide-react';
@@ -23,7 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="container flex h-18 items-center justify-between py-3">
         <Link to="/" className="flex items-center gap-2" aria-label="Jirani OS home">
-          <img src="/jirani-logo.png" alt="Jirani OS" className="logo-shadow h-8 w-auto" />
+          <Logo className="h-9" />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">

@@ -26,7 +26,7 @@ const pillars = [
   {
     icon: Lock,
     title: 'Role-based permissions',
-    body: 'Every person in your organization is assigned a role — owner, manager, accountant, cashier, rider, and more — that determines exactly what they can see and do. A cashier cannot view payroll; a rider cannot edit accounting entries. Permissions are enforced on every request, not just hidden in the interface.',
+    body: 'Every person in your organization is assigned a role — owner, manager, accountant, cashier, rider, and more — that determines exactly what they can see and do. A cashier cannot see staff pay records; a rider cannot edit accounting entries. Permissions are enforced on every request, not just hidden in the interface.',
   },
   {
     icon: History,
