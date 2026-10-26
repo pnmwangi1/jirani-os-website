@@ -65,6 +65,13 @@ export default function Refer() {
   // their phone.
   const pageUrl = typeof window !== 'undefined' ? window.location.href : `https://www.jiranios.com/r/${normalizedCode}`;
 
+  // "Open Jirani": opens the installed app on this referral (Android Chrome / Samsung Internet); the app stores the code. If the app is
+  // not installed the browser falls back to the Play Store with the referral attached. Works even when App Links are not verified.
+  const playWithReferrer = normalizedCode ? `${PLAY_STORE_URL}${PLAY_STORE_URL.includes('?') ? '&' : '?'}referrer=${encodeURIComponent(normalizedCode)}` : PLAY_STORE_URL;
+  const openAppUrl = normalizedCode
+    ? `intent://jiranios.com/r/${encodeURIComponent(normalizedCode)}#Intent;scheme=https;package=com.jiranios.app;S.browser_fallback_url=${encodeURIComponent(playWithReferrer)};end`
+    : APP_URL;
+
   return (
     <Section>
       <div className="container">
@@ -123,7 +130,7 @@ export default function Refer() {
             >
               <Download size={18} /> Download Jirani
             </AnchorButton>
-            <AnchorButton href={APP_URL} target="_blank" rel="noopener noreferrer" variant="outline" size="lg">
+            <AnchorButton href={openAppUrl} variant="outline" size="lg">
               Already have it? Open Jirani
             </AnchorButton>
           </div>
