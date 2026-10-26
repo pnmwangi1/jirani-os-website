@@ -22,6 +22,9 @@ export default function Duel() {
       .catch(() => setMissing(true));
   }, [code]);
   // The Play Store keeps this value and the app reads it on first open, so the challenge is waiting after signup.
+  // Opens the installed app straight from this page (Android Chrome / Samsung Internet); if the app is not installed the browser
+  // falls back to the Play Store. Works even when App Links are not verified, because it names the app's package.
+  const openApp = `intent://jiranios.com/d/${encodeURIComponent(String(code).toUpperCase())}#Intent;scheme=https;package=com.jiranios.app;S.browser_fallback_url=${encodeURIComponent(`${PLAY}${PLAY.includes('?') ? '&' : '?'}referrer=${encodeURIComponent(`duel_${String(code).toUpperCase()}`)}`)};end`;
   const store = `${PLAY}${PLAY.includes('?') ? '&' : '?'}referrer=${encodeURIComponent(`duel_${String(code).toUpperCase()}`)}`;
   const line = missing ? 'This challenge link is not valid any more.'
     : !p ? 'Loading the challenge…'
@@ -36,8 +39,9 @@ export default function Duel() {
       <p style={{ fontSize: 14, color: '#555' }}>Same puzzle, one try each, best result wins. Just for fun: no money or prizes.</p>
       {(!p || p.open) && !missing && (
         <>
-          <a href={store} style={{ display: 'block', margin: '24px 0 10px', padding: '14px 18px', borderRadius: 12, background: '#4F46E5', color: '#fff', fontWeight: 700, textDecoration: 'none' }}>Get the Jirani app and play</a>
-          <p style={{ fontSize: 13, color: '#555' }}>Already have the app? Open this link on your phone and it opens in the app.</p>
+          <a href={openApp} data-testid="open-app" style={{ display: 'block', margin: '24px 0 10px', padding: '14px 18px', borderRadius: 12, background: '#4F46E5', color: '#fff', fontWeight: 700, textDecoration: 'none' }}>Open in the Jirani app</a>
+          <a href={store} style={{ display: 'block', margin: '0 0 10px', padding: '12px 18px', borderRadius: 12, border: '1px solid #4F46E5', color: '#4F46E5', fontWeight: 700, textDecoration: 'none' }}>Don't have it? Get the app</a>
+          <p style={{ fontSize: 13, color: '#555' }}>Tap “Open in the Jirani app”. If the app is not installed you will be taken to the Play Store, and your challenge will be waiting after you sign up.</p>
         </>
       )}
     </main>
