@@ -29,6 +29,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Learn = lazy(() => import('./pages/Learn'));
 const Refer = lazy(() => import('./pages/Refer'));
+const Duel = lazy(() => import('./pages/Duel'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 function ScrollToTop() {
@@ -83,6 +84,8 @@ export default function App() {
                   own top-level route, not nested under any existing
                   page, matching how every other route here works. */}
               <Route path="/r/:code" element={<Refer />} />
+              {/* Duel invite links (https://jiranios.com/d/CODE): the page shown when the app is not installed. */}
+              <Route path="/d/:code" element={<Duel />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

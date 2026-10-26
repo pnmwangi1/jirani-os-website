@@ -3,9 +3,10 @@
 // (App Links) and this page never shows. Shows only the challenger's nickname and the game; nothing else is public.
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { API_BASE_URL, PLAY_STORE_URL } from '../lib/constants';
 
-const API = (import.meta as any).env?.VITE_API_URL || 'https://api.jiranios.com/api'; // TODO: use the same API base Refer.tsx uses
-const PLAY = 'https://play.google.com/store/apps/details?id=com.jiranios.app';
+const API = API_BASE_URL;
+const PLAY = PLAY_STORE_URL;
 
 type Preview = { game: string; game_name: string; difficulty: string | null; best_of: number; challenger: string; open: boolean; status: string };
 const EMOJI: Record<string, string> = { word: '🔤', duka: '🏪', sudoku: '🔢', afterglow: '✨' };
@@ -21,7 +22,7 @@ export default function Duel() {
       .catch(() => setMissing(true));
   }, [code]);
   // The Play Store keeps this value and the app reads it on first open, so the challenge is waiting after signup.
-  const store = `${PLAY}&referrer=${encodeURIComponent(`duel_${String(code).toUpperCase()}`)}`;
+  const store = `${PLAY}${PLAY.includes('?') ? '&' : '?'}referrer=${encodeURIComponent(`duel_${String(code).toUpperCase()}`)}`;
   const line = missing ? 'This challenge link is not valid any more.'
     : !p ? 'Loading the challenge…'
     : p.open ? `${p.challenger} challenged you to ${p.game_name}${p.difficulty ? ` (${p.difficulty})` : ''}${p.best_of === 3 ? ', best of 3' : ''}.`
