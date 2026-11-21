@@ -14,7 +14,7 @@ export function CTASection({
 }: CTASectionProps) {
   return (
     <Reveal>
-      <div className="rounded-3xl bg-primary px-8 py-14 text-center md:px-16 md:py-20">
+      <div className="rounded-3xl bg-action px-8 py-14 text-center md:px-16 md:py-20">
         <h2 className="mx-auto max-w-xl text-3xl font-extrabold text-white md:text-4xl">{title}</h2>
         <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/75">{subtitle}</p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

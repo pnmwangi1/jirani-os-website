@@ -3,6 +3,7 @@
 // (App Links) and this page never shows. Shows only the challenger's nickname and the game; nothing else is public.
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSeo } from '../lib/seo';
 import { API_BASE_URL, PLAY_STORE_URL } from '../lib/constants';
 
 const API = API_BASE_URL;
@@ -13,6 +14,7 @@ const EMOJI: Record<string, string> = { word: '🔤', duka: '🏪', sudoku: '�
 
 export default function Duel() {
   const { code = '' } = useParams();
+  useSeo({ title: 'A friend challenged you', description: 'Play a Jirani Games duel.', path: `/d/${code}`, noindex: true });
   const [p, setP] = useState<Preview | null>(null);
   const [missing, setMissing] = useState(false);
   useEffect(() => {

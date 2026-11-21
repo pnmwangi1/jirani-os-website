@@ -45,7 +45,7 @@ export default function Riders() {
             <h1 className="mt-4 text-4xl font-extrabold text-ink md:text-5xl">Ride on your own terms.</h1>
             <p className="mt-4 text-base leading-relaxed text-ink-muted">Otieno sets his own rate, sees what he will earn before he says yes, and works with the shops and customers who already trust him.</p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-              <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="riders-hero" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-soft hover:bg-primary/90">Become a rider <ArrowRight size={16} /></a>
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="riders-hero" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-7 py-3.5 text-base font-semibold text-white shadow-soft hover:bg-action/90">Become a rider <ArrowRight size={16} /></a>
               <a href="#rate" className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3.5 text-base font-semibold text-ink hover:bg-surface">Try the rate</a>
             </div>
             <p className="mt-3 text-xs text-ink-muted">Choose Rider when you create your account.</p>

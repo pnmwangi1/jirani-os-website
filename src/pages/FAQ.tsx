@@ -1,4 +1,4 @@
-import { useSeo } from '../lib/seo';
+import { useSeo, useJsonLd } from '../lib/seo';
 import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
 import { Accordion } from '../components/ui/Accordion';
@@ -13,6 +13,11 @@ export default function FAQ() {
     title: 'FAQ',
     description: 'Answers to common questions about Jirani OS — getting started, pricing, security, and support.',
     path: '/faq',
+  });
+  useJsonLd('faq', {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
   });
 
   return (

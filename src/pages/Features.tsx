@@ -5,8 +5,10 @@ import { Reveal } from '../components/marketing/Reveal';
 import { FeatureCard } from '../components/marketing/FeatureCard';
 import { CTASection } from '../components/marketing/CTASection';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
+import { PhoneFrame } from '../components/marketing/PhoneFrame';
 import { GroupScene } from '../components/story/GroupScene';
 import { capabilities } from '../content/capabilities';
+import { capabilityScreens } from '../content/realScreens';
 import { featureGroups } from '../content/features';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -45,7 +47,16 @@ export default function Features() {
         <Section key={c.id} className={`scroll-mt-20 py-12 ${i % 2 === 0 ? 'border-t border-border bg-surface' : ''}`}>
           <div id={c.id} className="container grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
             <Reveal className={i % 2 === 1 ? 'lg:order-2' : ''}>
-              <div className="overflow-hidden rounded-2xl border border-border bg-primary-light/30 p-3"><GroupScene kind={c.kind} after /></div>
+              {capabilityScreens[c.id] ? (
+                <div className="flex flex-col items-center gap-4 overflow-hidden rounded-2xl border border-border bg-primary-light/30 p-3 sm:flex-row sm:gap-3">
+                  <div className="w-full min-w-0 sm:flex-1"><GroupScene kind={c.kind} after /></div>
+                  <div className="w-[190px] shrink-0 sm:w-[38%] sm:max-w-[190px]">
+                    <PhoneFrame src={`/app/${capabilityScreens[c.id].id}.webp`} alt={capabilityScreens[c.id].alt} />
+                  </div>
+                </div>
+              ) : (
+                <div className="overflow-hidden rounded-2xl border border-border bg-primary-light/30 p-3"><GroupScene kind={c.kind} after /></div>
+              )}
             </Reveal>
             <Reveal delay={0.08}>
               <h2 className="text-2xl font-extrabold text-ink md:text-3xl">{c.title}</h2>

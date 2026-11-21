@@ -1,4 +1,3 @@
-@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=general-sans@400,500,600,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,10 +10,11 @@
   --color-bg: 250 247 240;              /* #FAF7F0 */
   --color-surface: 255 255 255;         /* #FFFFFF */
   --color-ink: 28 43 36;                /* #1C2B24 */
-  --color-ink-muted: 138 150 144;       /* #8A9690 */
+  --color-ink-muted: 95 107 101;        /* #5F6B65 */
   --color-border: 233 226 211;          /* #E9E2D3 */
   --color-primary: 31 77 61;            /* #1F4D3D */
   --color-primary-light: 226 235 228;   /* #E2EBE4 */
+  --color-action: 31 77 61;             /* fill behind white text: buttons and panels */
   --color-tenant: 224 146 47;           /* #E0922F */
   --color-tenant-light: 251 240 220;    /* #FBF0DC */
   --color-manager: 124 58 237;          /* #7C3AED */
@@ -25,7 +25,7 @@
   --color-caretaker-light: 209 250 229; /* #D1FAE5 */
   --color-contractor: 193 87 43;        /* #C1572B */
   --color-contractor-light: 248 231 221;/* #F8E7DD */
-  --color-success: 58 140 94;           /* #3A8C5E */
+  --color-success: 38 115 74;           /* #26734A */
   --color-success-light: 227 241 232;   /* #E3F1E8 */
   --color-warning: 217 119 6;           /* #D97706 */
   --color-warning-light: 254 243 199;   /* #FEF3C7 */
@@ -43,8 +43,9 @@
   --color-ink: 240 237 231;             /* #F0EDE7 */
   --color-ink-muted: 155 150 140;       /* #9B968C */
   --color-border: 74 69 60;              /* was #38352F - too close to both bg (#1A1815) and surface (#242220) to actually separate them; lightened so surface-on-background elements (cards, the hero's floating tool chips, dividers) read as distinct shapes rather than relying on near-invisible edges */
-  --color-primary: 74 155 127;          /* #4A9B7F */
+  --color-primary: 96 180 152;          /* #60B498 */
   --color-primary-light: 30 49 41;      /* #1E3129 */
+  --color-action: 24 95 72;             /* darker than primary so white text reads in the dark theme */
   --color-tenant: 240 169 74;           /* #F0A94A */
   --color-tenant-light: 61 46 19;       /* #3D2E13 */
   --color-manager: 167 139 250;         /* #A78BFA */
@@ -64,6 +65,19 @@
   --color-info: 96 165 250;             /* #60A5FA */
   --color-info-light: 19 42 68;         /* #132A44 */
   --logo-shadow: drop-shadow(0 1px 2px rgba(240,237,231,0.35));
+}
+
+/* Business pages and sections use the app's purple, shoppers and everything else stay green. Components keep
+   using primary and action; a scope swaps what those mean. */
+.theme-business {
+  --color-primary: 107 33 168;          /* #6B21A8 */
+  --color-primary-light: 243 232 255;   /* #F3E8FF */
+  --color-action: 107 33 168;
+}
+.dark .theme-business {
+  --color-primary: 167 139 250;         /* #A78BFA */
+  --color-primary-light: 44 35 64;      /* #2C2340 */
+  --color-action: 109 40 217;           /* #6D28D9 */
 }
 
 * {
@@ -101,7 +115,10 @@ h1, h2, h3, h4 {
   outline: 2px solid rgb(var(--color-primary));
   outline-offset: 2px;
   border-radius: 4px;
+  /* a halo in the page colour keeps the ring visible on dark green and purple fills */
+  box-shadow: 0 0 0 4px rgb(var(--color-bg));
 }
+main:focus-visible { box-shadow: none; }
 
 .logo-shadow {
   filter: var(--logo-shadow);

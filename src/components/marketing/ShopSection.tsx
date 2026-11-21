@@ -36,7 +36,7 @@ export function ShopSection() {
         </ul>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="shop-section-trial" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-primary/90">
+          <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="shop-section-trial" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-6 py-3 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-action/90">
             Start your 7-day free trial <ArrowRight size={15} />
           </a>
           <a href={SHOP_URL} data-cta="shop-section-browse" className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-surface">

@@ -70,7 +70,7 @@ export function ServiceProviderSection({ posShot }: Props) {
 
       <Reveal delay={0.15}>
         <div className="relative mx-auto w-full max-w-sm">
-          <img
+          <img loading="lazy" decoding="async"
             src="/photography/service-provider-butcher.jpg"
             alt="A Kenyan business owner using his phone to run his shop"
             className="absolute -left-2 top-6 hidden h-56 w-40 rounded-2xl object-cover shadow-soft-lg sm:block md:h-64 md:w-48"
@@ -78,7 +78,7 @@ export function ServiceProviderSection({ posShot }: Props) {
           <div className="relative sm:ml-16 md:ml-20">
             <PhoneFrame src={posShot.src} alt={posShot.alt} className="max-w-[260px]" />
             <div className="absolute -right-3 top-8 flex items-center gap-2 rounded-2xl border border-primary/30 bg-surface px-3 py-2.5 shadow-soft-lg sm:-right-10">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-action">
                 <ScanLine size={15} className="text-white" />
               </div>
               <div>

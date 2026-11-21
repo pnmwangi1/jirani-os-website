@@ -37,7 +37,7 @@ export function FollowOrder({ bare = false }: { bare?: boolean }) {
           {orderSteps.map((s, i) => (
             <li key={s.title} ref={(el) => { refs.current[i] = el; }} data-i={i} className={`rounded-3xl border bg-surface p-5 transition-colors ${i === active ? 'lg:border-primary' : 'border-border'}`}>
               <div className="lg:hidden"><OrderScene step={i} className="mb-3 w-full" /></div>
-              <p className="text-xs font-bold uppercase tracking-wider" style={{ color: whoColor[s.who] }}>{i + 1} · {whoName[s.who]}</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-ink"><span style={{ color: whoColor[s.who] }} aria-hidden>●</span> {i + 1} · {whoName[s.who]}</p>
               <h3 className="mt-1 font-display text-xl font-bold text-ink">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-muted">{s.body}</p>
             </li>

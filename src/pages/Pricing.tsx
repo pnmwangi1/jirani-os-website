@@ -42,7 +42,7 @@ const plans: Plan[] = [
     id: 'start',
     name: 'Jirani Start',
     price: 'KES 1,000',
-    tagline: 'Everything you need to successfully run one business location — including a shop your customers can order from.',
+    tagline: 'Everything you need to run one business location — including a shop your customers can order from.',
     perfectFor: 'Single shops, mini marts, pharmacies, salons, hardware stores, restaurants, water refill businesses and growing SMEs.',
     included: '1 branch included · your shop is live from day one',
     groups: [
@@ -116,24 +116,24 @@ export default function Pricing() {
               <div
                 className={`relative flex h-full flex-col rounded-3xl border p-8 ${
                   plan.featured
-                    ? 'border-primary bg-primary text-white shadow-soft-lg'
+                    ? 'border-primary bg-action text-white shadow-soft-lg'
                     : 'border-border bg-surface shadow-soft'
                 }`}
               >
                 {plan.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white px-3 py-1 text-xs font-bold text-primary shadow-soft">
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-white px-3 py-1 text-xs font-bold text-action shadow-soft">
                     Most popular
                   </span>
                 )}
                 <h2 className={`font-display text-xl font-bold ${plan.featured ? 'text-white' : 'text-ink'}`}>{plan.name}</h2>
-                <p className={`mt-1.5 text-sm leading-relaxed ${plan.featured ? 'text-white/80' : 'text-ink-muted'}`}>{plan.tagline}</p>
+                <p className={`mt-1.5 text-sm leading-relaxed ${plan.featured ? 'text-white/90' : 'text-ink-muted'}`}>{plan.tagline}</p>
                 <p className="mt-6">
                   <span className={`font-display text-4xl font-extrabold ${plan.featured ? 'text-white' : 'text-ink'}`}>{plan.price}</span>
-                  <span className={`text-sm ${plan.featured ? 'text-white/70' : 'text-ink-muted'}`}> /month</span>
+                  <span className={`text-sm ${plan.featured ? 'text-white/90' : 'text-ink-muted'}`}> /month</span>
                 </p>
-                <p className={`mt-1.5 text-xs font-semibold ${plan.featured ? 'text-white/75' : 'text-ink-muted'}`}>{plan.included}</p>
+                <p className={`mt-1.5 text-xs font-semibold ${plan.featured ? 'text-white/90' : 'text-ink-muted'}`}>{plan.included}</p>
 
-                <div className={`mt-3 rounded-xl px-3 py-2.5 text-xs leading-relaxed ${plan.featured ? 'bg-white/10 text-white/85' : 'bg-bg text-ink-muted'}`}>
+                <div className={`mt-3 rounded-xl px-3 py-2.5 text-xs leading-relaxed ${plan.featured ? 'bg-white/10 text-white' : 'bg-bg text-ink-muted'}`}>
                   <span className="font-semibold">Perfect for:</span> {plan.perfectFor}
                 </div>
 
@@ -142,7 +142,7 @@ export default function Pricing() {
                 <div className="mt-6 flex-1 space-y-4">
                   {plan.groups.map((group) => (
                     <div key={group.label}>
-                      <p className={`mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide ${plan.featured ? 'text-white/70' : 'text-ink-muted'}`}>
+                      <p className={`mb-1.5 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide ${plan.featured ? 'text-white/90' : 'text-ink-muted'}`}>
                         <group.icon size={13} /> {group.label}
                       </p>
                       <ul className="space-y-1.5">

@@ -17,7 +17,7 @@ export function IndustryPicker() {
       <div className="mt-8 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Kind of business">
         {guidedIndustries.map((g, k) => (
           <button key={g.id} role="tab" aria-selected={k === i} onClick={() => setI(k)}
-            className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${k === i ? 'border-primary bg-primary text-white shadow-soft' : 'border-border bg-surface text-ink hover:border-primary hover:text-primary'}`}>
+            className={`rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${k === i ? 'border-primary bg-action text-white shadow-soft' : 'border-border bg-surface text-ink hover:border-primary hover:text-primary'}`}>
             {g.title}
           </button>
         ))}

@@ -35,7 +35,7 @@ export default function Properties() {
               Set up from a Jirani <strong>customer account</strong>. Residents and staff join free by phone invite.
             </p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-              <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="properties-hero-setup" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-soft transition-colors hover:bg-primary/90">
+              <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="properties-hero-setup" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-7 py-3.5 text-base font-semibold text-white shadow-soft transition-colors hover:bg-action/90">
                 Set up a property <ArrowRight size={16} />
               </a>
               <a href="#story" className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:bg-surface">

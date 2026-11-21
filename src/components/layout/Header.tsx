@@ -20,6 +20,14 @@ export function Header() {
     setMobileOpen(false);
   }, [location.pathname]);
 
+  // Escape closes the mobile menu.
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMobileOpen(false);
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [mobileOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <div className="container flex h-18 items-center justify-between py-3">
@@ -89,7 +97,7 @@ export function Header() {
           className="flex h-10 w-10 items-center justify-center rounded-full text-ink lg:hidden"
           onClick={() => setMobileOpen((o) => !o)}
           aria-expanded={mobileOpen}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>

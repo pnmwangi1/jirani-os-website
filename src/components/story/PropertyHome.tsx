@@ -25,7 +25,7 @@ export function PropertyHome() {
           </div>
         </div>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link to="/properties" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white shadow-soft hover:bg-primary/90">
+          <Link to="/properties" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-7 py-3 text-sm font-semibold text-white shadow-soft hover:bg-action/90">
             See everything it does <ArrowRight size={15} />
           </Link>
           <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="property-home-setup" className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3 text-sm font-semibold text-ink hover:bg-surface">

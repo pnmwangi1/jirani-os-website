@@ -36,7 +36,7 @@ export function Accordion({ items, defaultOpenId }: AccordionProps) {
               className="grid transition-all duration-300 ease-in-out"
               style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
             >
-              <div className="overflow-hidden">
+              <div className="overflow-hidden" aria-hidden={!isOpen}>
                 <p className="px-6 pb-5 text-sm leading-relaxed text-ink-muted">{item.answer}</p>
               </div>
             </div>

@@ -1,5 +1,6 @@
-import { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect, useRef } from 'react';
+import { MotionConfig } from 'framer-motion';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { PageLayout } from './components/layout/PageLayout';
 import { PageLoader } from './components/layout/PageLoader';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -24,8 +25,10 @@ const Privacy = lazy(() => import('./pages/Privacy'));
 const DeleteAccount = lazy(() => import('./pages/DeleteAccount'));
 const Terms = lazy(() => import('./pages/Terms'));
 const Security = lazy(() => import('./pages/Security'));
-const Careers = lazy(() => import('./pages/Careers'));
-const Blog = lazy(() => import('./pages/Blog'));
+const WhatsNew = lazy(() => import('./pages/WhatsNew'));
+const Games = lazy(() => import('./pages/Games'));
+const Budget = lazy(() => import('./pages/Budget'));
+const Tables = lazy(() => import('./pages/Tables'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const Learn = lazy(() => import('./pages/Learn'));
 const Refer = lazy(() => import('./pages/Refer'));
@@ -34,6 +37,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
+  const first = useRef(true);
   useEffect(() => {
     // A link like /#properties scrolls to that section; any other navigation starts at the top.
     if (hash) {
@@ -41,6 +45,9 @@ function ScrollToTop() {
       if (el) { el.scrollIntoView(); return; }
     }
     window.scrollTo(0, 0);
+    // After a page change (not the first load), move keyboard and screen-reader focus to the new page.
+    if (!first.current) document.getElementById('main')?.focus({ preventScroll: true });
+    first.current = false;
   }, [pathname, hash]);
   return null;
 }
@@ -52,7 +59,7 @@ function CtaTracking() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <MotionConfig reducedMotion="user"><BrowserRouter>
       <ErrorBoundary>
         <ScrollToTop />
         <CtaTracking />
@@ -74,8 +81,13 @@ export default function App() {
               <Route path="/delete-account" element={<DeleteAccount />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/security" element={<Security />} />
-              <Route path="/careers" element={<Careers />} />
-              <Route path="/blog" element={<Blog />} />
+              <Route path="/games" element={<Games />} />
+              <Route path="/budget" element={<Budget />} />
+              <Route path="/tables" element={<Tables />} />
+              <Route path="/whats-new" element={<WhatsNew />} />
+              {/* Blog and Careers are hidden until there is real content; old links land on What's new. */}
+              <Route path="/blog" element={<Navigate to="/whats-new" replace />} />
+              <Route path="/careers" element={<Navigate to="/contact" replace />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/learn" element={<Learn />} />
               <Route path="/learn/:slug" element={<Learn />} />
@@ -91,6 +103,6 @@ export default function App() {
           </Suspense>
         </PageLayout>
       </ErrorBoundary>
-    </BrowserRouter>
+    </BrowserRouter></MotionConfig>
   );
 }

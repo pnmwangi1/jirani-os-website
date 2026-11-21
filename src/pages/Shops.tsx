@@ -87,7 +87,7 @@ export default function Shops() {
               {shopperSteps.map((s, i) => (
                 <Reveal key={s.title} delay={i * 0.08}>
                   <li className="flex gap-4 rounded-2xl border border-border bg-bg p-5">
-                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">{i + 1}</span>
+                    <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-action text-sm font-bold text-white">{i + 1}</span>
                     <div>
                       <h3 className="flex items-center gap-2 text-lg font-bold text-ink"><s.icon size={18} className="text-primary" />{s.title}</h3>
                       <p className="mt-1 text-sm leading-relaxed text-ink-muted">{s.body}</p>

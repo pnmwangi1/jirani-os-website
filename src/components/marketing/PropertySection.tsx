@@ -33,7 +33,7 @@ export function PropertySection() {
         </p>
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="property-section-setup" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-primary/90">
+          <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="property-section-setup" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-6 py-3 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-action/90">
             Set up a property <ArrowRight size={15} />
           </a>
           <Link to="/properties" className="inline-flex items-center justify-center rounded-full border border-border px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-surface">

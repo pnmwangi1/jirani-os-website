@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { useSeo } from '../lib/seo';
+import { useSeo, useJsonLd } from '../lib/seo';
 import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
 import { Reveal } from '../components/marketing/Reveal';
@@ -48,6 +48,7 @@ function Index() {
 function GuidePage({ slug }: { slug: string }) {
   const g = guides.find((x) => x.slug === slug);
   useSeo({ title: g ? g.title : 'Learn', description: g ? g.summary : 'Jirani OS guides', path: `/learn/${slug}` });
+  useJsonLd(`guide-${slug}`, g ? { '@context': 'https://schema.org', '@type': 'Article', headline: g.title, description: g.summary, inLanguage: 'en-KE', author: { '@type': 'Organization', name: 'Jirani OS' }, publisher: { '@type': 'Organization', name: 'Jirani OS', logo: { '@type': 'ImageObject', url: 'https://www.jiranios.com/jirani-logo.png' } }, mainEntityOfPage: `https://www.jiranios.com/learn/${slug}` } : null);
   if (!g) return <NotFound />;
   const next = guides[(guides.indexOf(g) + 1) % guides.length];
   return (
@@ -65,7 +66,7 @@ function GuidePage({ slug }: { slug: string }) {
           <ol className="space-y-4">
             {g.steps.map((s, i) => (
               <li key={s.title} className="flex gap-4 rounded-2xl border border-border bg-surface p-5">
-                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">{i + 1}</span>
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-action text-sm font-bold text-white">{i + 1}</span>
                 <div><h2 className="text-base font-bold text-ink">{s.title}</h2><p className="mt-1 text-sm leading-relaxed text-ink-muted">{s.body}</p></div>
               </li>
             ))}

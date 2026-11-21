@@ -27,7 +27,7 @@ export function PlansSnapshot() {
         ))}
       </div>
       <Reveal delay={0.1} className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="plans-trial" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white shadow-soft hover:bg-primary/90">Start free trial <ArrowRight size={15} /></a>
+        <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="plans-trial" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-7 py-3 text-sm font-semibold text-white shadow-soft hover:bg-action/90">Start free trial <ArrowRight size={15} /></a>
         <Link to="/pricing" className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3 text-sm font-semibold text-ink hover:bg-surface">Compare plans in full</Link>
       </Reveal>
     </div>

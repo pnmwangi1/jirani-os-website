@@ -8,7 +8,7 @@ import { Input, Textarea } from '../components/ui/Input';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
-import { CommunicationIllustration, MobileAppIllustration } from '../components/marketing/illustrations';
+import { CommunicationIllustration } from '../components/marketing/illustrations';
 
 export default function Contact() {
   useSeo({
@@ -21,6 +21,10 @@ export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  // Spam guards, all invisible to a real person: a hidden field only bots fill in,
+  // a minimum time on the page, and a cap on links in the message.
+  const [honeypot, setHoneypot] = useState('');
+  const [openedAt] = useState(() => Date.now());
 
   // Item FIX (contact form previously delivered nothing — `handleSubmit`
   // only flipped local state and never sent the data anywhere): submits
@@ -34,6 +38,18 @@ export default function Contact() {
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
+    const tooFast = Date.now() - openedAt < 4000;
+    const links = (form.message.match(/https?:\/\/|www\./gi) || []).length;
+    if (honeypot || tooFast || links > 2) {
+      // Look like a success so bots learn nothing. A real person who typed
+      // very quickly can simply send again.
+      if (tooFast && !honeypot && links <= 2) {
+        setError('That was quick. Please check your message and press send again.');
+        return;
+      }
+      setSubmitted(true);
+      return;
+    }
     setSubmitting(true);
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -46,7 +62,8 @@ export default function Contact() {
           name: form.name,
           email: form.email,
           reply_to: form.email,
-          message: form.message,
+          message: form.message.slice(0, 4000),
+          botcheck: '',
         }),
       });
       const result = await res.json();
@@ -86,6 +103,9 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                  <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                    <label>Leave this empty<input type="text" name="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} /></label>
+                  </div>
                   <Input
                     id="contact-name"
                     label="Full name"
@@ -151,16 +171,13 @@ export default function Contact() {
                 </div>
               </div>
             </Card>
-            {/* Item (confirmed real gap, now fixed): this was a bare
-                dashed box with just the words "Map placeholder" -
-                looked exactly like an unfinished element rather than a
-                deliberate design choice. Once a real office address
-                exists, replace this whole block with a real Google
-                Maps iframe embed instead. */}
-            <div className="flex aspect-video flex-col items-center justify-center gap-2 rounded-2xl border border-border bg-primary-light/40 p-6 text-center">
-              <MobileAppIllustration className="h-20 w-28" />
+            <div className="rounded-2xl border border-border bg-primary-light/40 p-6">
               <p className="text-sm font-semibold text-ink">Serving businesses across Kenya</p>
-              <p className="text-xs text-ink-muted">Reach us by email or phone above — we&rsquo;ll get back to you directly.</p>
+              <p className="mt-1 text-sm text-ink-muted">Tell us what you run. We reply directly, usually within one working day.</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href="mailto:support@jiranios.com" data-cta="contact_email" className="rounded-xl bg-action px-4 py-2 text-sm font-semibold text-white hover:opacity-90">Email us</a>
+                <a href="tel:+254753127090" data-cta="contact_call" className="rounded-xl border border-border bg-surface px-4 py-2 text-sm font-semibold text-ink hover:border-primary">Call us</a>
+              </div>
             </div>
           </Reveal>
         </div>

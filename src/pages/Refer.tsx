@@ -45,6 +45,7 @@ export default function Refer() {
     title: 'You\u2019ve been invited to Jirani OS',
     description: 'Manage sales, stock, purchases, and more from your phone — join Jirani OS today.',
     path: `/r/${normalizedCode}`,
+    noindex: true,
   });
 
   useEffect(() => {
@@ -84,7 +85,7 @@ export default function Refer() {
           </h1>
           <p className="mt-4 text-base leading-relaxed text-ink-muted">
             Running a business? Manage sales, stock, purchases, and customers — all from your
-            phone. Simple enough for a shop counter, powerful enough to run the whole business.
+            phone. Simple enough for a shop counter, complete enough to run the whole business.
           </p>
         </Reveal>
 

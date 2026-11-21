@@ -4,6 +4,8 @@ interface SeoProps {
   title: string;
   description: string;
   path?: string;
+  /** Keep the page out of search results (404, invite and duel links). */
+  noindex?: boolean;
 }
 
 const SITE_NAME = 'Jirani OS';
@@ -29,7 +31,31 @@ function setMeta(name: string, content: string, attr: 'name' | 'property' = 'nam
  * and OG/Twitter meta tags for that specific route — a lightweight,
  * dependency-free alternative to a head-management library, sized
  * appropriately for a 13-page static site. */
-export function useSeo({ title, description, path = '' }: SeoProps) {
+function setLink(rel: string, href: string) {
+  let el = document.querySelector(`link[rel="${rel}"]`);
+  if (!el) {
+    el = document.createElement('link');
+    el.setAttribute('rel', rel);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('href', href);
+}
+
+/** Adds or replaces one JSON-LD block, keyed by id, and removes it when the page unmounts. */
+export function useJsonLd(id: string, data: Record<string, unknown> | null) {
+  const json = data ? JSON.stringify(data) : '';
+  useEffect(() => {
+    if (!json) return;
+    const el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.setAttribute('data-seo', id);
+    el.text = json;
+    document.head.appendChild(el);
+    return () => el.remove();
+  }, [id, json]);
+}
+
+export function useSeo({ title, description, path = '', noindex = false }: SeoProps) {
   useEffect(() => {
     const fullTitle = title === SITE_NAME ? title : `${title} — ${SITE_NAME}`;
     document.title = fullTitle;
@@ -39,5 +65,21 @@ export function useSeo({ title, description, path = '' }: SeoProps) {
     setMeta('og:url', `${BASE_URL}${path}`, 'property');
     setMeta('twitter:title', fullTitle);
     setMeta('twitter:description', description);
-  }, [title, description, path]);
+    setLink('canonical', `${BASE_URL}${path === '/' ? '/' : path}`);
+    setMeta('robots', noindex ? 'noindex, nofollow' : 'index, follow');
+  }, [title, description, path, noindex]);
+
+  // Breadcrumbs for every inner page: Home > Page.
+  const crumbs =
+    path && path !== '/' && !noindex
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: SITE_NAME, item: `${BASE_URL}/` },
+            { '@type': 'ListItem', position: 2, name: title, item: `${BASE_URL}${path}` },
+          ],
+        }
+      : null;
+  useJsonLd('breadcrumbs', crumbs);
 }

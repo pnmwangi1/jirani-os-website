@@ -23,7 +23,7 @@ export function ParkingPromptCard({ className = '' }: { className?: string }) {
         <p className="mt-3 text-sm font-bold text-ink">Your vehicle KXX 123A is blocking another resident.</p>
         <p className="mt-1 text-xs text-ink-muted">Please move it. Reminder 2 of 3.</p>
         <div className="mt-3 flex gap-2">
-          <span className="rounded-full bg-primary px-3 py-1.5 text-xs font-semibold text-white">I am moving it</span>
+          <span className="rounded-full bg-action px-3 py-1.5 text-xs font-semibold text-white">I am moving it</span>
           <span className="rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-ink-muted">Not mine</span>
         </div>
       </Shell>

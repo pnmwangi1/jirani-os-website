@@ -20,7 +20,7 @@ export function ThemeToggle() {
           aria-label={label}
           onClick={() => setPreference(value)}
           className={`flex h-7 w-7 items-center justify-center rounded-full transition-colors ${
-            preference === value ? 'bg-primary text-white' : 'text-ink-muted hover:text-ink'
+            preference === value ? 'bg-action text-white' : 'text-ink-muted hover:text-ink'
           }`}
         >
           <Icon size={14} />

@@ -22,7 +22,7 @@ export function AudienceCards() {
                 href={c.href}
                 {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 data-cta={`audience-${a.key}`}
-                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-primary/90"
+                className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition-colors hover:bg-action/90"
               >
                 {a.cta} <ArrowRight size={15} />
               </a>

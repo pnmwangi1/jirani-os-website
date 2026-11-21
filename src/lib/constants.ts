@@ -7,10 +7,8 @@
 // itself, so linking out to it — rather than duplicating a login form
 // here — is the integration point, not a new auth system.
 //
-// Falls back to the current Vercel deployment URL so this works out of the
-// box; override with VITE_APP_URL once a custom domain (e.g.
-// app.jiranios.com) is assigned, per the domain-split plan.
-export const APP_URL = import.meta.env.VITE_APP_URL || 'https://jirani-frontend.vercel.app';
+// Falls back to the live app domain, app.jiranios.com; override with VITE_APP_URL for a staging app.
+export const APP_URL = import.meta.env.VITE_APP_URL || 'https://app.jiranios.com';
 
 // Item (Customer Referral & Community Growth Engine, spec §10/11 —
 // "app not installed → referral web page → Google Play"): confirmed

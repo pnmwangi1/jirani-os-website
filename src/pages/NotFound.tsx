@@ -4,7 +4,7 @@ import { Section } from '../components/ui/Section';
 import { LinkButton } from '../components/ui/Button';
 
 export default function NotFound() {
-  useSeo({ title: 'Page not found', description: 'This page does not exist.', path: '/404' });
+  useSeo({ title: 'Page not found', description: 'This page does not exist.', path: '/404', noindex: true });
 
   return (
     <Section className="flex min-h-[70vh] items-center">

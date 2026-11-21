@@ -17,7 +17,7 @@ const toneClasses: Record<Tone, string> = {
   warning: 'bg-warning-light text-warning',
   danger: 'bg-danger-light text-danger',
   info: 'bg-info-light text-info',
-  neutral: 'bg-border/60 text-ink-muted',
+  neutral: 'bg-border/60 text-ink',
 };
 
 export function Badge({ tone = 'neutral', className = '', children, ...props }: BadgeProps) {

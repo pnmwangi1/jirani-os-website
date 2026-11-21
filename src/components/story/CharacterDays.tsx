@@ -87,7 +87,7 @@ export function CharacterDays({ only, heading = true }: { only?: Who[]; heading?
               <ul className="mt-3 flex-1 space-y-1.5 text-sm text-ink-muted">
                 {p.points.map((x) => (<li key={x} className="flex gap-2"><span aria-hidden className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />{x}</li>))}
               </ul>
-              <a href={p.href} {...(p.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} data-cta={`day-${p.who}`} className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-primary/90">
+              <a href={p.href} {...(p.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} data-cta={`day-${p.who}`} className="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-action px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-action/90">
                 {p.cta} <ArrowRight size={15} />
               </a>
               <Link to={p.to} className="mt-3 text-center text-sm font-semibold text-primary hover:underline">{p.toLabel}</Link>

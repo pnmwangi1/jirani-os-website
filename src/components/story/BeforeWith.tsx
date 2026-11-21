@@ -33,7 +33,7 @@ export function BeforeWith({ kind, title, before, withJirani, bullets, plus = []
       <div className="relative bg-bg px-3 pt-3">
         <div className="absolute left-4 top-4 z-10 inline-flex rounded-full border border-border bg-surface p-0.5 text-xs font-bold shadow-soft" role="tablist" aria-label={`${title}: before or with Jirani`}>
           <button role="tab" aria-selected={!after} onClick={() => pick(false)} className={`rounded-full px-3 py-1.5 transition-colors ${!after ? 'bg-danger text-white' : 'text-ink-muted'}`}>Before</button>
-          <button role="tab" aria-selected={after} onClick={() => pick(true)} className={`rounded-full px-3 py-1.5 transition-colors ${after ? 'bg-primary text-white' : 'text-ink-muted'}`}>With Jirani</button>
+          <button role="tab" aria-selected={after} onClick={() => pick(true)} className={`rounded-full px-3 py-1.5 transition-colors ${after ? 'bg-action text-white' : 'text-ink-muted'}`}>With Jirani</button>
         </div>
         <div className="pt-8">
           <div style={{ opacity: 1 }} aria-live={motion ? 'off' : 'polite'}><GroupScene kind={kind} after={after} /></div>

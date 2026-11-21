@@ -42,11 +42,11 @@ interface AnchorButtonProps extends BaseProps {
 // in practice, making the button's label invisible. A dedicated
 // variant has no competing classes to lose to.
 const variantClasses: Record<Variant, string> = {
-  primary: 'bg-primary text-white hover:bg-primary/90 shadow-soft',
+  primary: 'bg-action text-white hover:bg-action/90 shadow-soft',
   secondary: 'bg-primary-light text-primary hover:bg-primary-light/70',
   outline: 'border border-border text-ink hover:bg-surface',
   ghost: 'text-ink hover:bg-primary-light/50',
-  invert: 'bg-white text-primary hover:bg-white/90 shadow-soft',
+  invert: 'bg-white text-action hover:bg-white/90 shadow-soft',
 };
 
 const sizeClasses: Record<Size, string> = {

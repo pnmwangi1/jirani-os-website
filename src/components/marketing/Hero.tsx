@@ -37,7 +37,7 @@ export function Hero() {
             Sales, stock, staff, customer credit, suppliers and your books, plus your own online shop with delivery.
           </motion.p>
           <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
-            <a href="#day" data-cta="hero-day" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-semibold text-white shadow-soft transition-colors hover:bg-primary/90">
+            <a href="#day" data-cta="hero-day" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-7 py-3.5 text-base font-semibold text-white shadow-soft transition-colors hover:bg-action/90">
               See a day with Jirani <ArrowDown size={16} />
             </a>
             <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="hero-trial" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:border-primary hover:text-primary">

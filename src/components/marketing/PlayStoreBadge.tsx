@@ -21,9 +21,9 @@ export function PlayStoreBadge({ className = '' }: PlayStoreBadgeProps) {
       className={`inline-block ${className}`}
     >
       {failed ? (
-        <span className="inline-flex h-12 items-center rounded-xl bg-ink px-5 text-sm font-semibold text-white">Get it on Google Play</span>
+        <span className="inline-flex h-12 items-center rounded-xl bg-black px-5 text-sm font-semibold text-white">Get it on Google Play</span>
       ) : (
-        <img
+        <img loading="lazy" decoding="async"
           src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
           alt="Get it on Google Play"
           className="h-14 w-auto"

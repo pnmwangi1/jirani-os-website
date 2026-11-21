@@ -19,6 +19,7 @@ export default {
           DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
           light: 'rgb(var(--color-primary-light) / <alpha-value>)',
         },
+        action: 'rgb(var(--color-action) / <alpha-value>)',
         tenant: {
           DEFAULT: 'rgb(var(--color-tenant) / <alpha-value>)',
           light: 'rgb(var(--color-tenant-light) / <alpha-value>)',

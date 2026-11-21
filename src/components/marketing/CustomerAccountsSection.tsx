@@ -16,7 +16,7 @@ export function CustomerAccountsSection({ customersShot }: Props) {
     <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
       <Reveal className="order-2 lg:order-1">
         <div className="relative mx-auto w-full max-w-sm">
-          <img
+          <img loading="lazy" decoding="async"
             src="/photography/customer-market-1.jpg"
             alt="A customer checking her phone at a market stall"
             className="absolute -right-2 top-4 hidden h-52 w-40 rounded-2xl object-cover shadow-soft-lg sm:block md:h-60 md:w-44"
