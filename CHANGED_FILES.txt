@@ -90,4 +90,4 @@ src/content/blog.ts
 src/pages/Blog.tsx
 src/pages/Careers.tsx
 
-After unzipping run: npm install   (adds playwright-core)
+package-lock.json is included and in sync with package.json (npm ci passes).
