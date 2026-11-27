@@ -1,8 +1,14 @@
+.gitignore
+.nvmrc
 WEBSITE_HANDOFF.md
+deploy/cloudflare-pages.md
 index.html
+package-lock.json
+package.json
 public/llms.txt
 public/robots.txt
 public/sitemap.xml
+scripts/prerender.mjs
 scripts/routes.mjs
 scripts/seoCheck.mjs
 src/components/marketing/BusinessSection.tsx
@@ -33,3 +39,4 @@ src/pages/Pricing.tsx
 src/pages/Properties.tsx
 src/pages/Security.tsx
 src/pages/Solutions.tsx
+src/pages/Terms.tsx

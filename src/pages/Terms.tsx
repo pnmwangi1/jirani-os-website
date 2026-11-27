@@ -4,7 +4,7 @@ import { LegalLayout } from './LegalLayout';
 export default function Terms() {
   useSeo({
     title: 'Terms of Service',
-    description: 'The terms that govern your use of Jirani OS.',
+    description: 'The terms of service that govern your use of Jirani OS, including the website, the app and related services.',
     path: '/terms',
   });
 

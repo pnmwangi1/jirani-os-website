@@ -101,3 +101,14 @@ Positioning: "one platform for your business, your property and your personal mo
 - **Check:** `npm run build` then `node scripts/seoCheck.mjs` (one h1, canonical, title length, en-KE, JSON-LD parses, banned-claims list). Add to the banned list whenever a claim must never appear.
 - **Delivery hygiene:** `.env` must not be in the zip. Rotate the Web3Forms key if you want it private (it is also in the public bundle by design).
 - **Not done / left as is:** the Home page HTML is ~430 KB because the story illustrations are inline SVG (gzips well); fonts still load from Fontshare (self-hosting is optional); one shared OG image; Lighthouse not run.
+
+## Phase 7 — production hardening of prerender and SEO checks (Nov 2026)
+- `npm run build` = sitemap, type check, Vite build, **strict prerender**, **full SEO validation**. Any failure stops the build.
+- `scripts/prerender.mjs`: no silent fallback. It fails when no browser can start, when `PRERENDER=0`, when any route fails after 3 tries, or when a page comes out wrong (default title, wrong canonical, page script error, 4xx/5xx asset, thin content). Writes `build-reports/prerender-manifest.json`.
+- Browser lookup: `CHROME_PATH`, system Chrome/Edge/Chromium, Playwright Chromium, bundled `@sparticuz/chromium` (new dependency; `playwright-core` moved from devDependencies to dependencies so it is installed on any build server).
+- `scripts/seoCheck.mjs`: compares the files on disk with `routes.mjs` (21 pages + 9 guides = 30), the sitemap, `robots.txt` (search bots allowed, `GPTBot` and `Google-Extended` blocked, Sitemap host) and `llms.txt` links. Per page: real content, one h1, unique title/canonical/h1, canonical equals the route, description length, og/twitter match, no unexpected noindex, `lang="en-KE"`, valid JSON-LD, required types per page (Organization, WebSite; BreadcrumbList; Home SoftwareApplication; FAQPage pages; Article on guides), FAQ and Article text visible on the page, SoftwareApplication offers match Pricing and mention Pay as you go, banned claims. Writes `build-reports/seo-report.md`.
+- `useJsonLd` now replaces an existing block with the same id, so a prerendered page never ends up with two copies after the app loads (checked in a real browser).
+- Home SoftwareApplication description now mentions Pay as you go with no monthly fee. No token prices, and no "free" claim.
+- `/terms` meta description lengthened (44 to 108 characters) because the new check required at least 50.
+- The app still uses `createRoot` (it replaces the prerendered markup when it loads); hydration was not introduced on purpose.
+- Known limit: an unknown URL is served the Home HTML (single-page-app fallback) until the app shows the 404 page. `/r/` and `/d/` links need that fallback.

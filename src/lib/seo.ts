@@ -46,6 +46,8 @@ export function useJsonLd(id: string, data: Record<string, unknown> | null) {
   const json = data ? JSON.stringify(data) : '';
   useEffect(() => {
     if (!json) return;
+    // A pre-rendered page already carries this block: replace it, so the page never has two copies.
+    document.head.querySelectorAll(`script[data-seo="${id}"]`).forEach((old) => old.remove());
     const el = document.createElement('script');
     el.type = 'application/ld+json';
     el.setAttribute('data-seo', id);

@@ -36,7 +36,7 @@ export default function Home() {
     operatingSystem: 'Android, Web',
     url: 'https://www.jiranios.com/',
     inLanguage: 'en-KE',
-    description: 'One platform for business, property and personal money in Kenya: point of sale, stock, staff and payroll, accounting and an online shop with delivery; virtual properties with parking prompts, gate passes, notices and utility bills; and My budget, a personal budget that reads M-Pesa statements.',
+    description: 'One platform for business, property and personal money in Kenya: point of sale, stock, staff and payroll, accounting and an online shop with delivery; virtual properties with parking prompts, gate passes, notices and utility bills; and My budget, a personal budget that reads M-Pesa statements. Pay monthly on Jirani Start or Jirani Plus, or pay as you go with tokens and no monthly fee.',
     offers: [
       { '@type': 'Offer', name: 'Jirani Start', price: '1000', priceCurrency: 'KES', description: 'Per month. Every new business starts with a 7-day free trial.' },
       { '@type': 'Offer', name: 'Jirani Plus', price: '2500', priceCurrency: 'KES', description: 'Per month. Adds full accounting, branch tools and advanced insights.' },
