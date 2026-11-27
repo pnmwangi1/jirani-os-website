@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Badge } from '../ui/Badge';
 import { BackgroundGlow } from './BackgroundGlow';
 import { PlayStoreBadge } from './PlayStoreBadge';
@@ -34,7 +35,7 @@ export function Hero() {
             Your whole business, in one app.
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink-muted lg:mx-0">
-            Sales, stock, staff, customer credit, suppliers and your books, plus your own online shop with delivery.
+            Sales, stock, staff and payroll, customer credit, suppliers and your books, plus your own online shop with delivery. The same account also runs a virtual property and your personal budget.
           </motion.p>
           <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
             <a href="#day" data-cta="hero-day" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-7 py-3.5 text-base font-semibold text-white shadow-soft transition-colors hover:bg-action/90">
@@ -47,8 +48,9 @@ export function Hero() {
           <p className="mt-3 text-xs text-ink-muted">7-day free trial · no card required</p>
           <div className="mt-5 flex justify-center lg:justify-start"><PlayStoreBadge /></div>
           <p className="mt-6 text-sm text-ink-muted">
-            Also for <a href="#beyond" className="font-semibold text-primary hover:underline">shoppers and riders</a> and{' '}
-            <a href="#properties" className="font-semibold text-primary hover:underline">property owners</a>.
+            Also for <a href="#beyond" className="font-semibold text-primary hover:underline">shoppers and riders</a>,{' '}
+            <a href="#properties" className="font-semibold text-primary hover:underline">property owners</a> and anyone who wants a{' '}
+            <Link to="/budget" className="font-semibold text-primary hover:underline">personal budget</Link>.
           </p>
         </div>
 

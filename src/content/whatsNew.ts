@@ -31,7 +31,7 @@ export const releases: Release[] = [
     points: [
       'One trading day unlocks each day. Missed a day? Catch up in order, never ahead.',
       'Seasons such as school fees, the rains and the festive rush change what sells.',
-      'Earn a cosmetic title and badge. Rewards are cosmetic only.',
+      'Earn a cosmetic title and badge.',
     ],
   },
   {

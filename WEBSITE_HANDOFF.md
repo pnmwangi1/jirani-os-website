@@ -33,7 +33,7 @@
 - Features: eight capability sections with a jump menu (content/capabilities.ts). Industries: all 15 illustrated (content/industryProfiles.ts); six are "Guided setup", the rest "Runs on Goods & Services".
 - Solutions: by job, Before/With. Pricing: term discounts (10% for 6 months, 20% for 12, from the billing code) and Start vs Plus table.
 - Learn hub: /learn and /learn/:slug from content/learn.ts (written from be/content/training-manual.md).
-- People/HR is described as records (pay sheets, advances, leave), never "payroll".
+- People/HR is described as HR and payroll: attendance, leave, payroll runs with PAYE, NSSF, SHIF and Housing Levy from rates the business adopts, payslips, P9, and remittance records. Jirani RECORDS payments; it does not send money to staff or file with KRA, and the site must never say it does. (Updated Phase 2, Nov 2026.)
 - Home shows four hand-built sample screens (components/story/SampleScreens.tsx), labelled "Sample data". Not done yet: real screenshots of more app screens; Shops/Riders/Delivery/Properties/Blog/Careers still use the earlier layout.
 - Run `npm install`, `npm run build`, then `npx wrangler deploy`. `tsc` could not run in the build sandbox.
 
@@ -74,7 +74,7 @@
 - **Pre-render:** `npm run build` now ends with `scripts/prerender.mjs`, which saves every public page (30, including the guides) as real HTML in `dist/<route>/index.html`. Crawlers, WhatsApp/Facebook previews and slow phones get content and tags at once; React then takes over. It needs Chrome/Edge (found automatically on Windows/Mac/Linux, or set `CHROME_PATH`) and `playwright-core` (new devDependency: run `npm install`). If no browser is found (some build servers) it prints a warning and the build still succeeds as the old single-page app. `PRERENDER=0` skips it; `npm run build:spa` builds without it.
 - **Sitemap:** `public/sitemap.xml` is generated before each build from `scripts/routes.mjs` (adds /delivery, /terms, /learn and every guide, with `lastmod`). Update a page's `lastmod` there when its content changes. New guides are picked up from `src/content/learn.ts`.
 - **Head tags:** every page now has a canonical link and a robots tag; 404, `/r/` and `/d/` are `noindex`.
-- **Schema (JSON-LD):** Organization and WebSite (index.html), SoftwareApplication (Home), FAQPage (/faq), Article (each guide), BreadcrumbList (every inner page). Pricing in the Home schema is Jirani Start KES 1,000/month; change it if the price changes.
+- **Schema (JSON-LD):** Organization and WebSite (index.html), SoftwareApplication (Home), FAQPage (/faq), Article (each guide), BreadcrumbList (every inner page). The Home schema lists Jirani Start KES 1,000 and Jirani Plus KES 2,500 per month; change them if prices change.
 - **Fonts:** the font stylesheet moved from a CSS `@import` to `<link>` with preconnect, so it no longer waits for the app CSS. Images below the fold load lazily.
 - **Analytics (off until you turn it on):** create a Plausible site for jiranios.com, then set `VITE_PLAUSIBLE_DOMAIN=jiranios.com` where you build. No cookies, honours Do Not Track, skipped on localhost. Clicks on every `data-cta` button are sent by the existing `lib/track.ts` as a `cta_click` event with props `cta` (button id) and `page` (set up a `cta_click` goal in Plausible).
 - **Contact form:** hidden honeypot field, 4-second minimum before send, more than 2 links in a message is dropped silently, message capped at 4,000 characters. Tested: too-fast shows a retry message; bot and link-spam sends nothing.
@@ -87,3 +87,17 @@
 - Copy: removed filler ("successfully", "powerful enough"); no other marketing clichés found in `src`.
 - Older pages (Shops, Riders, Delivery, Properties, About) were reviewed at desktop width: they already use the story scenes and palette, so no layout change was needed.
 - Still open (needs you): real shop.jiranios.com slugs for the three showcase cards (`src/content/shopShowcase.ts`, add `href`); confirm the three What's new entries are live (`src/content/whatsNew.ts`).
+
+## Phase 6 — one platform: business, property and personal money (Nov 2026)
+Positioning: "one platform for your business, your property and your personal money." Every line below was checked against the app and backend code, not the old site text.
+- **Pay as you go** (Pricing block, FAQ, Home plans note, Games): no monthly fee, tokens bought by M-Pesa, used for paid work. The site deliberately states NO token value in KES and NO per-action token counts; they are admin settings. A welcome gift of tokens is mentioned without a number, by decision: do not publish the number.
+- **HR and payroll** now described accurately (Features group, capabilities, FAQ, Security, Learn). Records only: no money moves, no KRA filing, no eTIMS. Available on Start and Plus.
+- **My budget** page rewritten (M-Pesa statement import, bills, goals, debts, shopping plans, shop limits, shared budgets, privacy). Free. Not claimed: net worth, bank linking, budget chat, investments. Its phone screenshots still show the old rings; refresh them from the current app (pockets now show progress bars).
+- **Virtual properties:** parking-prompt scenario and privacy design, utility billing (meter readings and bills, payments recorded only), estates, guest plates. No rent collection is claimed.
+- **Offline:** described as allocation-based (a phone is given stock, sells with no signal, syncs later); M-Pesa prompts still need a connection.
+- **Games:** no money at stake; finishing daily games and duels can earn a few tokens (small daily limit).
+- **Header nav:** Budget replaces Delivery (Delivery stays in the footer, Shops and Riders pages).
+- **SEO/GEO:** keyword Home title, en-KE, Home schema with both plans, FAQPage schema on Home, Pricing, Properties, Budget, Games, Tables, FAQ; explicit bot rules in robots.txt (search and answer bots allowed; training crawlers GPTBot and Google-Extended blocked); `public/llms.txt`; fresh sitemap dates.
+- **Check:** `npm run build` then `node scripts/seoCheck.mjs` (one h1, canonical, title length, en-KE, JSON-LD parses, banned-claims list). Add to the banned list whenever a claim must never appear.
+- **Delivery hygiene:** `.env` must not be in the zip. Rotate the Web3Forms key if you want it private (it is also in the public bundle by design).
+- **Not done / left as is:** the Home page HTML is ~430 KB because the story illustrations are inline SVG (gzips well); fonts still load from Fontshare (self-hosting is optional); one shared OG image; Lighthouse not run.

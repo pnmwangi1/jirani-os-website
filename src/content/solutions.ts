@@ -42,7 +42,7 @@ export const solutions: Solution[] = [
     icon: Store,
     title: 'Retail Shops',
     tone: 'primary',
-    summary: 'A point of sale that keeps working when the internet does not, backed by inventory that stays accurate.',
+    summary: 'A point of sale that can keep selling when the signal drops, backed by inventory that stays accurate.',
     points: [
       'Fast checkout with cash, M-Pesa and split payment support',
       'Stock levels that update the moment a sale happens',

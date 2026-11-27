@@ -13,8 +13,8 @@ export interface VirtualFeature {
 // people who live at a property; keep this list in step with the app when a feature is added.
 export const virtualFeatures: VirtualFeature[] = [
   { key: 'parking', icon: Car, title: 'Parking prompts',
-    outcome: 'Someone blocking your car? Send a prompt to their plate.',
-    points: ['Residents register their vehicles once', 'Three reminders, two minutes apart', 'Unanswered prompts go to security, then management'] },
+    outcome: 'Someone blocking your car? Type their plate and prompt them, privately.',
+    points: ['Type the plate. Jirani only says whether it found it, never the owner or the unit', 'The owner is told a vehicle needs to move, never who asked', 'Three prompts, two minutes apart, then security, or management if there is no guard'] },
   { key: 'gate', icon: KeyRound, title: 'Gate passes and expected guests',
     outcome: 'Security knows who is coming and what is leaving, before they reach the gate.',
     points: ['Residents invite guests with a name and time', 'Gate passes for moving items out, approved by management', 'Security logs arrival and departure'] },
@@ -23,10 +23,10 @@ export const virtualFeatures: VirtualFeature[] = [
     points: ['Invite by phone number', 'Managers run the community day to day', 'Caretakers handle repairs, security handles the gate'] },
   { key: 'notices', icon: Megaphone, title: 'Notices that reach everyone',
     outcome: 'Water cut tomorrow? Post once and every resident is notified.',
-    points: ['Set how long a notice stays up', 'Pin the important ones', 'See how many residents have read it'] },
+    points: ['Set how long a notice stays up and how urgent it is', 'Pin the important ones', 'See how many residents have read it'] },
   { key: 'lostfound', icon: Search, title: 'Lost and found with proof',
     outcome: 'Found items are posted with a photo. Owners prove it is theirs first.',
-    points: ['Security or caretaker posts with photos', 'Claims are checked by staff', 'Photos are deleted once the item is claimed'] },
+    points: ['Security or caretaker posts with photos', 'Claimants give proof, and only staff who approve can see it', 'Photos are deleted once the item is claimed or archived'] },
   { key: 'chat', icon: MessageCircle, title: 'Property chat',
     outcome: 'One place for the building instead of scattered WhatsApp groups.',
     points: ['Optional group chat for the whole property', 'Private feedback thread with management', 'Reported content is reviewed'] },

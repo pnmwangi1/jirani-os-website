@@ -22,7 +22,7 @@ function Car({ x }: { x: number }) {
 const frames = [
   {
     title: 'A car blocks the gate',
-    body: 'Mama Njeri types the plate. The owner gets a prompt and replies "I am moving it". If nobody answers, it goes to security.',
+    body: 'A tenant is blocked in. They type the number plate. Jirani says only that it found the plate, never who owns it. The owner gets a prompt that does not say who asked, and if nobody answers, security is alerted.',
     scene: (
       <svg viewBox="0 0 260 130" className="w-full" role="img" aria-label="A parked car blocks the way and its owner gets a prompt">
         <Ground w={260} y={118} /><Block x={8} /><Car x={110} />

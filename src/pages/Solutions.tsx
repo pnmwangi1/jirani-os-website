@@ -13,7 +13,7 @@ import { X, Check, ArrowRight } from 'lucide-react';
 export default function Solutions() {
   useSeo({
     title: 'Solutions',
-    description: 'Jirani OS by the job you need done: sell, keep stock right, collect credit, pay suppliers, manage people, know your profit and grow to more branches.',
+    description: 'Jirani OS by the job you need done: sell, keep stock right, collect credit, pay suppliers, manage people and payroll, know your profit and grow to more branches.',
     path: '/solutions',
   });
 

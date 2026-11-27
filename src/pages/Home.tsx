@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { useSeo, useJsonLd } from '../lib/seo';
+import { useSeo, useJsonLd, faqSchema } from '../lib/seo';
 import { Hero } from '../components/marketing/Hero';
 import { Section } from '../components/ui/Section';
 import { Reveal } from '../components/marketing/Reveal';
@@ -12,20 +12,22 @@ import { FollowOrder } from '../components/story/FollowOrder';
 import { CharacterDays } from '../components/story/CharacterDays';
 import { PropertyHome } from '../components/story/PropertyHome';
 import { PlansSnapshot } from '../components/story/PlansSnapshot';
+import { Pillars } from '../components/story/Pillars';
 import { RealScreens } from '../components/marketing/RealScreens';
 import { FinalCTA } from '../components/marketing/FinalCTA';
 import { Accordion } from '../components/ui/Accordion';
 import { faqs } from '../content/faq';
 
-const homeFaqIds = ['what-is-jirani', 'who-is-it-for', 'getting-started-time'];
+const homeFaqIds = ['what-is-jirani', 'what-can-it-do', 'who-is-it-for', 'getting-started-time'];
 
 export default function Home() {
   useSeo({
-    title: 'Jirani OS',
+    title: 'POS, payroll, property and budget app, Kenya',
     description:
-      'Jirani OS is one app for Kenya to run a business, order from shops near you, or manage a property. Every business gets an online shop with delivery, a till, stock, staff and accounts. Start your 7-day free trial.',
+      'Jirani OS is one platform for Kenyan businesses, properties and personal money. Run a till, stock, staff, payroll and accounts, manage a virtual property from your phone, and plan your month with My budget. Pay monthly or pay as you go.',
     path: '/',
   });
+  const homeFaqs = homeFaqIds.map((id) => faqs.find((f) => f.id === id)).filter((f): f is NonNullable<typeof f> => !!f);
   useJsonLd('app', {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
@@ -33,14 +35,22 @@ export default function Home() {
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Android, Web',
     url: 'https://www.jiranios.com/',
-    description: 'One app to run a business, shop from local businesses, deliver as a rider, or look after a property in Kenya.',
-    offers: { '@type': 'Offer', price: '1000', priceCurrency: 'KES', description: 'Jirani Start, per month. Every new business starts with a 7-day free trial.' },
+    inLanguage: 'en-KE',
+    description: 'One platform for business, property and personal money in Kenya: point of sale, stock, staff and payroll, accounting and an online shop with delivery; virtual properties with parking prompts, gate passes, notices and utility bills; and My budget, a personal budget that reads M-Pesa statements.',
+    offers: [
+      { '@type': 'Offer', name: 'Jirani Start', price: '1000', priceCurrency: 'KES', description: 'Per month. Every new business starts with a 7-day free trial.' },
+      { '@type': 'Offer', name: 'Jirani Plus', price: '2500', priceCurrency: 'KES', description: 'Per month. Adds full accounting, branch tools and advanced insights.' },
+    ],
   });
-  const homeFaqs = homeFaqIds.map((id) => faqs.find((f) => f.id === id)).filter((f): f is NonNullable<typeof f> => !!f);
+  useJsonLd('faq', faqSchema(homeFaqs));
 
   return (
     <>
       <div className="theme-business"><Hero /></div>
+
+      <Section className="border-t border-border bg-surface">
+        <div className="container"><Pillars /></div>
+      </Section>
 
       <Section id="day" className="theme-business scroll-mt-16 border-t border-border bg-surface">
         <div className="container"><DayWithBaraka /></div>

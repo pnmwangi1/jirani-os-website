@@ -50,6 +50,21 @@ const pillars = [
   },
   {
     icon: Eye,
+    title: 'My budget is private and yours',
+    body: 'My budget stays off until you switch it on after a clear consent screen. It is private to you unless you invite someone to a shared budget. You can hide amounts on screen, export your data, or delete it from inside the app. Counting how the feature is used is optional.',
+  },
+  {
+    icon: Lock,
+    title: 'Parking prompts keep identities private',
+    body: 'When a resident prompts the owner of a parked car, Jirani answers only whether it found the plate. It never shows the owner or the unit, and the owner is never told who asked. Only people who belong to the property can send a prompt, and lookups are limited.',
+  },
+  {
+    icon: History,
+    title: 'Payroll with checks and records',
+    body: 'A payroll run is prepared by one person and approved by another, and the person who prepared it cannot pay it. Jirani records how each payment was made and what is owed to the authorities. It does not send money to staff or file returns for you.',
+  },
+  {
+    icon: Eye,
     title: 'Data access, by design',
     body: 'Your business data is visible only within your own organization, scoped by role. We do not use your business data to train external models or share it with unrelated third parties.',
   },

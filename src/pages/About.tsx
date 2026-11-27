@@ -19,7 +19,7 @@ const values = [
 export default function About() {
   useSeo({
     title: 'About',
-    description: 'The story behind Jirani OS — why it exists, what it is built on, and how we think about building software for growing businesses.',
+    description: 'The story behind Jirani OS — why it exists, what it is built on, and how we think about building one platform for business, property and personal money.',
     path: '/about',
   });
 
@@ -37,7 +37,9 @@ export default function About() {
               down the road, the salon serving a whole estate — were all running on the same
               patchwork of spreadsheets, WhatsApp threads and disconnected apps, arranging every
               delivery over a phone call. Not because they wanted to, but because nothing built
-              for their scale had brought it all together.
+              for their scale had brought it all together. The same neighbourly thinking now
+              reaches the buildings people live in and the way they plan their own month, so one
+              Jirani account can run a business, look after a property and keep a personal budget.
             </p>
           </Reveal>
           <Reveal delay={0.1} className="mx-auto mt-8 max-w-xl">

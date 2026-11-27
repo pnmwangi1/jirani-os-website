@@ -9,7 +9,7 @@ interface Stat {
 const stats: Stat[] = [
   { value: '5+', label: 'Core engines unified into one system' },
   { value: '1', label: 'Login for every part of the business' },
-  { value: '24/7', label: 'Point of sale that keeps working offline' },
+  { value: '3', label: 'Areas of life in one app: business, property and personal money' },
 ];
 
 export function StatBlock() {

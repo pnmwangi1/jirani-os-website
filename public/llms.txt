@@ -1,0 +1,23 @@
+# Jirani OS
+
+> Jirani OS is one platform for business, property and personal money in Kenya. One Jirani account can run a business (till, stock, staff and payroll, accounts, online shop with delivery), look after a virtual property (parking prompts, gate passes, notices, lost and found, utility bills, repairs) and plan a personal budget (My budget).
+
+Pricing: Jirani Start KES 1,000 a month, Jirani Plus KES 2,500 a month, or Pay as you go with tokens and no monthly fee. A virtual property is KES 250 per property per month, and residents and staff join free. Every new business starts with a 7-day free trial. Payments are by M-Pesa.
+
+Jirani OS records payments and payroll. It does not send money to staff, collect rent or utility payments, or file returns with KRA.
+
+## Pages
+- [Features](https://www.jiranios.com/features): business tools, HR and payroll, accounting, online shop and delivery
+- [Pricing](https://www.jiranios.com/pricing): Jirani Start, Jirani Plus, Pay as you go and virtual properties
+- [Virtual properties](https://www.jiranios.com/properties): private parking prompts, gate passes, notices, lost and found, meter readings and utility bills, repairs
+- [My budget](https://www.jiranios.com/budget): a personal budget that reads M-Pesa statements, with bills, goals, debts and shared household budgets
+- [Industries](https://www.jiranios.com/industries): guided setups for water refill, mini mart, jerseys, restaurants, LPG and electronics
+- [Solutions](https://www.jiranios.com/solutions)
+- [Tables and kitchen](https://www.jiranios.com/tables)
+- [Shops near you](https://www.jiranios.com/shops)
+- [Riders](https://www.jiranios.com/riders)
+- [Games](https://www.jiranios.com/games)
+- [Security](https://www.jiranios.com/security)
+- [FAQ](https://www.jiranios.com/faq)
+- [Learn](https://www.jiranios.com/learn)
+- [Contact](https://www.jiranios.com/contact)

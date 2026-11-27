@@ -83,3 +83,13 @@ export function useSeo({ title, description, path = '', noindex = false }: SeoPr
       : null;
   useJsonLd('breadcrumbs', crumbs);
 }
+
+/** FAQPage structured data. Pass exactly the questions shown on the page, so the schema matches the visible text. */
+export function faqSchema(items: { question: string; answer: string }[]): Record<string, unknown> | null {
+  if (!items.length) return null;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+  };
+}

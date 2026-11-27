@@ -65,7 +65,7 @@ export const guides: Guide[] = [
     summary: 'Staff see only what their job needs. Your plan sets how many seats you have.',
     steps: [
       { title: 'Add a staff member', body: 'Invite them and assign a role. Jirani Start includes 3 staff seats, Jirani Plus includes 9.' },
-      { title: 'Keep records in People', body: 'Record pay terms, pay sheets, salary advances with an instalment plan, leave and shifts. Jirani keeps the records; it does not move money.' },
+      { title: 'Run HR and payroll in People', body: 'Record attendance, shifts and leave, and prepare payroll with PAYE, NSSF, SHIF and Housing Levy from rates you confirm. Staff see their payslips, and you can produce P9 forms. Jirani records payments; it does not move money or file with KRA.' },
       { title: 'Need more seats?', body: 'Buy an extra staff seat for the branch you choose, or an extra branch that includes 3 staff seats.' },
     ] },
   { slug: 'online-shop', title: 'Turn on your online shop', minutes: 3, kind: 'grow',

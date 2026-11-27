@@ -61,7 +61,7 @@ export function StockScreen() {
 export function PeopleScreen() {
   return (
     <Screen title="People" caption="Pay terms, advances and leave">
-      <Row a="Amina · Cashier" b="Pay sheet ready" tone="good" />
+      <Row a="Amina · Cashier" b="Payslip ready" tone="good" />
       <Row a="Salary advance" b="3 instalments" />
       <Row a="Leave" b="Approved" tone="good" />
       <Row a="Shifts this week" b="5" />

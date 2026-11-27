@@ -1,4 +1,37 @@
+# Jirani OS: everyone is welcome to read the public pages.
 User-agent: *
 Allow: /
+
+# Search and answer engines, stated explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Model-training crawlers: blocked. Search and answer bots above can still read the site.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
 
 Sitemap: https://www.jiranios.com/sitemap.xml

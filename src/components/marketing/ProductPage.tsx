@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { useSeo } from '../../lib/seo';
+import { useSeo, useJsonLd, faqSchema } from '../../lib/seo';
 import { Section } from '../ui/Section';
 import { Badge } from '../ui/Badge';
 import { Accordion } from '../ui/Accordion';
@@ -27,6 +27,7 @@ export interface ProductPageData {
 /** One layout for a product page (Games, My budget, Tables): hero with real screens, fact strip, alternating sections, questions, closing call to action. */
 export function ProductPage({ data }: { data: ProductPageData }) {
   useSeo(data.seo);
+  useJsonLd('faq', faqSchema(data.faqs));
   return (
     <>
       <Section className="relative overflow-hidden pb-12">

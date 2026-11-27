@@ -9,7 +9,7 @@ export const primaryNav: NavLink[] = [
   { label: 'Riders', to: '/riders' },
   { label: 'Properties', to: '/properties' },
   { label: 'Games', to: '/games' },
-  { label: 'Delivery', to: '/delivery' },
+  { label: 'Budget', to: '/budget' },
   { label: 'Industries', to: '/industries' },
   { label: 'Learn', to: '/learn' },
   { label: 'Pricing', to: '/pricing' },

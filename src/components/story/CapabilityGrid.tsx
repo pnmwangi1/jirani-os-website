@@ -8,7 +8,7 @@ export function CapabilityGrid({ ids, heading = true }: { ids?: string[]; headin
     <div>
       {heading && (
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold text-ink md:text-4xl">Everything the business needs, in one app.</h2>
+          <h2 className="text-3xl font-extrabold text-ink md:text-4xl">Everything the business needs, in one app, from the till to payroll.</h2>
           <p className="mt-3 text-base text-ink-muted">Tap Before or With Jirani on any card to see the difference.</p>
         </Reveal>
       )}

@@ -3,7 +3,7 @@ import { ArrowRight, Check } from 'lucide-react';
 import { Reveal } from '../marketing/Reveal';
 import { APP_URL } from '../../lib/constants';
 
-const start = ['Everything above: sales, barcode scanning, stock, customers with credit limits, suppliers, people and reports', 'Your own online shop', 'Profit and Loss and a Balance Sheet', '1 branch and 3 staff seats'];
+const start = ['Everything above: sales, barcode scanning, stock, customers with credit limits, suppliers, HR and payroll, and reports', 'Your own online shop', 'Profit and Loss and a Balance Sheet', '1 branch and 3 staff seats'];
 const plus = ['Everything in Jirani Start', 'Full accounting: ledger, trial balance and cash flow', 'Move stock between branches, and compare them', 'Advanced business insights and branch dashboards', '3 branches and 9 staff seats'];
 
 export function PlansSnapshot() {
@@ -26,6 +26,9 @@ export function PlansSnapshot() {
           </Reveal>
         ))}
       </div>
+      <Reveal delay={0.1} className="mx-auto mt-5 max-w-4xl rounded-2xl border border-border bg-surface px-5 py-4 text-center text-sm text-ink-muted">
+        <span className="font-semibold text-ink">Prefer no monthly fee?</span> Pay as you go: buy tokens with M-Pesa and use them only when you do paid work.
+      </Reveal>
       <Reveal delay={0.1} className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a href={APP_URL} target="_blank" rel="noopener noreferrer" data-cta="plans-trial" className="inline-flex items-center justify-center gap-2 rounded-full bg-action px-7 py-3 text-sm font-semibold text-white shadow-soft hover:bg-action/90">Start free trial <ArrowRight size={15} /></a>
         <Link to="/pricing" className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3 text-sm font-semibold text-ink hover:bg-surface">Compare plans in full</Link>

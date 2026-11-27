@@ -1,5 +1,5 @@
-import { Check, ArrowRight, Smartphone, Barcode, Building2, Calculator, TrendingUp, Users, ShoppingCart } from 'lucide-react';
-import { useSeo } from '../lib/seo';
+import { Check, ArrowRight, Smartphone, Barcode, Building2, Calculator, TrendingUp, Users, ShoppingCart, Coins } from 'lucide-react';
+import { useSeo, useJsonLd, faqSchema } from '../lib/seo';
 import { Section } from '../components/ui/Section';
 import { Badge } from '../components/ui/Badge';
 import { AnchorButton } from '../components/ui/Button';
@@ -7,6 +7,8 @@ import { Reveal } from '../components/marketing/Reveal';
 import { BackgroundGlow } from '../components/marketing/BackgroundGlow';
 import { APP_URL, VIRTUAL_PRICE_KES } from '../lib/constants';
 import { Link } from 'react-router-dom';
+import { Accordion } from '../components/ui/Accordion';
+import { faqs } from '../content/faq';
 import type { LucideIcon } from 'lucide-react';
 
 interface FeatureGroup {
@@ -72,11 +74,15 @@ const addons = [
   { label: 'Additional staff', price: 'KES 250/month', note: 'Per staff member, for the branch you choose' },
 ];
 
+const pricingFaqIds = ['pricing-when', 'payg', 'free-trial', 'plus-needed', 'payroll'];
+
 export default function Pricing() {
+  const priceFaqs = pricingFaqIds.map((id) => faqs.find((f) => f.id === id)).filter((f): f is NonNullable<typeof f> => !!f);
+  useJsonLd('faq', faqSchema(priceFaqs));
   useSeo({
     title: 'Pricing',
     description:
-      'Jirani OS pricing: Jirani Start at KES 1,000/month and Jirani Plus at KES 2,500/month — every plan includes your own online shop, customer app listing, and automatic delivery dispatch. Start your 7-Day Jirani Plus Experience free trial today, paid via M-Pesa.',
+      'Jirani OS pricing: Jirani Start at KES 1,000/month, Jirani Plus at KES 2,500/month, or Pay as you go with no monthly fee. Every plan includes your own online shop, customer app listing and automatic delivery dispatch. Start with a free 7-day trial, paid via M-Pesa.',
     path: '/pricing',
   });
 
@@ -190,6 +196,38 @@ export default function Pricing() {
           </div>
         </Reveal>
 
+        {/* Pay as you go: the third way to pay, shown beside the business plans. No token value is stated on purpose. */}
+        <Reveal delay={0.31} className="mx-auto mt-6 max-w-4xl">
+          <div className="rounded-2xl border border-border bg-surface p-6">
+            <div className="flex items-start gap-3">
+              <Coins size={20} className="mt-0.5 flex-shrink-0 text-primary" />
+              <div>
+                <p className="text-sm font-bold text-ink">Prefer to pay as you go? No monthly fee.</p>
+                <p className="mt-1 text-sm leading-relaxed text-ink-muted">
+                  Switch your business to Pay as you go and pay with tokens, only when you do paid work. You get the everyday
+                  Jirani Start tools, with no monthly fee and no expiry. Choose it when your sales go up and down and you would
+                  rather pay for what you use.
+                </p>
+              </div>
+            </div>
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {[
+                'Buy tokens with M-Pesa whenever you need them',
+                'Tokens are used when you complete a sale, hold a bill, send a quote, record a purchase, do a stock take or adjustment, make a delivery or download a report or payslip',
+                'Looking things up, receipts and invoices are free, and the same file on the same day is only charged once',
+                'You can also use tokens for extra branches, extra staff and virtual property bills',
+                'See your balance and get a warning when it runs low',
+                'Owners can set a daily limit on what each staff member can spend',
+              ].map((t) => (
+                <div key={t} className="flex items-start gap-2 rounded-xl bg-bg px-4 py-3 text-xs leading-relaxed text-ink">
+                  <Check size={14} className="mt-0.5 flex-shrink-0 text-primary" /> <span>{t}</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-3 text-xs text-ink-muted">Pay as you go is not a free trial and not a monthly plan. You can start from your 7-day trial or from a paid plan, and when a trial ends you get a welcome gift of tokens to start with. You can also earn a few tokens by finishing the daily games.</p>
+          </div>
+        </Reveal>
+
         {/* Pay for longer and save: 10% off 6 months, 20% off 12 months (enforced by the billing code) */}
         <Reveal delay={0.31} className="mx-auto mt-6 max-w-4xl">
           <div className="rounded-2xl border border-border bg-surface p-6">
@@ -225,6 +263,7 @@ export default function Pricing() {
                     ['Barcode scanning with your phone camera', true, true],
                     ['Full accounting: ledger, trial balance, cash flow', false, true],
                     ['Credit limits and terms for customers', true, true],
+                    ['HR and payroll: attendance, leave, payroll runs, payslips, P9', true, true],
                     ['Move stock between branches', false, true],
                     ['Compare branches, branch dashboards, advanced insights', false, true],
                   ].map(([label, a, b]) => (
@@ -255,6 +294,11 @@ export default function Pricing() {
               <Link to="/properties" className="rounded-full border border-border px-4 py-2 text-sm font-semibold text-ink hover:bg-bg">See properties</Link>
             </div>
           </div>
+        </Reveal>
+
+        <Reveal delay={0.34} className="mx-auto mt-14 max-w-2xl">
+          <h2 className="mb-6 text-center text-2xl font-extrabold text-ink">Pricing questions</h2>
+          <Accordion items={priceFaqs.map((f) => ({ id: f.id, question: f.question, answer: f.answer }))} />
         </Reveal>
 
         {/* Value framing */}

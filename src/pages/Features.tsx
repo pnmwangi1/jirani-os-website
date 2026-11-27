@@ -17,7 +17,7 @@ const moreIds = ['shop-delivery', 'riders', 'virtual-properties'];
 export default function Features() {
   useSeo({
     title: 'Features',
-    description: 'Everything Jirani OS does for your business: selling, stock, customers and credit, suppliers, people, money and reports, growth and branches, plus your online shop, delivery and virtual properties.',
+    description: 'Everything Jirani OS does for your business: selling, stock, customers and credit, suppliers, HR and payroll, money and reports, growth and branches, plus your online shop, delivery and virtual properties.',
     path: '/features',
   });
   const more = featureGroups.filter((g) => moreIds.includes(g.id));

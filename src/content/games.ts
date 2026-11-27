@@ -1,16 +1,16 @@
 import type { ProductPageData } from '../components/marketing/ProductPage';
 
-// Facts here match the app. Swahili Saturdays start on 5 December 2026. Rewards are cosmetic only: there is no money in any game.
+// Facts here match the app. Swahili Saturdays start on 5 December 2026. No game takes money. Finishing daily games and playing duels can earn a few Jirani tokens (small daily limit, set by Jirani), plus cosmetic titles and badges.
 export const gamesPage: ProductPageData = {
   seo: {
     title: 'Games',
-    description: 'Daily games in the Jirani app: Word of the Day with Swahili Saturdays, Jirani Shop, Afterglow, Daily Sudoku and friendly duels. Free to play, with streaks and a weekly league.',
+    description: 'Daily games in the Jirani app: Word of the Day with Swahili Saturdays, Jirani Shop, Afterglow, Daily Sudoku and friendly duels. Free to play, with streaks, a weekly league and a few tokens to earn.',
     path: '/games',
   },
   badge: 'Games',
   title: 'A short break that is actually fun.',
-  intro: 'Five games inside the Jirani app. Play for a few minutes, keep your streak, and challenge a friend. Nothing to pay and no money at stake.',
-  facts: ['Free to play', 'Rewards are cosmetic only', 'New puzzles every day', 'Play with a friend by link'],
+  intro: 'Five games inside the Jirani app. Play for a few minutes, keep your streak, and challenge a friend. Nothing to pay, no money at stake, and you can earn a few tokens for finishing the daily games.',
+  facts: ['Free to play', 'No money at stake', 'New puzzles every day', 'Play with a friend by link'],
   cta: { label: 'Play in the app', cta: 'games-hero-play' },
   hero: [
     { id: 'games-hub', alt: 'The Jirani games hub with Word of the Day, Jirani Shop, Afterglow, Daily Sudoku and Duels', caption: 'The games hub' },
@@ -47,6 +47,15 @@ export const gamesPage: ProductPageData = {
       ],
     },
     {
+      title: 'Earn tokens as you play',
+      text: 'Finishing a daily game can earn you Jirani tokens, with a small daily limit.',
+      points: [
+        'Tokens go into your Jirani wallet, the same one used for Pay as you go.',
+        'A duel that both of you play to the end can earn tokens too.',
+        'Nothing is taken from you to play, and there is no betting.',
+      ],
+    },
+    {
       title: 'Streaks, a weekly league and gentle reminders',
       text: 'Finish any daily game to keep your Games streak going. Every Monday a fresh league starts.',
       points: [
@@ -57,7 +66,7 @@ export const gamesPage: ProductPageData = {
     },
   ],
   faqs: [
-    { id: 'free', question: 'Is it really free?', answer: 'Yes. There is nothing to buy, and there is no money in any game. Rewards are cosmetic, such as titles and badges.' },
+    { id: 'free', question: 'Is it really free?', answer: 'Yes. There is nothing to buy and no money at stake in any game. You earn titles and badges, and finishing the daily games can also earn you a few Jirani tokens, up to a small daily limit.' },
     { id: 'account', question: 'Do I need a business to play?', answer: 'No. Anyone with a Jirani account can play. Business owners also get tips in Jirani Shop that link to the matching tool in the app.' },
     { id: 'name', question: 'Will other players see my name?', answer: 'No. Leagues and duels show your gaming alias, not your real name.' },
     { id: 'reminders', question: 'Will the app nag me to play?', answer: 'No. Reminders are optional: at most one a day, none between 9pm and 8am, and only when a streak is at risk or a duel is waiting. You can pause them any time in notification settings.' },

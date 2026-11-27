@@ -8,7 +8,7 @@ import { PhoneFrame } from './PhoneFrame';
 const tiles = [
   { icon: ShoppingCart, title: 'Till and stock', line: 'Goods and services in one till. Stock updates on every sale.' },
   { icon: Users, title: 'Customer credit', line: 'Who owes what, always up to date.' },
-  { icon: UserCog, title: 'Staff and pay records', line: 'Roles, pay sheets, advances and commissions.' },
+  { icon: UserCog, title: 'HR and payroll', line: 'Attendance, leave, payroll with PAYE, NSSF and SHIF, payslips.' },
   { icon: LayoutDashboard, title: 'Owner dashboard', line: 'Today at a glance, across every branch.' },
   { icon: FileBarChart, title: 'Reports', line: 'Sales by shift, profit and loss, downloadable.' },
   { icon: ArrowLeftRight, title: 'Shop-to-shop loans', line: 'Borrow or lend any item with another shop.' },
